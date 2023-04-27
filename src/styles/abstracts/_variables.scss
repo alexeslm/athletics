@@ -1,0 +1,10 @@
+:root {
+
+}
+
+$breakpoints: (
+        'large': (max-width: 1490px),
+        'normal': (max-width: 991px),
+        'medium': (max-width: 767px),
+        'small': (max-width: 499px),
+);
