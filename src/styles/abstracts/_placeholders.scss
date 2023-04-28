@@ -1,0 +1,11 @@
+%list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+%link-reset {
+  color: inherit;
+  text-decoration: none;
+  transition: color .4s ease;
+}

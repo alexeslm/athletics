@@ -1,0 +1,40 @@
+.menu {
+  background-color: var(--color-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  //display: flex;
+  display: none;
+  align-items: center;
+  font-family: var(--font-family-secondary);
+  &__list {
+    @extend %list-reset;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    font-size: 3.2rem;
+    line-height: 125%;
+    &_main {
+      font-size: 4rem;
+      line-height: 120%;
+      background-color: red;
+      width: max-content;
+      position: relative;
+    }
+  }
+  ul li:hover > ul {
+    left: 100%;
+    display: block;
+
+  }
+  ul li > ul {
+    position: absolute;
+    background-color: #333;
+    top: 0;
+    left: 100%;
+    display: none;
+  }
+}

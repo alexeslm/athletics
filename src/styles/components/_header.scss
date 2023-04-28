@@ -1,0 +1,36 @@
+.header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 127px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-between;
+  align-items: center;
+  &__menu {
+    display: flex;
+    column-gap: 64px;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    @extend %list-reset;
+  }
+  &__menu-link {
+    @extend %link-reset;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+    &_active {
+      color: var(--color-primary);
+    }
+  }
+  &__right {
+    display: flex;
+    column-gap: 62px;
+    align-items: center;
+  }
+}

@@ -1,4 +1,24 @@
+@import "normalize.css";
+
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/placeholders";
 @import "abstracts/utils";
+
+@import "base/typography";
+@import "base/base";
+
+@import "layout/container";
+
+@import "components/header";
+@import "components/language";
+@import "components/hamburger";
+@import "components/banner";
+@import "components/button";
+@import "components/menu";
+@import "components/about";
+@import "components/title";
+@import "components/indicators";
+
+
+//@import "test";

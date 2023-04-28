@@ -1,0 +1,31 @@
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/src/images/banner/image.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  &__content {
+    margin-left: 11.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 70rem;
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-w-bold);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 6rem;
+    line-height: 120%;
+  }
+
+  &__slogan {
+    margin-top: 3.2rem;
+    margin-bottom: 5.6rem;
+    font-size: 3rem;
+    line-height: 140%;
+  }
+}

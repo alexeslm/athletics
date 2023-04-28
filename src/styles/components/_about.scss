@@ -1,0 +1,10 @@
+.about {
+  &__inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 448px);
+    column-gap: 4rem;
+    justify-content: space-between;
+  }
+}

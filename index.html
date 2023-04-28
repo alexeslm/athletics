@@ -10,31 +10,128 @@
   <title>Атлетика</title>
 </head>
 <body>
-<header class="header">
+
+<header class="header container-fluid">
   <div class="logo">
     <a href="/">
-      <img src="#" alt="#">
+      <img src="src/images/logo/Logo.png" alt="#">
     </a>
   </div>
   <nav>
-    <ul>
-      <li><a href="#">Каталог</a></li>
-      <li><a href="#">Компания</a></li>
-      <li><a href="#">Бренды</a></li>
-      <li><a href="#">Новости</a></li>
-      <li><a href="#">Контакты</a></li>
+    <ul class="header__menu">
+      <li><a class="header__menu-link header__menu-link_active" href="#">Каталог</a></li>
+      <li><a class="header__menu-link" href="#">Компания</a></li>
+      <li><a class="header__menu-link" href="#">Бренды</a></li>
+      <li><a class="header__menu-link" href="#">Новости</a></li>
+      <li><a class="header__menu-link" href="#">Контакты</a></li>
     </ul>
   </nav>
-  <div>
-    <div>search</div>
-    <div>
-      <a href="#">rus</a>
-      <a href="#">eng</a>
+  <div class="header__right">
+    <div class="glass">
+      <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
+            fill="#222222" stroke="#222222" stroke-width="0.3"/>
+      </svg>
+    </div>
+    <div class="language">
+      <a class="language__item language__item_active" href="#">rus</a>
+      <a class="language__item" href="#">eng</a>
     </div>
     <div class="hamburger">
       <span class="hamburger__line"></span>
     </div>
   </div>
 </header>
+
+<div class="menu">
+  <div class="container w-100">
+    <ul class="menu__list menu__list_main">
+      <li class="submenu-link"><a href="#">Компания</a>
+        <ul class="menu__list menu__list_sub">
+          <li>Сотрудники
+            <ul>
+              <li>Структура бизнеса</li>
+              <li>Каталог</li>
+              <li>Бренды</li>
+            </ul>
+          </li>
+          <li>Отзывы</li>
+          <li>Франшиза</li>
+          <li>Вакансии</li>
+          <li>Доставка и оплата</li>
+        </ul>
+      </li>
+      <li>Структура бизнеса</li>
+      <li>Каталог</li>
+      <!--      <li>Бренды</li>
+            <li>Где купить</li>
+            <li>Сотрудничество</li>
+            <li>Статьи</li>
+            <li>Контакты</li>-->
+    </ul>
+  </div>
+</div>
+
+<main>
+
+  <div class="banner">
+    <div class="banner__content">
+      <h1 class="banner__title">Товары для здоровья, реабилитации и спорта</h1>
+      <span class="banner__slogan">Объединяя возможности</span>
+      <button class="button" type="button">Начать сотрудничество</button>
+    </div>
+  </div>
+
+  <div class="about">
+    <div class="container">
+      <h2 class="title">Торговый дом <br> «Атлетика»</h2>
+      <div class="about__inner">
+        <div class="about__item">
+          <h3>О нас</h3>
+          <p>Торговый дом «Атлетика» - крупнейший агрегатор на ортопедическом рынке России. Является лидером в
+            производстве и реализации ортопедической продукции, предназначенной для профилактики, лечения, реабилитации в
+            ценовом сегменте low-priced и middle-priced.</p>
+        </div>
+        <div class="about__item">
+          <h3>История</h3>
+          <p>Торговый дом «Атлетика» был образован в 1993 году, как оптовая компания по продаже товаров медицинского
+            назначения. В настоящее время крупнейший профессиональный розничный и оптовый оператор на рынке ортопедической
+            продукции и товаров для здоровья, красоты и средств ухода.</p>
+        </div>
+        <div class="about__item">
+          <h3>Миссия</h3>
+          <p>Умножая возможности партнеров, делать доступной для потребителя ортопедическую продукцию достойного
+            качества.</p>
+        </div>
+        <div class="about__item">
+          <h3>Партнеры</h3>
+          <p>ТД «Атлетика» имеет контрактное производство с компаниями из США, Германии, Италии, Китая, Турции, Тайваня,
+            Южной Кореи, Пакистана.</p>
+        </div>
+      </div>
+      <div class="indicators">
+        <div class="indicators__item">
+          <span class="indicators__value">> 30</span>
+          <span class="indicators__info">лет на рынке</span>
+        </div>
+        <div class="indicators__item">
+          <span class="indicators__value">> 700</span>
+          <span class="indicators__info">сотрудников</span>
+        </div>
+        <div class="indicators__item">
+          <span class="indicators__value">14</span>
+          <span class="indicators__info">собственных торговых брендов</span>
+        </div>
+        <div class="indicators__item">
+          <span class="indicators__value">> 1500</span>
+          <span class="indicators__info">компаний-клиентов</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
 </body>
 </html>
