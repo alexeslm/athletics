@@ -1,0 +1,25 @@
+.catalog {
+  &__list {
+    @extend %list-reset;
+    font-size: 2.4rem;
+    line-height: 133%;
+    font-family: var(--font-family-secondary);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  &__link {
+    @extend %link-reset;
+    @extend %link-arrow;
+    @media (any-hover: hover) {
+      &:hover .catalog__icon {
+        filter: none;
+      }
+    }
+  }
+  &__icon {
+    filter: grayscale(1) opacity(0.7);
+    transition: filter .4s ease;
+  }
+}
