@@ -19,11 +19,6 @@
   }
   &__menu-link {
     @extend %link-reset;
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--color-primary);
-      }
-    }
     &_active {
       color: var(--color-primary);
     }
