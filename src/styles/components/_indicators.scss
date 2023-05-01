@@ -6,6 +6,23 @@
     flex-direction: column;
     align-items: center;
     height: 28.2rem;
+    padding-top: 3.7rem;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
+    row-gap: 1.6rem;
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+  &__value {
+    color: var(--color-primary);
+    font-size: 8rem;
+    line-height: 120%;
+    font-weight: var(--font-w-extra);
+  }
+  &__info {
+    font-size: 2.4rem;
+    line-height: 133%;
+    text-align: center;
+    color: var(--color-secondary);
   }
 }

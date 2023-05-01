@@ -1,10 +1,58 @@
 .about {
+  padding-top: 26rem;
+  padding-bottom: 16rem;
   &__inner {
+    margin-top: 4.8rem;
     max-width: 1024px;
-    margin: 0 auto;
+    margin-left: 9.6rem;
     display: grid;
     grid-template-columns: repeat(2, 448px);
-    column-gap: 4rem;
+    row-gap: 4rem;
     justify-content: space-between;
+  }
+  &__title {
+    font-size: 4rem;
+    font-weight: var(--font-w-bold);
+    line-height: 120%;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 2.4rem;
+  }
+  &__desc {
+    font-size: 2rem;
+    line-height: 140%;
+    margin: 0;
+  }
+  &__indicators {
+    margin: 8rem 0;
+  }
+  &__call {
+    position: relative;
+    min-height: 14.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    text-transform: uppercase;
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-w-bold);
+    font-size: 3.2rem;
+    background-color: rgba(247, 247, 247, 0.2);
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.2;
+      background-color: rgba(233, 78, 27, 0.19);
+      background-image: url("../images/about/Logo black Square.svg");
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+      z-index: -1;
+    }
   }
 }
