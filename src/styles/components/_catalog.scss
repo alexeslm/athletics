@@ -1,4 +1,13 @@
 .catalog {
+  &__inner {
+    position: relative;
+    margin-top: 4.8rem;
+    max-width: 1024px;
+    margin-left: 4.5rem;
+    display: flex;
+    column-gap: 9rem;
+  }
+
   &__list {
     @extend %list-reset;
     font-size: 2.4rem;
@@ -9,15 +18,37 @@
     flex-direction: column;
     row-gap: 1.5rem;
   }
+
   &__link {
     @extend %link-reset;
     @extend %link-arrow;
+    column-gap: 1.5rem;
     @media (any-hover: hover) {
-      &:hover .catalog__icon {
-        filter: none;
+      &:hover {
+        .catalog__icon {
+          filter: none;
+        }
+
+        &:after {
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
+
+    &:after {
+      visibility: hidden;
+      opacity: 0;
+      content: '';
+      display: inline-block;
+      width: 2.4rem;
+      height: 2.4rem;
+      background: url("../../src/images/arrow/arrow_active.svg") no-repeat center;
+      background-size: contain;
+      transition: opacity .4s ease;
+    }
   }
+
   &__icon {
     filter: grayscale(1) opacity(0.7);
     transition: filter .4s ease;
