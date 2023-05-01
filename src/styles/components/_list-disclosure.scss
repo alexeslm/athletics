@@ -1,0 +1,8 @@
+.list-disclosure {
+  @extend %list-reset;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  list-style-type: disclosure-closed;
+  padding-left: 21px;
+}
