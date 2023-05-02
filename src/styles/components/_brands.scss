@@ -1,0 +1,50 @@
+.brands {
+  &__wrapper {
+    margin-top: 5.5rem;
+    position: relative;
+    height: 306px;
+  }
+  &__inner {
+    margin-left: 7.2rem;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    max-width: 1300px;
+  }
+  &__opacity {
+    position: absolute;
+    z-index: 2;
+    width: 64px;
+    height: 25.6rem;
+    right: 0;
+    top: 2.5rem;
+    background: linear-gradient(270deg, #F7F7F7 0%, rgba(247, 247, 247, 0) 100%);
+  }
+  .swiper-slide.brands__slide {
+    padding: 2.5rem;
+    width: 28.1rem;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 25.6rem;
+    height: 25.6rem;
+    transition: box-shadow .4s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+  &__navigation {
+    margin-top: 2.3rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    column-gap: 2.5rem;
+  }
+}

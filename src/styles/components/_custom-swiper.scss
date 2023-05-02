@@ -1,0 +1,8 @@
+.swiper-button-prev {
+  @extend %button-arrow;
+  transform: rotate(180deg);
+}
+
+.swiper-button-next {
+  @extend %button-arrow;
+}

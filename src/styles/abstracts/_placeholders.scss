@@ -31,3 +31,17 @@
     }
   }
 }
+
+%button-arrow {
+  width: 24px;
+  height: 24px;
+  background: transparent url("../../src/images/arrow/arrow.svg") no-repeat center;
+  border: none;
+  transition: background-image .4s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      cursor: pointer;
+      background-image: url("../../src/images/arrow/arrow_active.svg");
+    }
+  }
+}
