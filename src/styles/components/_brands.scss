@@ -41,10 +41,7 @@
     }
   }
   &__navigation {
+    @extend %swiper-navigation;
     margin-top: 2.3rem;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    column-gap: 2.5rem;
   }
 }

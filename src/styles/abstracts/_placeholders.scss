@@ -19,10 +19,12 @@
   display: flex;
   align-items: center;
   column-gap: 2.5rem;
+
   & svg path {
     stroke: var(--color-body);
     transition: stroke .4s ease;
   }
+
   @media (any-hover: hover) {
     &:hover {
       svg path {
@@ -44,4 +46,11 @@
       background-image: url("../../src/images/arrow/arrow_active.svg");
     }
   }
+}
+
+%swiper-navigation {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  column-gap: 2.5rem;
 }

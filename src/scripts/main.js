@@ -22,3 +22,14 @@ const brandsSwiper = new Swiper('.brands .swiper', {
     prevEl: ".brands__navigation .swiper-button-prev"
   }
 });
+
+const articlesSwiper = new Swiper('.articles .swiper', {
+  modules: [Navigation],
+  loop: false,
+  slidesPerView: "auto",
+  spaceBetween: 32,
+  navigation: {
+    nextEl: ".articles__navigation .swiper-button-next",
+    prevEl: ".articles__navigation .swiper-button-prev"
+  }
+});
