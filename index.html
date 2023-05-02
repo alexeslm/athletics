@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="src/styles/main.scss">
   <script type="module" src="/src/scripts/main.js"></script>
   <title>Атлетика</title>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d15451b8-f0c3-4ed8-939d-cfdbcbc978ac&lang=ru_RU"></script>
 </head>
 <body>
 
@@ -82,6 +83,23 @@
       <a class="button" href="#">Начать сотрудничество</a>
     </div>
   </section>
+
+  <div class="scroll-wrap">
+
+  </div>
+
+  <div class="sidebar">
+    <ul id="sidebar__list">
+      <li><a href="#company">Компания</a></li>
+      <li><a href="#structure">Структура бизнеса</a></li>
+      <li><a href="#cooperation">Сотрудничество</a></li>
+      <li><a href="#catalog">Каталог</a></li>
+      <li><a href="#whereToBuy">Где купить</a></li>
+      <li><a href="#articles">Статьи</a></li>
+      <li><a href="#news">Новости</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </div>
 
   <section class="section">
     <div class="about">
@@ -475,6 +493,86 @@
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="news">
+      <div class="container">
+        <h2 class="title">Новости</h2>
+        <div class="news__wrapper">
+          <div class="news__inner">
+            <div class="news__opacity"></div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide news__slide">
+                  <a class="news__item" href="#">
+                    <img class="news__thumbnail" src="src/images/news/news_1.jpg" alt="#">
+                    <span class="news__desc">Уважаемые Партнеры! Предлагаем Вам новинки – медицинские кровати с электрическим приводом.</span>
+                  </a>
+                </div>
+                <div class="swiper-slide news__slide">
+                  <a class="news__item" href="#">
+                    <img class="news__thumbnail" src="src/images/news/news_2.jpg" alt="#">
+                    <span class="news__desc">Уважаемые партнеры! На период с 16 по 31 мая действуют специальные цены на Антиэмболические чулки Ergoforma 257/267.</span>
+                  </a>
+                </div>
+                <div class="swiper-slide news__slide">
+                  <a class="news__item" href="#">
+                    <img class="news__thumbnail" src="src/images/news/news_3.jpg" alt="#">
+                    <span class="news__desc">Изделия Comforma снимают боли и чувство усталости в стопе</span>
+                  </a>
+                </div>
+                <div class="swiper-slide news__slide">
+                  <a class="news__item" href="#">
+                    <img class="news__thumbnail" src="src/images/news/news_1.jpg" alt="#">
+                    <span class="news__desc">Уважаемые Партнеры! Предлагаем Вам новинки – медицинские кровати с электрическим приводом.</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news__navigation">
+          <button class="swiper-button-prev"></button>
+          <button class="swiper-button-next"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="contacts">
+    <div class="section section_bg">
+      <div class="container">
+        <h2 class="title">Контакты</h2>
+        <div class="section__inner contacts__inner">
+          <div class="contacts__item contacts__item_location">
+            <span class="contacts__main">Санкт-Петербург</span>
+            <span>ул. Швецова, д. 23, лит. Б</span>
+          </div>
+          <div class="contacts__item contacts__item_telephone">
+            <a class="contacts__main contacts__link" href="tel:+78127796161">+7 (812) 779-61-61</a>
+          </div>
+          <div class="contacts__item contacts__item_email">
+            <a class="contacts__link" href="mailto:info@atletika.ru">info@atletika.ru</a>
+            <a class="contacts__link" href="mailto:secretar@atletika.ru">secretar@atletika.ru</a>
+          </div>
+          <div class="contacts__item contacts__item_fax">
+            <a class="contacts__link" href="tel:+78127796161">+7 (812) 779-61-61</a>
+            <span>ext. 201</span>
+          </div>
+        </div>
+        <div class="contacts__footer">
+          <a class="button" href="#">Задать вопрос</a>
+        </div>
+        <div class="contacts__map">
+          <div id="map" style="width: 1350px; height: 520px"></div>
+        </div>
+        <small class="contacts__copyright">
+          © 1995-2020 Торговый дом "Атлетика" <br>
+          Копирование материалов размещенных на данном сайте, правообладателем которых является Торговый Дом «Атлетика», без особого разрешения - запрещено.
+        </small>
+      </div>
+    </div>
+  </footer>
 
 </main>
 

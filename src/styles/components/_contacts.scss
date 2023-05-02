@@ -1,0 +1,57 @@
+.contacts {
+  .section {
+    padding-bottom: 9rem;
+  }
+  &__inner {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 3.4rem;
+    row-gap: 5rem;
+    justify-content: left;
+  }
+  &__item {
+    font-size: 2rem;
+    line-height: 150%;
+    background: no-repeat top left;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding-left: 5.5rem;
+    &_location {
+      background-image: url("../../src/images/contacts/icon_location.svg");
+    }
+    &_telephone {
+      background-image: url("../../src/images/contacts/icon_phone.svg");
+    }
+    &_email {
+      background-image: url("../../src/images/contacts/icon_mail.svg");
+    }
+    &_fax {
+      background-image: url("../../src/images/contacts/icon_fax.svg");
+    }
+  }
+  &__main {
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-w-bold);
+    font-size: 3rem;
+    line-height: 133%;
+    text-transform: uppercase;
+  }
+  &__link {
+    @extend %link-reset;
+  }
+  &__footer {
+    margin-left: 9.6rem;
+    margin-top: 6rem;
+  }
+  &__map {
+    margin-top: 7.4rem;
+    margin-bottom: 4.6rem;
+  }
+  &__copyright {
+    display: inline-block;
+    max-width: 83rem;
+    font-size: 1.6rem;
+    line-height: 150%;
+    color: var(--color-gray);
+  }
+}
