@@ -1,5 +1,6 @@
 import Swiper, {Navigation} from "swiper";
 import 'swiper/css';
+import scrollSpy from 'simple-scrollspy'
 
 const hamburger = document.querySelector('.hamburger');
 hamburger.addEventListener('click', () => {
@@ -11,6 +12,13 @@ document.body.addEventListener('click', (event) => {
     hamburger.classList.remove('hamburger_active');
   }
 });
+
+scrollSpy('#sidebar-nav', {
+  sectionClass: '.scrollspy',
+  menuActiveTarget: '.sidebar__link',
+  activeClass: 'sidebar__link_active',
+  offset: 200,
+})
 
 const brandsSwiper = new Swiper('.brands .swiper', {
   modules: [Navigation],
