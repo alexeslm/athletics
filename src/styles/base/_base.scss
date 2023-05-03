@@ -5,6 +5,10 @@ html, body {
   scroll-behavior: smooth;
 }
 
+body.popup-open {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }

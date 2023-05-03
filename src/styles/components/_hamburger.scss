@@ -8,25 +8,12 @@
 .hamburger {
   display: flex;
   width: 32px;
-  height: 24px;
+  height: 25px;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform .4s linear;
   @media (any-hover: hover) {
     &:hover {
       cursor: pointer;
-    }
-  }
-  &_active {
-    transform: rotate(90deg);
-    .hamburger__line {
-      background-color: var(--color-primary);
-    }
-    &:before {
-      background-color: var(--color-primary);
-    }
-    &:after {
-      background-color: var(--color-primary);
     }
   }
   &__line {
@@ -36,11 +23,30 @@
     }
   }
   &:before {
+    display: inline-block;
+    content: '';
+    @extend %line;
+    transition: transform .4s linear;
+  }
+  &:after {
+    transition: transform .4s linear;
+    display: inline-block;
     content: '';
     @extend %line;
   }
-  &:after {
-    content: '';
-    @extend %line;
+  &_active {
+    //transform: rotate(90deg);
+    .hamburger__line {
+      background-color: var(--color-primary);
+      display: none;
+    }
+    &:before {
+      background-color: var(--color-primary);
+      transform: rotate(-45deg) translateY(16px);
+    }
+    &:after {
+      background-color: var(--color-primary);
+      transform: rotate(45deg) translateY(-16px);
+    }
   }
 }

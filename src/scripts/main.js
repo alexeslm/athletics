@@ -2,9 +2,26 @@ import Swiper, {Navigation} from "swiper";
 import 'swiper/css';
 import scrollSpy from 'simple-scrollspy'
 
+const getScrollbarWidth = () =>
+  window.innerWidth - document.documentElement.clientWidth;
+
 const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+const header = document.querySelector('.header');
+const main = document.querySelector('main');
+const scrollbarWidth = getScrollbarWidth();
+
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('hamburger_active');
+  menu.classList.toggle('menu_active');
+  document.body.classList.toggle('popup-open');
+  if (document.body.classList.contains('popup-open')) {
+    header.style.paddingRight = (parseFloat(window.getComputedStyle(header).paddingRight) + scrollbarWidth) + 'px';
+    main.style.paddingRight = (parseFloat(window.getComputedStyle(main).paddingRight) + scrollbarWidth) + 'px';
+  } else {
+    header.style.paddingRight = (parseFloat(window.getComputedStyle(header).paddingRight) - scrollbarWidth) + 'px';
+    main.style.paddingRight = (parseFloat(window.getComputedStyle(main).paddingRight) - scrollbarWidth) + 'px';
+  }
 });
 
 document.body.addEventListener('click', (event) => {
@@ -68,7 +85,7 @@ function init() {
     new ymaps.control.ZoomControl()  // Добавление элемента управления картой
   );
 
-  myPlacemark = new ymaps.Placemark([43.238253, 76.945465], { // Координаты метки объекта
+  let myPlacemark = new ymaps.Placemark([43.238253, 76.945465], { // Координаты метки объекта
     balloonContent: "<div class='ya_map'>Заезжайте в гости!</div>" // Подсказка метки
   }, {
     preset: "twirl#redDotIcon" // Тип метки
