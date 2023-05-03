@@ -54,3 +54,19 @@
   align-items: center;
   column-gap: 2.5rem;
 }
+
+%menu-list {
+  @extend %list-reset;
+  flex-direction: column;
+  row-gap: 2.4rem;
+  width: max-content;
+  & > li {
+    @media (any-hover: hover) {
+      &:hover {
+        & > .menu__sub-list {
+          display: flex;
+        }
+      }
+    }
+  }
+}
