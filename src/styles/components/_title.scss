@@ -6,4 +6,9 @@
   line-height: 120%;
   margin: 0;
   text-transform: uppercase;
+  &__link {
+    @extend %link-reset;
+    background: url("../../../src/images/arrow/arrow_big.svg")no-repeat center right;
+    padding-right: 7rem;
+  }
 }
