@@ -11,6 +11,8 @@ const header = document.querySelector('.header');
 const main = document.querySelector('main');
 const scrollbarWidth = getScrollbarWidth();
 
+const sidebar = document.querySelector('.sidebar');
+
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('hamburger_active');
   menu.classList.toggle('menu_active');
@@ -24,9 +26,17 @@ hamburger.addEventListener('click', () => {
   }
 });
 
-document.body.addEventListener('click', (event) => {
+/*document.body.addEventListener('click', (event) => {
   if (!event.target.closest('.hamburger') && event.target !== mobileMenu) {
     hamburger.classList.remove('hamburger_active');
+  }
+});*/
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 900) {
+    sidebar.classList.add('sidebar_affix');
+  } else {
+    sidebar.classList.remove('sidebar_affix')
   }
 });
 
