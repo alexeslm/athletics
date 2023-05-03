@@ -85,23 +85,23 @@ ymaps.ready(init);
 let myMap;
 
 function init() {
-
   myMap = new ymaps.Map("map", {
-    center: [43.238253, 76.945465], // Координаты центра карты
-    zoom: 13 // Маштаб карты
+    center: [59.896526, 30.285236],
+    zoom: 15
   });
-
   myMap.controls.add(
-    new ymaps.control.ZoomControl()  // Добавление элемента управления картой
+    new ymaps.control.ZoomControl()
   );
 
-  let myPlacemark = new ymaps.Placemark([43.238253, 76.945465], { // Координаты метки объекта
-    balloonContent: "<div class='ya_map'>Заезжайте в гости!</div>" // Подсказка метки
+  let myPlacemark = new ymaps.Placemark([59.896526, 30.285236], {
+
   }, {
-    preset: "twirl#redDotIcon" // Тип метки
+    iconLayout: "default#image",
+    iconImageHref: "./src/images/map/label.svg",
+    iconImageSize: [80, 80],
+    //iconImageOffset: [30, -42]
   });
 
-  myMap.geoObjects.add(myPlacemark); // Добавление метки
-  myPlacemark.balloon.open(); // Открытие подсказки метки
-
-};
+  myMap.geoObjects.add(myPlacemark);
+  //myPlacemark.balloon.open();
+}
