@@ -6,6 +6,21 @@
     background: linear-gradient(180deg, rgba(237, 250, 255, 0.95) 0%, rgba(228, 248, 255, 0.95) 100%);
   }
 
+  &_bg1 {
+    background-image: url("../../../src/images/sections/bg_1.jpg");
+    background-size: cover;
+  }
+
+  &_bg2 {
+    background-image: url("../../../src/images/sections/bg_2.jpg");
+    background-size: cover;
+  }
+
+  &_bg3 {
+    background-image: url("../../../src/images/sections/bg_3.jpg");
+    background-size: cover;
+  }
+
   &__inner {
     margin-top: 4.8rem;
     max-width: 1024px;

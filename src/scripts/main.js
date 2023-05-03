@@ -44,7 +44,7 @@ scrollSpy('#sidebar-nav', {
   sectionClass: '.scrollspy',
   menuActiveTarget: '.sidebar__link',
   activeClass: 'sidebar__link_active',
-  offset: 200,
+  offset: -500,
 })
 
 const brandsSwiper = new Swiper('.brands .swiper', {
