@@ -2,4 +2,53 @@
   position: absolute;
   top: -175px;
   right: -290px;
+  &__link {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: url("../../src/images/catalog/catalogue_dot.svg") no-repeat center;
+    position: absolute;
+    transition: background-image .4s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        background-image: url("../../src/images/catalog/catalogue_dot_active.svg");
+      }
+    }
+    &_active {
+      background-image: url("../../src/images/catalog/catalogue_dot_active.svg");
+    }
+    &_neck {
+      top: 77px;
+      left: 275px;
+    }
+    &_elbow {
+      top: 156px;
+      left: 127px;
+    }
+    &_hand {
+      top: 232px;
+      left: 138px;
+    }
+    &_back {
+      top: 195px;
+      left: 207px;
+    }
+    &_belly {
+      top: 297px;
+      left: 272px
+    }
+    &_knee {
+      bottom: 250px;
+      right: 41px;
+    }
+    &_ankle {
+      bottom: 116px;
+      right: 160px;
+    }
+    &_foot {
+      bottom: 31px;
+      left: 0px;
+    }
+  }
 }

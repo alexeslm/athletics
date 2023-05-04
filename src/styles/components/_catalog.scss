@@ -36,6 +36,18 @@
       }
     }
 
+    &.catalog__link_active {
+      color: var(--color-primary);
+      .catalog__icon {
+        filter: none;
+      }
+
+      &:after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
     &:after {
       visibility: hidden;
       opacity: 0;

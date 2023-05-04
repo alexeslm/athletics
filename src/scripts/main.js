@@ -81,6 +81,66 @@ const newsSwiper = new Swiper('.news .swiper', {
 });
 
 
+
+
+// *********************************************************************************************************************
+const figure = document.querySelector('.figure');
+figure.addEventListener('mouseover', (evt) => {
+  if (evt.target.classList.contains('figure__link')) {
+    const dataType = evt.target.dataset.type;
+    const catalogLink = document.querySelector(`.catalog__link[data-type="${dataType}"]`);
+    if (catalogLink) {
+      catalogLink.classList.add('catalog__link_active');
+    }
+  }
+})
+
+figure.addEventListener('mouseout', (evt) => {
+  if (evt.target.classList.contains('figure__link')) {
+    const dataType = evt.target.dataset.type;
+    const catalogLink = document.querySelector(`.catalog__link[data-type="${dataType}"]`);
+    if (catalogLink) {
+      catalogLink.classList.remove('catalog__link_active');
+    }
+  }
+})
+//**********************************************************************************************************************
+
+
+// *********************************************************************************************************************
+const catalogLists = document.querySelectorAll('.catalog__list');
+catalogLists.forEach((catalog) => {
+
+  catalog.addEventListener('mouseover', (evt) => {
+    if (evt.target.classList.contains('catalog__link')) {
+      const dataType = evt.target.dataset.type;
+      const figureLink = document.querySelector(`.figure__link[data-type="${dataType}"]`);
+      if (figureLink) {
+        figureLink.classList.add('figure__link_active');
+      }
+    }
+  })
+
+  catalog.addEventListener('mouseout', (evt) => {
+    if (evt.target.classList.contains('catalog__link')) {
+      const dataType = evt.target.dataset.type;
+      const figureLink = document.querySelector(`.figure__link[data-type="${dataType}"]`);
+      if (figureLink) {
+        figureLink.classList.remove('figure__link_active');
+      }
+    }
+  })
+
+})
+
+
+
+//**********************************************************************************************************************
+
+
+
+
+
 ymaps.ready(init);
 let myMap;
 
