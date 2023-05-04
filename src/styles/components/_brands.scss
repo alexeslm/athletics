@@ -3,6 +3,12 @@
     margin-top: 5.5rem;
     position: relative;
     height: 306px;
+    @include respond-to('large') {
+      height: auto;
+    }
+    @include respond-to('mobile') {
+      margin-top: 3.2rem;
+    }
   }
   &__inner {
     margin-left: 7.2rem;
@@ -11,6 +17,11 @@
     left: 0;
     top: 0;
     max-width: 1300px;
+    @include respond-to('large') {
+      position: static;
+      max-width: 100%;
+      margin-left: 0;
+    }
   }
   &__opacity {
     position: absolute;
@@ -20,10 +31,17 @@
     right: 0;
     top: 2.5rem;
     background: linear-gradient(270deg, #F7F7F7 0%, rgba(247, 247, 247, 0) 100%);
+    @include respond-to('mobile') {
+      display: none;
+    }
   }
   .swiper-slide.brands__slide {
     padding: 2.5rem;
     width: 28.1rem;
+    @include respond-to('mobile') {
+      padding: 0;
+      width: 13.4rem;
+    }
   }
   &__item {
     display: flex;
@@ -34,11 +52,21 @@
     width: 25.6rem;
     height: 25.6rem;
     transition: box-shadow .4s ease;
+    @include respond-to('mobile') {
+      width: 13.4rem;
+      height: 13.4rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     @media (any-hover: hover) {
       &:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       }
     }
+  }
+  &__logo {
+    width: 100%;
+    height: auto;
   }
   &__navigation {
     @extend %swiper-navigation;

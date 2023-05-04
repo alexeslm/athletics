@@ -6,6 +6,15 @@
   display: flex;
   align-items: center;
   position: relative;
+  @include respond-to('normal') {
+    height: 700px;
+  }
+  @include respond-to('mobile') {
+    align-items: start;
+    background-image: url("/src/images/banner/image-mobile.jpg");
+    height: 500px;
+    padding-top: 7.2rem;
+  }
 
   &__content {
     margin-left: 11.5vw;
@@ -15,12 +24,29 @@
     max-width: 70rem;
     font-family: var(--font-family-secondary);
     font-weight: var(--font-w-bold);
+    @include respond-to('small') {
+      padding-left: 20px;
+      padding-right: 20px;
+      max-width: 100%;
+      margin-left: 0;
+    }
+    @include respond-to('mobile') {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   &__title {
     margin: 0;
     font-size: 6rem;
     line-height: 120%;
+    text-transform: uppercase;
+    @include respond-to('small') {
+      font-size: 4rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 2.4rem;
+    }
   }
 
   &__slogan {
@@ -28,6 +54,16 @@
     margin-bottom: 5.6rem;
     font-size: 3rem;
     line-height: 140%;
+    text-transform: uppercase;
+    @include respond-to('small') {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 1.4rem;
+      margin-top: .8rem;
+      margin-bottom: 1.6rem;
+    }
   }
 
   &__nav {
@@ -41,6 +77,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include respond-to('medium') {
+      display: none;
+    }
   }
 
   &__link {

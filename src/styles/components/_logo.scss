@@ -1,0 +1,8 @@
+.logo {
+  &__image {
+    @include respond-to('mobile') {
+      width: 9.2rem;
+      height: auto;
+    }
+  }
+}

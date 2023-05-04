@@ -16,6 +16,10 @@
       cursor: pointer;
     }
   }
+  @include respond-to('mobile') {
+    width: 18px;
+    height: 15px;
+  }
   &__line {
     @extend %line;
     &_main {
@@ -43,10 +47,16 @@
     &:before {
       background-color: var(--color-primary);
       transform: rotate(-45deg) translateY(16px);
+      @include respond-to('mobile') {
+        transform: rotate(-45deg) translateY(9px);
+      }
     }
     &:after {
       background-color: var(--color-primary);
       transform: rotate(45deg) translateY(-16px);
+      @include respond-to('mobile') {
+        transform: rotate(45deg) translateY(-9px);
+      }
     }
   }
 }

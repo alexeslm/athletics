@@ -14,4 +14,11 @@
       cursor: pointer;
     }
   }
+  @include respond-to('normal') {
+    font-size: 1.8rem;
+  }
+  @include respond-to('small') {
+    font-size: 1.4rem;
+    padding: 1.3rem 2.3rem;
+  }
 }

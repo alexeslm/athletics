@@ -1,0 +1,10 @@
+.glass {
+  &__icon {
+    width: 30px;
+    height: 31px;
+    @include respond-to('mobile') {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

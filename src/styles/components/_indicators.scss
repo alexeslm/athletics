@@ -1,6 +1,13 @@
 .indicators {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  @include respond-to('normal') {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4rem;
+  }
+  @include respond-to('mobile') {
+    row-gap: 1.6rem;
+  }
   &__item {
     display: flex;
     flex-direction: column;
@@ -9,6 +16,18 @@
     padding-top: 3.7rem;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     row-gap: 1.6rem;
+    @include respond-to('normal') {
+      height: 18rem;
+      &:nth-of-type(even) {
+        border-right: none;
+      }
+    }
+    @include respond-to('medium') {
+      padding-top: 0;
+      row-gap: .8rem;
+      height: 103px;
+      justify-content: center;
+    }
     &:last-of-type {
       border-right: none;
     }
@@ -18,11 +37,23 @@
     font-size: 8rem;
     line-height: 120%;
     font-weight: var(--font-w-extra);
+    @include respond-to('normal') {
+      font-size: 6rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 4.8rem;
+    }
   }
   &__info {
     font-size: 2.4rem;
     line-height: 133%;
     text-align: center;
     color: var(--color-secondary);
+    @include respond-to('normal') {
+      font-size: 2rem;
+    }
+    @include respond-to('medium') {
+      font-size: 1.4rem;
+    }
   }
 }

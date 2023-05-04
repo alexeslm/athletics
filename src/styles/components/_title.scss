@@ -6,9 +6,22 @@
   line-height: 120%;
   margin: 0;
   text-transform: uppercase;
+  @include respond-to('normal') {
+    font-size: 6rem;
+  }
+  @include respond-to('small') {
+    font-size: 4rem;
+  }
+  @include respond-to('mobile') {
+    font-size: 3rem;
+  }
   &__link {
     @extend %link-reset;
     background: url("../../src/images/arrow/arrow_big.svg")no-repeat center right;
     padding-right: 7rem;
+    @include respond-to('mobile') {
+      width: 100%;
+      display: inline-block;
+    }
   }
 }

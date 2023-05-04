@@ -7,6 +7,11 @@
     column-gap: 3.4rem;
     row-gap: 5rem;
     justify-content: left;
+    @include respond-to('mobile') {
+      row-gap: 3.4rem;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.2rem;
+    }
   }
   &__item {
     font-size: 2rem;
@@ -16,6 +21,15 @@
     flex-direction: column;
     row-gap: 1rem;
     padding-left: 5.5rem;
+    @include respond-to('small') {
+      font-size: 1.6rem;
+      row-gap: .5rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 1.4rem;
+      padding-left: 0;
+      padding-top: 55px;
+    }
     &_location {
       background-image: url("../../src/images/contacts/icon_location.svg");
     }
@@ -35,6 +49,12 @@
     font-size: 3rem;
     line-height: 133%;
     text-transform: uppercase;
+    @include respond-to('small') {
+      font-size: 2rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 1.6rem;
+    }
   }
   &__link {
     @extend %link-reset;
@@ -42,6 +62,17 @@
   &__footer {
     margin-left: 9.6rem;
     margin-top: 6rem;
+    @include respond-to('small') {
+      margin-top: 4rem;
+      margin-left: 0;
+    }
+    @include respond-to('mobile') {
+      margin-top: 3.2rem;
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
   &__map {
     margin-top: 7.4rem;
@@ -53,5 +84,19 @@
     font-size: 1.6rem;
     line-height: 150%;
     color: var(--color-gray);
+    @include respond-to('mobile') {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+#map {
+  width: 1350px;
+  height: 520px;
+  @include respond-to('large') {
+    max-width: 100% !important;
+  }
+  @include respond-to('normal') {
+    height: 400px;
   }
 }

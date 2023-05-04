@@ -6,6 +6,11 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 1.4rem;
+  @include respond-to('mobile') {
+    width: 48px;
+    height: 24px;
+    font-size: .9rem;
+  }
   &__item {
     width: 50%;
     height: 100%;

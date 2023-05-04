@@ -1,6 +1,6 @@
 .header {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
@@ -9,6 +9,18 @@
   grid-template-columns: repeat(3, max-content);
   justify-content: space-between;
   align-items: center;
+  &_in {
+    grid-template-columns: repeat(2, max-content);
+  }
+  @include respond-to('medium') {
+    grid-template-columns: repeat(2, max-content);
+    nav {
+      display: none;
+    }
+  }
+  @include respond-to('mobile') {
+    min-height: 5.8rem;
+  }
   &__menu {
     display: flex;
     column-gap: 64px;
@@ -27,5 +39,8 @@
     display: flex;
     column-gap: 62px;
     align-items: center;
+    @include respond-to(small) {
+      column-gap: 28px;
+    }
   }
 }

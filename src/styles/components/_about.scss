@@ -7,6 +7,19 @@
     grid-template-columns: repeat(2, 448px);
     row-gap: 4rem;
     justify-content: space-between;
+    @include respond-to('medium') {
+      max-width: 100%;
+      margin-left: 0;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 9rem;
+    }
+    @include respond-to('normal') {
+      grid-template-columns: 1fr;
+    }
+    @include respond-to('mobile') {
+      margin-top: 3.2rem;
+      row-gap: 2.4rem;
+    }
   }
   &__title {
     font-size: 4rem;
@@ -15,14 +28,29 @@
     color: var(--color-primary);
     margin-top: 0;
     margin-bottom: 2.4rem;
+    text-transform: uppercase;
+    @include respond-to('small') {
+      font-size: 3rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 2.4rem;
+      margin-bottom: 1.6rem;
+    }
   }
   &__desc {
     font-size: 2rem;
     line-height: 140%;
     margin: 0;
+    @include respond-to('mobile') {
+      font-size: 1.4rem;
+    }
   }
   &__indicators {
     margin: 8rem 0;
+    @include respond-to('mobile') {
+      margin-top: 2.4rem;
+      margin-bottom: 4.8rem;
+    }
   }
   &__call {
     position: relative;
@@ -37,6 +65,18 @@
     font-weight: var(--font-w-bold);
     font-size: 3.2rem;
     background-color: rgba(247, 247, 247, 0.2);
+    @include respond-to('normal') {
+      font-size: 2.4rem;
+    }
+    @include respond-to('small') {
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 1.6rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 1.8rem;
+      text-align: center;
+    }
     &:before {
       content: "";
       position: absolute;

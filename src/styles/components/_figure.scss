@@ -2,6 +2,24 @@
   position: absolute;
   top: -175px;
   right: -290px;
+  @include respond-to('large') {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  @include respond-to('medium') {
+    width: max-content;
+  }
+  @include respond-to('mobile') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__image {
+    @include respond-to('mobile') {
+      width: 224px;
+      height: auto;
+    }
+  }
   &__link {
     display: block;
     width: 44px;
@@ -21,34 +39,66 @@
     &_neck {
       top: 77px;
       left: 275px;
+      @include respond-to('mobile') {
+        top: 26px;
+        left: 125px;
+      }
     }
     &_elbow {
       top: 156px;
       left: 127px;
+      @include respond-to('mobile') {
+        top: 64px;
+        left: 52px;
+      }
     }
     &_hand {
       top: 232px;
       left: 138px;
+      @include respond-to('mobile') {
+        top: 108px;
+        left: 58px;
+      }
     }
     &_back {
       top: 195px;
       left: 207px;
+      @include respond-to('mobile') {
+        top: 87px;
+        left: 94px;
+      }
     }
     &_belly {
       top: 297px;
-      left: 272px
+      left: 272px;
+      @include respond-to('mobile') {
+        top: 123px;
+        left: 132px;
+      }
     }
     &_knee {
       bottom: 250px;
       right: 41px;
+      @include respond-to('mobile') {
+        bottom: 115px;
+        right: 6px;
+      }
     }
     &_ankle {
       bottom: 116px;
       right: 160px;
+      @include respond-to('mobile') {
+        bottom: 49px;
+        right: 75px;
+      }
     }
     &_foot {
       bottom: 31px;
-      left: 0px;
+      left: 0;
+      @include respond-to('mobile') {
+        bottom: 4px;
+        left: -6px;
+      }
     }
   }
 }

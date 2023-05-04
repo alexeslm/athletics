@@ -1,9 +1,23 @@
 .cooperation {
   &__channel {
     padding-bottom: 6rem;
+    @include respond-to('medium') {
+      padding-bottom: 0;
+    }
   }
   &__footer {
     margin-left: 9.6rem;
     margin-top: 2rem;
+    @include respond-to('medium') {
+      margin-left: 0;
+      margin-top: 6rem;
+    }
+    @include respond-to('mobile') {
+      margin-top: 2.4rem;
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
 }
