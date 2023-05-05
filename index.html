@@ -45,7 +45,7 @@
   </div>
 </div>
 
-<header class="header container-fluid">
+<header class="header header_main container-fluid">
   <div class="logo">
     <a href="/">
       <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
@@ -79,79 +79,88 @@
 </header>
 
 <div class="menu">
-  <div class="container w-100">
-    <ul class="menu__list menu__list_main">
-      <li>
-        <a class="menu__link" href="#">
-          Компания
-          <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <ul class="menu__sub-list">
-          <li><a class="menu__sub-link" href="#">Сотрудники</a></li>
-          <li><a class="menu__sub-link" href="#">Отзывы</a></li>
-          <li><a class="menu__sub-link" href="#">Франшиза</a></li>
-          <li><a class="menu__sub-link" href="#">Вакансии</a></li>
-          <li><a class="menu__sub-link" href="#">Доставка и оплата</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu__link" href="#">
-          Структура бизнеса
-          <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a class="menu__link" href="#">
-          Каталог
-          <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <ul class="menu__sub-list">
-          <li><a class="menu__sub-link" href="#">Фиксаторы суставов</a></li>
-          <li>
-            <a class="menu__sub-link" href="#">Подушки ортопедические</a>
-            <ul class="menu__sub-list menu__sub-list_scroll">
-              <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
-              <li><a class="menu__sub-link" href="#">Подушки</a></li>
-              <li><a class="menu__sub-link" href="#">Бинты</a></li>
-              <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
-              <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
-              <li><a class="menu__sub-link" href="#">Обувь</a></li>
-              <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
-              <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
-              <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
-              <li><a class="menu__sub-link" href="#">Подушки</a></li>
-              <li><a class="menu__sub-link" href="#">Бинты</a></li>
-              <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
-              <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
-              <li><a class="menu__sub-link" href="#">Обувь</a></li>
-              <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
-              <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
-            </ul>
-          </li>
-          <li><a class="menu__sub-link" href="#">Компрессорный трикотаж</a></li>
-          <li><a class="menu__sub-link" href="#">Ортезы на суставы</a></li>
-          <li><a class="menu__sub-link" href="#">Ортезы на позвоночник</a></li>
-          <li><a class="menu__sub-link" href="#">Бандажи</a></li>
-          <li><a class="menu__sub-link" href="#">Средства реабилитации</a></li>
-          <li><a class="menu__sub-link" href="#">Матрасы</a></li>
-          <li><a class="menu__sub-link" href="#">Массажные изделия</a></li>
-        </ul>
-      </li>
-      <li><a class="menu__link" href="#">Бренды</a></li>
-      <li><a class="menu__link" href="#">Где купить</a></li>
-      <li><a class="menu__link" href="#">Сотрудничество</a></li>
-      <li><a class="menu__link" href="#">Статьи</a></li>
-      <li><a class="menu__link" href="#">Контакты</a></li>
-    </ul>
+  <div class="container menu__container">
+    <a class="menu__back" href="#">Вернуться назад</a>
+
+    <div class="menu__wrap">
+      <ul class="menu__list menu__list_main">
+        <li>
+          <a class="menu__link" href="#">
+            Компания
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Сотрудники</a></li>
+            <li><a class="menu__sub-link" href="#">Отзывы</a></li>
+            <li><a class="menu__sub-link" href="#">Франшиза</a></li>
+            <li><a class="menu__sub-link" href="#">Вакансии</a></li>
+            <li><a class="menu__sub-link" href="#">Доставка и оплата</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Структура бизнеса
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Каталог
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Фиксаторы суставов</a></li>
+            <li>
+              <a class="menu__sub-link" href="#">Подушки ортопедические</a>
+              <ul class="menu__sub-list menu__sub-list_scroll">
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+              </ul>
+            </li>
+            <li><a class="menu__sub-link" href="#">Компрессорный трикотаж</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на суставы</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на позвоночник</a></li>
+            <li><a class="menu__sub-link" href="#">Бандажи</a></li>
+            <li><a class="menu__sub-link" href="#">Средства реабилитации</a></li>
+            <li><a class="menu__sub-link" href="#">Матрасы</a></li>
+            <li><a class="menu__sub-link" href="#">Массажные изделия</a></li>
+          </ul>
+        </li>
+        <li><a class="menu__link" href="#">Бренды</a></li>
+        <li><a class="menu__link" href="#">Где купить</a></li>
+        <li><a class="menu__link" href="#">Сотрудничество</a></li>
+        <li><a class="menu__link" href="#">Статьи</a></li>
+        <li><a class="menu__link" href="#">Контакты</a></li>
+      </ul>
+    </div>
+
+
+
+
+
   </div>
 </div>
 

@@ -9,8 +9,12 @@
   grid-template-columns: repeat(3, max-content);
   justify-content: space-between;
   align-items: center;
+  &_fix {
+    position: fixed;
+  }
   &_in {
     grid-template-columns: repeat(2, max-content);
+    z-index: 1;
   }
   @include respond-to('medium') {
     grid-template-columns: repeat(2, max-content);

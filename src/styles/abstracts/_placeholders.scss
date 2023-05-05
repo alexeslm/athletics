@@ -69,4 +69,12 @@
       }
     }
   }
+  @include respond-to('medium') {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    left: 0 !important;
+    padding-left: 0 !important;
+    background-color: var(--color-light);
+  }
 }

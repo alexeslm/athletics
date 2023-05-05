@@ -8,11 +8,36 @@
   left: 0;
   width: 100%;
   height: 100vh;
+  min-height: 800px;
   z-index: 4;
   display: flex;
   align-items: center;
   font-family: var(--font-family-secondary);
   transition: opacity .7s ease;
+  @include respond-to('medium') {
+    min-height: auto;
+    display: block;
+    padding-top: 142px;
+  }
+  @include respond-to('mobile') {
+    padding-top: 73px;
+  }
+
+  &__container {
+    width: 100%;
+    @include respond-to('medium') {
+      height: 100%;
+    }
+  }
+
+  &__wrap {
+    @include respond-to('medium') {
+      height: 100%;
+      position: relative;
+      margin-top: 3.2rem;
+    }
+  }
+
   &_active {
     visibility: visible;
     opacity: 1;
@@ -24,6 +49,14 @@
     position: relative;
     font-size: 4rem;
     line-height: 120%;
+    @include respond-to('medium') {
+      position: static;
+    }
+    @include respond-to('mobile') {
+      font-size: 1.8rem;
+      font-weight: var(--font-w-bold);
+      row-gap: 1.6rem;
+    }
   }
 
   &__sub-list {
@@ -35,12 +68,20 @@
     padding-left: 10rem;
     font-size: 3.2rem;
     line-height: 125%;
-
+    &_active {
+      display: flex;
+    }
     &_scroll {
       max-height: 552px;
       overflow-y: auto;
       padding-right: 2rem;
       max-width: 500px;
+
+    }
+    @include respond-to('mobile') {
+      font-size: 1.8rem;
+      font-weight: 400;
+      row-gap: 1.6rem;
     }
   }
 
@@ -52,6 +93,21 @@
 
   &__sub-link {
     @extend %link-reset;
+  }
+
+  &__back {
+    text-transform: uppercase;
+    font-weight: var(--font-w-bold);
+    font-family: var(--font-family-secondary);
+    font-size: 1.4rem;
+    color: #828282;
+    text-decoration: none;
+    background: url("/src/images/modal/arrow-back.svg") no-repeat left center;
+    padding-left: 32px;
+    display: none;
+    &_active {
+      display: inline-block;
+    }
   }
 }
 

@@ -3,15 +3,14 @@ import 'swiper/css';
 import scrollSpy from 'simple-scrollspy';
 import MicroModal from "micromodal";
 
-const getScrollbarWidth = () =>
-  window.innerWidth - document.documentElement.clientWidth;
+const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 
 const hamburgersList = document.querySelectorAll('.hamburger');
 const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
 const main = document.querySelector('main');
 const scrollbarWidth = getScrollbarWidth();
-
+const headerMain = document.querySelector('.header_main');
 const sidebar = document.querySelector('.sidebar');
 
 hamburgersList.forEach((hamburger) => {
@@ -19,6 +18,7 @@ hamburgersList.forEach((hamburger) => {
     hamburger.classList.toggle('hamburger_active');
     menu.classList.toggle('menu_active');
     document.body.classList.toggle('popup-open');
+    headerMain.classList.toggle('header_fix');
     if (document.body.classList.contains('popup-open')) {
       header.style.paddingRight = (parseFloat(window.getComputedStyle(header).paddingRight) + scrollbarWidth) + 'px';
       main.style.paddingRight = (parseFloat(window.getComputedStyle(main).paddingRight) + scrollbarWidth) + 'px';
@@ -28,6 +28,46 @@ hamburgersList.forEach((hamburger) => {
     }
   });
 });
+
+
+
+const menuLinkArrow = document.querySelectorAll('.menu__link-arrow');
+const listOfSubMenu = document.querySelectorAll('.menu__sub-list');
+const menuBack = document.querySelector('.menu__back');
+menuLinkArrow.forEach((arrow) => {
+  arrow.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    const currentMenuLink = evt.currentTarget.closest('.menu__link');
+    const currentMenuSubList = currentMenuLink.nextElementSibling;
+    listOfSubMenu.forEach(subMenu => subMenu.classList.remove('menu__sub-list_active'));
+    currentMenuSubList.classList.add('menu__sub-list_active');
+    const allSubList = document.querySelectorAll('.menu__sub-list');
+    for (const item of allSubList) {
+      if (item.classList.contains('menu__sub-list_active')) {
+        menuBack.classList.add('menu__back_active');
+        break;
+      } else {
+        menuBack.classList.remove('menu__back_active');
+      }
+    }
+  })
+});
+
+menuBack.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  listOfSubMenu.forEach(subMenu => subMenu.classList.remove('menu__sub-list_active'));
+  const allSubList = document.querySelectorAll('.menu__sub-list');
+  for (const item of allSubList) {
+    if (item.classList.contains('menu__sub-list_active')) {
+      menuBack.classList.add('menu__back_active');
+      break;
+    } else {
+      menuBack.classList.remove('menu__back_active');
+    }
+  }
+})
+
+
 
 const buttonQuestion = document.querySelector('#button-question');
 buttonQuestion.addEventListener('click', () => {
