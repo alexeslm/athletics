@@ -15,7 +15,9 @@ const sidebar = document.querySelector('.sidebar');
 
 hamburgersList.forEach((hamburger) => {
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('hamburger_active');
+    hamburgersList.forEach(item => {
+      item.classList.toggle('hamburger_active');
+    })
     menu.classList.toggle('menu_active');
     document.body.classList.toggle('popup-open');
     headerMain.classList.toggle('header_fix');
