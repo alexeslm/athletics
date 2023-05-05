@@ -1,6 +1,7 @@
 import Swiper, {Navigation} from "swiper";
 import 'swiper/css';
-import scrollSpy from 'simple-scrollspy'
+import scrollSpy from 'simple-scrollspy';
+import MicroModal from "micromodal";
 
 const getScrollbarWidth = () =>
   window.innerWidth - document.documentElement.clientWidth;
@@ -26,14 +27,15 @@ hamburgersList.forEach((hamburger) => {
       main.style.paddingRight = (parseFloat(window.getComputedStyle(main).paddingRight) - scrollbarWidth) + 'px';
     }
   });
+});
+
+const buttonQuestion = document.querySelector('#button-question');
+buttonQuestion.addEventListener('click', () => {
+  MicroModal.show('modal-question', {
+    disableScroll: true,
+    disableFocus: true,
+  });
 })
-
-
-/*document.body.addEventListener('click', (event) => {
-  if (!event.target.closest('.hamburger') && event.target !== mobileMenu) {
-    hamburger.classList.remove('hamburger_active');
-  }
-});*/
 
 window.addEventListener('scroll', () => {
   if (window.scrollY >= 900) {

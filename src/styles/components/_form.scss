@@ -1,0 +1,40 @@
+.form {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    color: var(--color-dark);
+    line-height: 157%;
+    @include respond-to('normal') {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid var(--color-light-gray);
+    height: 4.5rem;
+    font-size: 1.6rem;
+
+    ::placeholder {
+      color: var(--color-gray);
+    }
+  }
+
+  &__agreement {
+    font-size: 1.4rem;
+    line-height: 157%;
+    color: var(--color-dark);
+    margin: 0;
+  }
+}

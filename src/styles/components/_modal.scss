@@ -1,0 +1,158 @@
+.modal {
+  &__overlay {
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+    @include respond-to('small') {
+      flex-direction: column;
+    }
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+  }
+
+  &__aside {
+    background: url("/src/images/modal/bg.jpg") no-repeat;
+    background-size: cover;
+    width: 200px;
+    padding: 30px;
+    text-align: right;
+    @include respond-to('small') {
+      order: -1;
+      width: 100%;
+      padding: 26px 10px;
+      background-image: url("/src/images/modal/bg-mobile.jpg");
+    }
+  }
+
+  &__close {
+    border: none;
+    font-size: 1.6rem;
+    line-height: 162%;
+    background: transparent url("/src/images/modal/close_icon.svg") no-repeat center right;
+    padding-right: 43px;
+    @media (any-hover: hover) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__inner {
+    background-color: var(--color-light);
+    padding: 8rem 10rem;
+    @include respond-to('large') {
+      padding: 5rem 4rem;
+    }
+    @include respond-to('normal') {
+      padding: 3.2rem 1rem;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-w-bold);
+    font-size: 4.8rem;
+    line-height: 117%;
+    margin: 0;
+    @include respond-to('large') {
+      font-size: 4rem;
+    }
+    @include respond-to('normal') {
+      font-size: 3rem;
+    }
+  }
+
+  &__button {
+    @include respond-to('large') {
+      .button {
+        font-size: 1.8rem;
+        padding-top: 1.8rem;
+        padding-bottom: 1.8rem;
+      }
+    }
+    @include respond-to('mobile') {
+      .button {
+        font-size: 1.4rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+/**************************\
+      Animation Style
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.modal[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
