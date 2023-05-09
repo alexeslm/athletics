@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   font-family: var(--font-family-secondary);
-  transition: opacity .7s ease;
+  transition: opacity .4s ease;
   @include respond-to('medium') {
     min-height: auto;
     display: block;

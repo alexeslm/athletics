@@ -39,23 +39,22 @@
     @extend %line;
   }
   &_active {
-    //transform: rotate(90deg);
     .hamburger__line {
       background-color: var(--color-primary);
       display: none;
     }
     &:before {
       background-color: var(--color-primary);
-      transform: rotate(-45deg) translateY(16px);
+      transform: rotate(-45deg) translateY(10px) translateX(-6px);
       @include respond-to('mobile') {
-        transform: rotate(-45deg) translateY(9px);
+        transform: rotate(-45deg) translateY(4px) translateX(-5px);
       }
     }
     &:after {
       background-color: var(--color-primary);
-      transform: rotate(45deg) translateY(-16px);
+      transform: rotate(45deg) translateY(-10px) translateX(-6px);
       @include respond-to('mobile') {
-        transform: rotate(45deg) translateY(-9px);
+        transform: rotate(45deg) translateY(-4px) translateX(-5px);
       }
     }
   }

@@ -1,10 +1,21 @@
 .glass {
-  &__icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  .glass__icon {
+    display: block;
     width: 30px;
-    height: 31px;
+    height: 30px;
+    background: url("/src/images/search/glass.svg") no-repeat center;
+    transition: background-image .4s ease;
     @include respond-to('mobile') {
       width: 18px;
       height: 18px;
+    }
+
+    &_close {
+      background-image: url("/src/images/search/close.svg");
     }
   }
 }

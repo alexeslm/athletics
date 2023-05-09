@@ -5,6 +5,22 @@ import MicroModal from "micromodal";
 
 const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 
+const searchWindow = document.querySelector('.search');
+const searchButton = document.querySelector('.glass');
+const searchIcon = document.querySelector('.glass__icon');
+searchButton.addEventListener('click', () => {
+  searchIcon.classList.toggle('glass__icon_close');
+  searchWindow.classList.toggle('search_active');
+  document.body.classList.toggle('popup-open');
+  if (document.body.classList.contains('popup-open')) {
+    header.style.paddingRight = (parseFloat(window.getComputedStyle(header).paddingRight) + scrollbarWidth) + 'px';
+    main.style.paddingRight = (parseFloat(window.getComputedStyle(main).paddingRight) + scrollbarWidth) + 'px';
+  } else {
+    header.style.paddingRight = (parseFloat(window.getComputedStyle(header).paddingRight) - scrollbarWidth) + 'px';
+    main.style.paddingRight = (parseFloat(window.getComputedStyle(main).paddingRight) - scrollbarWidth) + 'px';
+  }
+})
+
 const hamburgersList = document.querySelectorAll('.hamburger');
 const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
@@ -30,8 +46,6 @@ hamburgersList.forEach((hamburger) => {
     }
   });
 });
-
-
 
 const menuLinkArrow = document.querySelectorAll('.menu__link-arrow');
 const listOfSubMenu = document.querySelectorAll('.menu__sub-list');
@@ -214,7 +228,7 @@ function init() {
 
   }, {
     iconLayout: "default#image",
-    iconImageHref: "./src/images/map/label.svg",
+    iconImageHref: "/src/images/map/label.svg",
     iconImageSize: [80, 80],
     //iconImageOffset: [30, -42]
   });
