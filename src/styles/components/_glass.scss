@@ -12,6 +12,7 @@
     @include respond-to('mobile') {
       width: 18px;
       height: 18px;
+      background-size: cover;
     }
 
     &_close {

@@ -19,6 +19,9 @@
 
   .search__wrap {
     &:focus-within {
+      @include respond-to('mobile') {
+        border: none;
+      }
       border: 1px solid var(--color-light-gray);
       border-radius: 16px;
       .search__result {
@@ -34,6 +37,9 @@
   .search__form {
     margin-left: 25px;
     margin-right: 25px;
+    @include respond-to('mobile') {
+      margin: 0;
+    }
   }
 
   .search__label {
@@ -43,6 +49,18 @@
     right: 25px;
     width: 28px;
     height: 28px;
+    @include respond-to('mobile') {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .search__icon {
+    @include respond-to('mobile') {
+      width: 22px;
+      height: 22px;
+    }
+    object-fit: contain;
   }
 
   .search__input {
@@ -54,6 +72,12 @@
     padding-right: 70px;
     border: none;
     border-bottom: 2px solid var(--color-primary);
+    @include respond-to('mobile') {
+      height: 56px;
+      font-size: 18px;
+      padding-left: 16px;
+      padding-right: 48px;
+    }
 
     &::-webkit-search-cancel-button {
       display: none;
@@ -77,6 +101,11 @@
     font-size: 19px;
     line-height: 168%;
     height: 100%;
+    @include respond-to('mobile') {
+      font-size: 16px;
+      line-height: 150%;
+      margin: 0;
+    }
   }
 
   .search__item {
@@ -88,6 +117,10 @@
     border-bottom: 1px solid var(--color-light-gray);
     &:last-of-type {
       border-bottom: none;
+    }
+    @include respond-to('mobile') {
+      height: auto;
+      padding: 16px 0;
     }
   }
 
