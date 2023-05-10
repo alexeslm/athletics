@@ -1,5 +1,6 @@
-import Swiper, {Navigation} from "swiper";
-import 'swiper/css';
+import Swiper, {Navigation, Pagination, Thumbs} from "swiper";
+import 'swiper/scss';
+import 'swiper/scss/pagination'
 import scrollSpy from 'simple-scrollspy';
 import MicroModal from "micromodal";
 
@@ -86,27 +87,32 @@ menuBack.addEventListener('click', (evt) => {
 
 
 const buttonQuestion = document.querySelector('#button-question');
-buttonQuestion.addEventListener('click', () => {
-  MicroModal.show('modal-question', {
-    disableScroll: true,
-    disableFocus: true,
+if (buttonQuestion) {
+  buttonQuestion.addEventListener('click', () => {
+    MicroModal.show('modal-question', {
+      disableScroll: true,
+      disableFocus: true,
+    });
+  })
+}
+
+if (sidebar) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= 900) {
+      sidebar.classList.add('sidebar_affix');
+    } else {
+      sidebar.classList.remove('sidebar_affix')
+    }
   });
-})
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY >= 900) {
-    sidebar.classList.add('sidebar_affix');
-  } else {
-    sidebar.classList.remove('sidebar_affix')
-  }
-});
+  scrollSpy('#sidebar-nav', {
+    sectionClass: '.scrollspy',
+    menuActiveTarget: '.sidebar__link',
+    activeClass: 'sidebar__link_active',
+    offset: -500,
+  })
+}
 
-scrollSpy('#sidebar-nav', {
-  sectionClass: '.scrollspy',
-  menuActiveTarget: '.sidebar__link',
-  activeClass: 'sidebar__link_active',
-  offset: -500,
-})
 
 const brandsSwiper = new Swiper('.brands .swiper', {
   modules: [Navigation],
@@ -156,25 +162,28 @@ const newsSwiper = new Swiper('.news .swiper', {
 
 // *********************************************************************************************************************
 const figure = document.querySelector('.figure');
-figure.addEventListener('mouseover', (evt) => {
-  if (evt.target.classList.contains('figure__link')) {
-    const dataType = evt.target.dataset.type;
-    const catalogLink = document.querySelector(`.catalog__link[data-type="${dataType}"]`);
-    if (catalogLink) {
-      catalogLink.classList.add('catalog__link_active');
+if (figure) {
+  figure.addEventListener('mouseover', (evt) => {
+    if (evt.target.classList.contains('figure__link')) {
+      const dataType = evt.target.dataset.type;
+      const catalogLink = document.querySelector(`.catalog__link[data-type="${dataType}"]`);
+      if (catalogLink) {
+        catalogLink.classList.add('catalog__link_active');
+      }
     }
-  }
-})
+  })
 
-figure.addEventListener('mouseout', (evt) => {
-  if (evt.target.classList.contains('figure__link')) {
-    const dataType = evt.target.dataset.type;
-    const catalogLink = document.querySelector(`.catalog__link[data-type="${dataType}"]`);
-    if (catalogLink) {
-      catalogLink.classList.remove('catalog__link_active');
+  figure.addEventListener('mouseout', (evt) => {
+    if (evt.target.classList.contains('figure__link')) {
+      const dataType = evt.target.dataset.type;
+      const catalogLink = document.querySelector(`.catalog__link[data-type="${dataType}"]`);
+      if (catalogLink) {
+        catalogLink.classList.remove('catalog__link_active');
+      }
     }
-  }
-})
+  })
+}
+
 //**********************************************************************************************************************
 
 
@@ -210,29 +219,58 @@ catalogLists.forEach((catalog) => {
 
 
 
+if (document.querySelector('#map')) {
+  ymaps.ready(init);
+  let myMap;
 
+  function init() {
+    myMap = new ymaps.Map("map", {
+      center: [59.896526, 30.285236],
+      zoom: 15
+    });
+    myMap.controls.add(
+        new ymaps.control.ZoomControl()
+    );
 
-ymaps.ready(init);
-let myMap;
+    let myPlacemark = new ymaps.Placemark([59.896526, 30.285236], {
 
-function init() {
-  myMap = new ymaps.Map("map", {
-    center: [59.896526, 30.285236],
-    zoom: 15
-  });
-  myMap.controls.add(
-    new ymaps.control.ZoomControl()
-  );
+    }, {
+      iconLayout: "default#image",
+      iconImageHref: "/src/images/map/label.svg",
+      iconImageSize: [80, 80],
+    });
 
-  let myPlacemark = new ymaps.Placemark([59.896526, 30.285236], {
-
-  }, {
-    iconLayout: "default#image",
-    iconImageHref: "/src/images/map/label.svg",
-    iconImageSize: [80, 80],
-    //iconImageOffset: [30, -42]
-  });
-
-  myMap.geoObjects.add(myPlacemark);
-  //myPlacemark.balloon.open();
+    myMap.geoObjects.add(myPlacemark);
+  }
 }
+
+
+
+
+
+
+const productSwiperThumb = new Swiper(".product__swiper-thumb", {
+  grabCursor: true,
+  slidesPerView: 4,
+  spaceBetween: 10,
+  freeMode: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+});
+
+const productSwiper = new Swiper(".product__swiper", {
+  modules: [Navigation, Pagination, Thumbs],
+  grabCursor: true,
+  thumbs: {
+    swiper: productSwiperThumb,
+  },
+  navigation: {
+    nextEl: ".product__swiper .swiper-button-next",
+    prevEl: ".product__swiper .swiper-button-prev",
+  },
+  pagination: {
+    el: '.product .swiper-pagination',
+    type: 'bullets',
+  },
+
+});

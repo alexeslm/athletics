@@ -13,6 +13,12 @@ body.popup-open {
   box-sizing: border-box;
 }
 
+abbr {
+  &[title] {
+    text-decoration: none;
+  }
+}
+
 #company,
 #structure,
 #cooperation,
