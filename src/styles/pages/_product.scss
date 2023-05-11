@@ -8,12 +8,55 @@
 .product {
   font-size: 1.6rem;
 
-  &__header {
+  .product__header {
     margin-top: 7rem;
     margin-bottom: 6rem;
     display: grid;
-    grid-template-columns: 48% 1fr;
-    column-gap: 4rem;
+    grid-column-gap: 4rem;
+    grid-template-areas:
+          "one two"
+          "one three"
+          "one four"
+          "one five"
+          "one six"
+          "one ...";
+  }
+
+  .product__slider {
+    width: 29vw;
+    grid-area: one;
+  }
+
+  .product__desc-top {
+    grid-area: two;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 15px;
+  }
+
+  .product__code-wrap {
+    grid-area: three;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .product__feature {
+    grid-area: four;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 15px;
+  }
+
+  .product__desc {
+    grid-area: five;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 30px;
   }
 
   &__swiper {
@@ -61,20 +104,6 @@
     &.swiper-button-prev {
       left: 0;
     }
-  }
-
-  &__desc {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    row-gap: 3rem;
-  }
-
-  &__desc-top {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.5rem;
-    align-items: start;
   }
 
   .product__tag {
@@ -145,6 +174,7 @@
   }
 
   .product__order {
+    grid-area: six;
     display: flex;
     column-gap: 3rem;
     align-items: center;
@@ -194,6 +224,7 @@
     margin-top: 15px;
     color: var(--color-info);
     line-height: 162%;
+    padding-right: 40px;
   }
 
   .product__details-list {
@@ -203,7 +234,66 @@
     flex-direction: column;
     row-gap: 15px;
   }
+
+  .product__characteristic {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--color-light-gray);
+    margin: 0;
+    padding: 15px 0;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    dd {
+      color: var(--color-dark-info);
+      margin-left: 0;
+    }
+  }
+
+  .product__documents-list {
+    @extend %list-reset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 15px;
+  }
+
+  .product__document {
+    padding: 24px 26px 24px 20px;
+    border: 1px solid var(--color-light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  .product__file-name {
+    color: var(--color-dark-info);
+    line-height: 140%;
+  }
+
+  .product__document-right {
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+  }
+
+  .product__file-size {
+    line-height: 162%;
+  }
+
+  .product__download {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("/src/images/arrow/arrow-download.svg") no-repeat center;
+    background-size: contain;
+  }
 }
+
+
 
 
 
