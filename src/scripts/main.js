@@ -251,11 +251,17 @@ if (document.querySelector('#map')) {
 
 const productSwiperThumb = new Swiper(".product__swiper-thumb", {
   grabCursor: true,
-  slidesPerView: 4,
-  spaceBetween: 10,
+  slidesPerView: 3,
+  spaceBetween: 12,
   freeMode: true,
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
+  breakpoints: {
+    520: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+  }
 });
 
 const productSwiper = new Swiper(".product__swiper", {
