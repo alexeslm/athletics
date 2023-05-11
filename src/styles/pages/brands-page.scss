@@ -1,0 +1,43 @@
+.brands-page {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 256px);
+  gap: 32px;
+  @include respond-to('normal') {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    grid-template-columns: repeat(3, 256px);
+    justify-content: space-between;
+  }
+  @include respond-to('small') {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: start;
+  }
+  @include respond-to('mobile') {
+    grid-template-columns: repeat(2, max-content);
+    gap: 10px;
+    margin-top: 10vw;
+    margin-bottom: 3.75vw;
+  }
+
+  .brands-page__item {
+
+    @include respond-to('small') {
+      width: 200px;
+      height: 180px;
+    }
+    @include respond-to('mobile') {
+      width: 41.88vw;
+      height: 41.88vw;
+    }
+  }
+
+  .brands-page__logo {
+    @include respond-to('small') {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
