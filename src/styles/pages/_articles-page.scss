@@ -1,0 +1,9 @@
+.articles-page {
+  .articles-page__grid {
+    margin: 50px 0;
+    @include respond-to('mobile') {
+      grid-template-columns: 1fr;
+      margin: 10vw 0;
+    }
+  }
+}
