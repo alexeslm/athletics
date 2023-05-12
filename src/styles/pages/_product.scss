@@ -1,10 +1,3 @@
-%title {
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-w-bold);
-  text-transform: uppercase;
-  margin: 0;
-}
-
 .product {
   font-size: 1.6rem;
 
@@ -174,23 +167,6 @@
     font-weight: var(--font-w-bold);
     @include respond-to('mobile') {
       font-size: 4.4vw;
-    }
-  }
-
-  &__title {
-    @extend %title;
-    font-size: 4.8rem;
-    line-height: 117%;
-    @include respond-to('mobile') {
-      font-size: 7.5vw;
-    }
-
-    &_normal {
-      font-size: 2.4rem;
-      line-height: 133%;
-      @include respond-to('mobile') {
-        line-height: 120%;
-      }
     }
   }
 

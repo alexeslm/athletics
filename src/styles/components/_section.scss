@@ -9,15 +9,6 @@
     padding-top: 9rem;
   }
 
-  &_page {
-    padding-top: 150px;
-    padding-bottom: 150px;
-    @include respond-to('mobile') {
-      padding-top: 22%;;
-      padding-bottom: 20%;
-    }
-  }
-
   &_bg {
     background: linear-gradient(180deg, rgba(237, 250, 255, 0.95) 0%, rgba(228, 248, 255, 0.95) 100%);
   }
@@ -97,40 +88,6 @@
     margin: 0;
     @include respond-to('mobile') {
       font-size: 1.4rem;
-    }
-  }
-
-  &__back{
-    @extend %link-reset;
-    font-family: var(--font-family-secondary);
-    color: var(--color-gray);
-    font-size: 3rem;
-    font-weight: var(--font-w-bold);
-    line-height: 133%;
-    display: flex;
-    align-items: center;
-    column-gap: 2.1rem;
-    text-transform: uppercase;
-    @media (hover: hover) {
-      &:hover {
-        .section__back-icon {
-          stroke: var(--color-primary);
-        }
-      }
-    }
-    @include respond-to('mobile') {
-      font-size: 4.4vw;
-      line-height: normal;
-      column-gap: 16px;
-    }
-  }
-
-  &__back-icon {
-    stroke: var(--color-gray);
-    transition: stroke .4s;
-    @include respond-to('mobile') {
-      width: 16px;
-      height: 16px;
     }
   }
 }
