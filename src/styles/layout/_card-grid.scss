@@ -1,0 +1,17 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  column-gap: 32px;
+  row-gap: 4rem;
+  @include respond-to('small') {
+    grid-template-columns: repeat(auto-fill, 220px);
+    justify-content: center;
+  }
+  @include respond-to('mobile') {
+    grid-template-columns: repeat(2, 45vw);
+    justify-content: space-between;
+    column-gap: 3.75vw;
+    row-gap: 10vw;
+  }
+}

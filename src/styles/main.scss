@@ -9,6 +9,7 @@
 @import "base/base";
 
 @import "layout/container";
+@import "layout/card-grid";
 
 @import "components/header";
 @import "components/logo";
@@ -37,6 +38,8 @@
 @import "components/sidebar";
 @import "components/form";
 @import "components/pagination";
+@import "components/card-product";
 
 @import "pages/product";
 @import "pages/brands-page";
+@import "pages/brand-detail";

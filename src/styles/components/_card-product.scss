@@ -1,0 +1,84 @@
+.card-product {
+  .card-product__item {
+    @extend %link-reset;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    @media (hover: hover) {
+      &:hover {
+        .card-product__more {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .card-product__image {
+    margin: 0;
+  }
+
+  .card-product__thumbnail {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .card-product__name {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    line-height: 162%;
+    @include respond-to('mobile') {
+      font-size: 4.4vw;
+      line-height: 150%;
+    }
+  }
+
+  .card-product__code {
+    font-size: 1.4rem;
+    line-height: 157%;
+    color: var(--color-gray);
+    @include respond-to('mobile') {
+      font-size: 3.75vw;
+      line-height: 150%;
+    }
+  }
+
+  .card-product__footer{
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-primary);
+  }
+
+  .card-product__price {
+    font-weight: var(--font-w-bold);
+    font-size: 2rem;
+    line-height: 140%;
+    @include respond-to('mobile') {
+      font-size: 5.625vw;
+      white-space: nowrap;
+    }
+  }
+
+  .card-product__more {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.6rem;
+    align-content: center;
+    column-gap: 1rem;
+    line-height: 162%;
+    transition: opacity .4s ease;
+    &:after {
+      content: '';
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      background: url("/src/images/arrow/arrow_active.svg") no-repeat center;
+      background-size: contain;
+    }
+    @include respond-to('mobile') {
+      display: none;
+    }
+  }
+}

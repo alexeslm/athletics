@@ -1,0 +1,75 @@
+.brand-detail {
+  .brand-detail__title {
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-w-bold);
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    line-height: 117%;
+    margin: 0;
+    @include respond-to('mobile') {
+      font-size: 9.375vw;
+      line-height: 110%;
+    }
+  }
+
+  .brand-detail__top {
+    margin-top: 70px;
+    @include respond-to('mobile') {
+      margin-top: 5vw;
+    }
+  }
+
+  .brand-detail__grid {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 50px;
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+      margin-bottom: 40px;
+      row-gap: 20px;
+    }
+    @include respond-to('mobile') {
+      margin-top: 10vw;
+      margin-bottom: 10vw;
+      row-gap: 12.5vw;
+    }
+  }
+
+  .brand-detail__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    @include respond-to('mobile') {
+      width: 41.875vw;
+      height: 41.875vw;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+    line-height: 162%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    @include respond-to('mobile') {
+      font-size: 4.4vw;
+      line-height: 150%;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
