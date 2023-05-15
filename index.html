@@ -1,961 +1,786 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="src/styles/main.scss">
-    <script type="module" src="/src/scripts/main.js"></script>
-    <title>Атлетика</title>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=d15451b8-f0c3-4ed8-939d-cfdbcbc978ac&lang=ru_RU"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="src/styles/main.scss">
+  <script type="module" src="/src/scripts/main.js"></script>
+  <title>Атлетика</title>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d15451b8-f0c3-4ed8-939d-cfdbcbc978ac&lang=ru_RU"></script>
 </head>
 <body>
 
 <div id="modal-question" class="modal">
-    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-        <div class="modal__container">
-            <div class="modal__inner">
-                <form class="form" action="#" method="post">
-                    <div class="form__container">
-                        <h2 class="modal__title">Задать вопрос</h2>
-                        <div class="form__item">
-                            <label class="form__label" for="name">ФИО</label>
-                            <input class="form__input" id="name" type="text" placeholder="Заполните поле">
-                        </div>
-                        <div class="form__item">
-                            <label class="form__label" for="tel">Контактный телефон</label>
-                            <input class="form__input" id="tel" type="tel" placeholder="+7 (___) ___-__-__">
-                        </div>
-                        <div class="form__item">
-                            <label class="form__label" for="email">E-mail</label>
-                            <input class="form__input" id="email" type="email" placeholder="Заполните поле">
-                        </div>
-                        <div class="modal__button">
-                            <button class="button" type="submit">Отправить</button>
-                        </div>
-                        <p class="form__agreement">Нажимая на кнопку “Отправить заявку”, <br> вы соглашаетесь с <a
-                                class="text-primary" href="#">Политикой конфиденциальности</a></p>
-                    </div>
-                </form>
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container">
+      <div class="modal__inner">
+        <form class="form" action="#" method="post">
+          <div class="form__container">
+            <h2 class="modal__title">Задать вопрос</h2>
+            <div class="form__item">
+              <label class="form__label" for="name">ФИО</label>
+              <input class="form__input" id="name" type="text" placeholder="Заполните поле">
             </div>
-            <div class="modal__aside">
-                <button class="modal__close" data-micromodal-close>Закрыть</button>
+            <div class="form__item">
+              <label class="form__label" for="tel">Контактный телефон</label>
+              <input class="form__input" id="tel" type="tel" placeholder="+7 (___) ___-__-__">
             </div>
-        </div>
+            <div class="form__item">
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" id="email" type="email" placeholder="Заполните поле">
+            </div>
+            <div class="modal__button">
+              <button class="button" type="submit">Отправить</button>
+            </div>
+            <p class="form__agreement">Нажимая на кнопку “Отправить заявку”, <br> вы соглашаетесь с <a
+                class="text-primary" href="#">Политикой конфиденциальности</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="modal__aside">
+        <button class="modal__close" data-micromodal-close>Закрыть</button>
+      </div>
     </div>
+  </div>
 </div>
 
-<header class="header header_main container-fluid">
-    <div class="logo">
-        <a href="/">
-            <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
-        </a>
+<!--<header class="header header_main container-fluid">
+  <div class="logo">
+    <a href="/">
+      <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+    </a>
+  </div>
+  <nav>
+    <ul class="header__menu">
+      <li><a class="header__menu-link header__menu-link_active" href="#">Каталог</a></li>
+      <li><a class="header__menu-link" href="#">Компания</a></li>
+      <li><a class="header__menu-link" href="#">Бренды</a></li>
+      <li><a class="header__menu-link" href="#">Новости</a></li>
+      <li><a class="header__menu-link" href="#">Контакты</a></li>
+    </ul>
+  </nav>
+  <div class="header__right">
+    <button class="glass" type="button">
+      <span class="glass__icon"></span>
+    </button>
+    <div class="language">
+      <a class="language__item language__item_active" href="#">rus</a>
+      <a class="language__item" href="#">eng</a>
     </div>
-    <nav>
-        <ul class="header__menu">
-            <li><a class="header__menu-link header__menu-link_active" href="#">Каталог</a></li>
-            <li><a class="header__menu-link" href="#">Компания</a></li>
-            <li><a class="header__menu-link" href="#">Бренды</a></li>
-            <li><a class="header__menu-link" href="#">Новости</a></li>
-            <li><a class="header__menu-link" href="#">Контакты</a></li>
-        </ul>
-    </nav>
-    <div class="header__right">
-        <button class="glass" type="button">
-            <span class="glass__icon"></span>
-        </button>
-        <div class="language">
-            <a class="language__item language__item_active" href="#">rus</a>
-            <a class="language__item" href="#">eng</a>
-        </div>
-        <div class="hamburger">
-            <span class="hamburger__line"></span>
-        </div>
+    <div class="hamburger" type="button">
+      <span class="hamburger__line"></span>
     </div>
-</header>
+  </div>
+</header>-->
 
 <div class="menu">
-    <div class="container menu__container">
-        <a class="menu__back" href="#">Вернуться назад</a>
-        <div class="menu__wrap">
-            <ul class="menu__list menu__list_main">
-                <li>
-                    <a class="menu__link" href="#">
-                        Компания
-                        <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                            <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                        </svg>
-                    </a>
-                    <ul class="menu__sub-list">
-                        <li><a class="menu__sub-link" href="#">Сотрудники</a></li>
-                        <li><a class="menu__sub-link" href="#">Отзывы</a></li>
-                        <li><a class="menu__sub-link" href="#">Франшиза</a></li>
-                        <li><a class="menu__sub-link" href="#">Вакансии</a></li>
-                        <li><a class="menu__sub-link" href="#">Доставка и оплата</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="menu__link" href="#">
-                        Структура бизнеса
-                        <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                            <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu__link" href="#">
-                        Каталог
-                        <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                            <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                        </svg>
-                    </a>
-                    <ul class="menu__sub-list">
-                        <li><a class="menu__sub-link" href="#">Фиксаторы суставов</a></li>
-                        <li>
-                            <a class="menu__sub-link" href="#">Подушки ортопедические</a>
-                            <ul class="menu__sub-list menu__sub-list_scroll">
-                                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
-                                <li><a class="menu__sub-link" href="#">Подушки</a></li>
-                                <li><a class="menu__sub-link" href="#">Бинты</a></li>
-                                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
-                                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
-                                <li><a class="menu__sub-link" href="#">Обувь</a></li>
-                                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
-                                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
-                                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
-                                <li><a class="menu__sub-link" href="#">Подушки</a></li>
-                                <li><a class="menu__sub-link" href="#">Бинты</a></li>
-                                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
-                                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
-                                <li><a class="menu__sub-link" href="#">Обувь</a></li>
-                                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
-                                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="menu__sub-link" href="#">Компрессорный трикотаж</a></li>
-                        <li><a class="menu__sub-link" href="#">Ортезы на суставы</a></li>
-                        <li><a class="menu__sub-link" href="#">Ортезы на позвоночник</a></li>
-                        <li><a class="menu__sub-link" href="#">Бандажи</a></li>
-                        <li><a class="menu__sub-link" href="#">Средства реабилитации</a></li>
-                        <li><a class="menu__sub-link" href="#">Матрасы</a></li>
-                        <li><a class="menu__sub-link" href="#">Массажные изделия</a></li>
-                    </ul>
-                </li>
-                <li><a class="menu__link" href="#">Бренды</a></li>
-                <li><a class="menu__link" href="#">Где купить</a></li>
-                <li><a class="menu__link" href="#">Сотрудничество</a></li>
-                <li><a class="menu__link" href="#">Статьи</a></li>
-                <li><a class="menu__link" href="#">Контакты</a></li>
-            </ul>
-        </div>
+  <div class="container menu__container">
+    <a class="menu__back" href="#">Вернуться назад</a>
+    <div class="menu__wrap">
+      <ul class="menu__list menu__list_main">
+        <li>
+          <a class="menu__link" href="#">
+            Компания
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Сотрудники</a></li>
+            <li><a class="menu__sub-link" href="#">Отзывы</a></li>
+            <li><a class="menu__sub-link" href="#">Франшиза</a></li>
+            <li><a class="menu__sub-link" href="#">Вакансии</a></li>
+            <li><a class="menu__sub-link" href="#">Доставка и оплата</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Структура бизнеса
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Каталог
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Фиксаторы суставов</a></li>
+            <li>
+              <a class="menu__sub-link" href="#">Подушки ортопедические</a>
+              <ul class="menu__sub-list menu__sub-list_scroll">
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+              </ul>
+            </li>
+            <li><a class="menu__sub-link" href="#">Компрессорный трикотаж</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на суставы</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на позвоночник</a></li>
+            <li><a class="menu__sub-link" href="#">Бандажи</a></li>
+            <li><a class="menu__sub-link" href="#">Средства реабилитации</a></li>
+            <li><a class="menu__sub-link" href="#">Матрасы</a></li>
+            <li><a class="menu__sub-link" href="#">Массажные изделия</a></li>
+          </ul>
+        </li>
+        <li><a class="menu__link" href="#">Бренды</a></li>
+        <li><a class="menu__link" href="#">Где купить</a></li>
+        <li><a class="menu__link" href="#">Сотрудничество</a></li>
+        <li><a class="menu__link" href="#">Статьи</a></li>
+        <li><a class="menu__link" href="#">Контакты</a></li>
+      </ul>
     </div>
+  </div>
 </div>
 
 <div class="search">
-    <div class="container">
-        <div class="search__wrap">
-            <form class="search__form" action="#" method="get">
-                <div class="search__inner">
-                    <label class="search__label" for="search">
-                        <img class="search__icon" src="/src/images/search/glass.svg" alt="#">
-                    </label>
-                    <input class="search__input" type="search" name="search" id="search">
-                </div>
-            </form>
-            <div class="search__result">
-                <ul class="search__list">
-                    <li class="search__item">
-                        <a class="search__link" href="#">Фиксаторы суставов</a>
-                        <a class="search__link" href="#">Каталог</a>
-                    </li>
-                    <li class="search__item">
-                        <a class="search__link" href="#">Подушки ортопедические</a>
-                        <a class="search__link" href="#">Каталог</a>
-                    </li>
-                    <li class="search__item">
-                        <a class="search__link" href="#">Новый массажер для ног «Нега» - простота и доступность</a>
-                        <a class="search__link" href="#">Статьи</a>
-                    </li>
-                    <li class="search__item">
-                        <a class="search__link" href="#">Ортезы на суставы</a>
-                        <a class="search__link" href="#">Каталог</a>
-                    </li>
-                    <li class="search__item">
-                        <a class="search__link" href="#">Лечение заболеваний и повреждений позвоночника</a>
-                        <a class="search__link" href="#">Статьи</a>
-                    </li>
-                    <li class="search__item">
-                        <a class="search__link" href="#">Бандажи</a>
-                        <a class="search__link" href="#">Каталог</a>
-                    </li>
-                </ul>
-            </div>
+  <div class="container">
+    <div class="search__wrap">
+      <form class="search__form" action="#" method="get">
+        <div class="search__inner">
+          <label class="search__label" for="search">
+            <img class="search__icon" src="/src/images/search/glass.svg" alt="#">
+          </label>
+          <input class="search__input" type="search" name="search" id="search">
         </div>
+      </form>
+      <div class="search__result">
+        <ul class="search__list">
+          <li class="search__item">
+            <a class="search__link" href="#">Фиксаторы суставов</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Подушки ортопедические</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Новый массажер для ног «Нега» - простота и доступность</a>
+            <a class="search__link" href="#">Статьи</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Ортезы на суставы</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Лечение заболеваний и повреждений позвоночника</a>
+            <a class="search__link" href="#">Статьи</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Бандажи</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </div>
 
 <main>
+  <div class="banner">
+    <header class="header header_main container-fluid">
+      <div class="logo">
+        <a href="/">
+          <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+        </a>
+      </div>
+      <nav>
+        <ul class="header__menu">
+          <li><a class="header__menu-link header__menu-link_active" href="#">Каталог</a></li>
+          <li><a class="header__menu-link" href="#">Компания</a></li>
+          <li><a class="header__menu-link" href="#">Бренды</a></li>
+          <li><a class="header__menu-link" href="#">Новости</a></li>
+          <li><a class="header__menu-link" href="#">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <button class="glass" type="button">
+          <span class="glass__icon"></span>
+        </button>
+        <div class="language">
+          <a class="language__item language__item_active" href="#">rus</a>
+          <a class="language__item" href="#">eng</a>
+        </div>
+        <div class="hamburger" type="button">
+          <span class="hamburger__line"></span>
+        </div>
+      </div>
+    </header>
+    <section class="banner__inner">
+      <div class="banner__content">
+        <h1 class="banner__title">Товары для здоровья, <br> реабилитации и спорта</h1>
+        <span class="banner__slogan">Объединяя возможности</span>
+        <a class="button" href="#">Начать сотрудничество</a>
+      </div>
+      <div class="banner__nav">
+        <a class="banner__link" href="#company">
+          <svg width="31" height="77" viewBox="0 0 31 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M2.62549 11.3559C2.46376 11.8893 1.88791 12.1933 1.33763 12.0368C0.78863 11.8801 0.473668 11.3219 0.635116 10.7885C1.59571 7.64252 3.5968 4.91813 6.24579 2.99567C8.83663 1.11514 12.0429 0 15.5 0C19.7631 0 23.6391 1.68952 26.4475 4.4114C29.2557 7.13335 31 10.8901 31 15.0227V27.976C31 32.1082 29.257 35.8652 26.4475 38.5873C23.6393 41.3105 19.7635 43 15.5 43C11.2365 43 7.36092 41.3105 4.55247 38.5873C1.74426 35.8654 0 32.1086 0 27.976V21.2787C0 20.723 0.465921 20.2714 1.03928 20.2714C1.61387 20.2714 2.07856 20.723 2.07856 21.2787V27.976C2.07856 31.5525 3.58783 34.8038 6.02106 37.1624C8.4543 39.5209 11.8086 40.9838 15.4985 40.9838C19.1883 40.9838 22.5426 39.5209 24.9759 37.1624C27.4092 34.8039 28.9184 31.5526 28.9184 27.976V15.0227C28.9184 11.4462 27.4091 8.19495 24.9759 5.83637C22.7736 3.70173 19.8159 2.30066 16.5392 2.05446V8.00535C17.3598 8.19488 18.0946 8.60454 18.672 9.16548C19.4857 9.95415 19.9911 11.0433 19.9911 12.2416V15.7563C19.9911 16.9547 19.4857 18.0438 18.672 18.8324C17.8584 19.6211 16.7347 20.111 15.4984 20.111C14.262 20.111 13.1384 19.6211 12.3247 18.8324C11.5111 18.0438 11.0057 16.9547 11.0057 15.7563V12.2416C11.0057 11.0433 11.5111 9.95415 12.3247 9.16548C12.9034 8.60456 13.6385 8.19488 14.4576 8.00535V2.05446C11.8573 2.2495 9.46066 3.16866 7.48545 4.60124C5.18807 6.26841 3.45448 8.62935 2.62181 11.3552L2.62549 11.3559ZM17.2039 10.5895C16.7664 10.1655 16.1634 9.90216 15.5004 9.90216C14.8373 9.90216 14.2356 10.1655 13.7969 10.5895C13.3594 11.0136 13.0877 11.5981 13.0877 12.2407V15.7553C13.0877 16.398 13.3594 16.9813 13.7969 17.4065C14.2344 17.8306 14.8373 18.0939 15.5004 18.0939C16.1621 18.0939 16.7652 17.8306 17.2039 17.4065C17.6414 16.9825 17.913 16.398 17.913 15.7553V12.2407C17.913 11.5981 17.6414 11.0147 17.2039 10.5895Z"
+                fill="#222222"/>
+            <path d="M15 57V75.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="banner__link banner__link_arrow" href="#company">
+          компания
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_171_11095)">
+              <path d="M12 1L12 23" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              <path d="M6 17L12 23L18 17" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_171_11095">
+                <rect width="24" height="24" fill="white" transform="translate(24) rotate(90)"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
 
-    <section class="banner">
-        <div class="banner__content">
-            <h1 class="banner__title">Товары для здоровья, <br> реабилитации и спорта</h1>
-            <span class="banner__slogan">Объединяя возможности</span>
+  <div class="scroll-wrap">
+
+    <aside class="sidebar">
+      <ul id="sidebar-nav" class="sidebar__list">
+        <li><a class="sidebar__link" href="#company">Компания</a></li>
+        <li><a class="sidebar__link" href="#structure">Структура бизнеса</a></li>
+        <li><a class="sidebar__link" href="#cooperation">Сотрудничество</a></li>
+        <li><a class="sidebar__link" href="#catalog">Каталог</a></li>
+        <li><a class="sidebar__link" href="#brands">Бренды</a></li>
+        <li><a class="sidebar__link" href="#articles">Статьи</a></li>
+        <li><a class="sidebar__link" href="#news">Новости</a></li>
+        <li><a class="sidebar__link" href="#contacts">Контакты</a></li>
+      </ul>
+    </aside>
+
+    <section id="company" class="section scrollspy">
+      <div class="about">
+        <div class="container">
+          <h2 class="title">Торговый дом <br> «Атлетика»</h2>
+          <div class="about__inner">
+            <div class="about__item">
+              <h3 class="about__title">О нас</h3>
+              <p class="about__desc">Торговый дом «Атлетика» - крупнейший агрегатор на ортопедическом рынке России.
+                Является лидером в производстве и реализации ортопедической продукции, предназначенной для профилактики,
+                лечения, реабилитации в ценовом сегменте low-priced и middle-priced.</p>
+            </div>
+            <div class="about__item">
+              <h3 class="about__title">История</h3>
+              <p class="about__desc">Торговый дом «Атлетика» был образован в 1993 году, как оптовая компания по продаже
+                товаров медицинского назначения. В настоящее время крупнейший профессиональный розничный и оптовый
+                оператор на рынке ортопедической продукции и товаров для здоровья, красоты и средств ухода.</p>
+            </div>
+            <div class="about__item">
+              <h3 class="about__title">Миссия</h3>
+              <p class="about__desc">Умножая возможности партнеров, делать доступной для потребителя ортопедическую
+                продукцию достойного качества.</p>
+            </div>
+            <div class="about__item">
+              <h3 class="about__title">Партнеры</h3>
+              <p class="about__desc">ТД «Атлетика» имеет контрактное производство с компаниями из США, Германии, Италии,
+                Китая, Турции, Тайваня, Южной Кореи, Пакистана.</p>
+            </div>
+          </div>
+          <div class="indicators about__indicators">
+            <div class="indicators__item">
+              <span class="indicators__value">> 30</span>
+              <span class="indicators__info">лет на рынке</span>
+            </div>
+            <div class="indicators__item">
+              <span class="indicators__value">> 700</span>
+              <span class="indicators__info">сотрудников</span>
+            </div>
+            <div class="indicators__item">
+              <span class="indicators__value">14</span>
+              <span class="indicators__info">собственных <br> торговых брендов</span>
+            </div>
+            <div class="indicators__item">
+              <span class="indicators__value">> 1500</span>
+              <span class="indicators__info">компаний-клиентов</span>
+            </div>
+          </div>
+          <div class="about__call">
+            <span>Объединяйте возможности с нами</span>
             <a class="button" href="#">Начать сотрудничество</a>
+          </div>
         </div>
-        <div class="banner__nav">
-            <a class="banner__link" href="#company">
-                <svg width="31" height="77" viewBox="0 0 31 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.62549 11.3559C2.46376 11.8893 1.88791 12.1933 1.33763 12.0368C0.78863 11.8801 0.473668 11.3219 0.635116 10.7885C1.59571 7.64252 3.5968 4.91813 6.24579 2.99567C8.83663 1.11514 12.0429 0 15.5 0C19.7631 0 23.6391 1.68952 26.4475 4.4114C29.2557 7.13335 31 10.8901 31 15.0227V27.976C31 32.1082 29.257 35.8652 26.4475 38.5873C23.6393 41.3105 19.7635 43 15.5 43C11.2365 43 7.36092 41.3105 4.55247 38.5873C1.74426 35.8654 0 32.1086 0 27.976V21.2787C0 20.723 0.465921 20.2714 1.03928 20.2714C1.61387 20.2714 2.07856 20.723 2.07856 21.2787V27.976C2.07856 31.5525 3.58783 34.8038 6.02106 37.1624C8.4543 39.5209 11.8086 40.9838 15.4985 40.9838C19.1883 40.9838 22.5426 39.5209 24.9759 37.1624C27.4092 34.8039 28.9184 31.5526 28.9184 27.976V15.0227C28.9184 11.4462 27.4091 8.19495 24.9759 5.83637C22.7736 3.70173 19.8159 2.30066 16.5392 2.05446V8.00535C17.3598 8.19488 18.0946 8.60454 18.672 9.16548C19.4857 9.95415 19.9911 11.0433 19.9911 12.2416V15.7563C19.9911 16.9547 19.4857 18.0438 18.672 18.8324C17.8584 19.6211 16.7347 20.111 15.4984 20.111C14.262 20.111 13.1384 19.6211 12.3247 18.8324C11.5111 18.0438 11.0057 16.9547 11.0057 15.7563V12.2416C11.0057 11.0433 11.5111 9.95415 12.3247 9.16548C12.9034 8.60456 13.6385 8.19488 14.4576 8.00535V2.05446C11.8573 2.2495 9.46066 3.16866 7.48545 4.60124C5.18807 6.26841 3.45448 8.62935 2.62181 11.3552L2.62549 11.3559ZM17.2039 10.5895C16.7664 10.1655 16.1634 9.90216 15.5004 9.90216C14.8373 9.90216 14.2356 10.1655 13.7969 10.5895C13.3594 11.0136 13.0877 11.5981 13.0877 12.2407V15.7553C13.0877 16.398 13.3594 16.9813 13.7969 17.4065C14.2344 17.8306 14.8373 18.0939 15.5004 18.0939C16.1621 18.0939 16.7652 17.8306 17.2039 17.4065C17.6414 16.9825 17.913 16.398 17.913 15.7553V12.2407C17.913 11.5981 17.6414 11.0147 17.2039 10.5895Z"
-                          fill="#222222"/>
-                    <path d="M15 57V75.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </a>
-            <a class="banner__link banner__link_arrow" href="#company">
-                компания
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_171_11095)">
-                        <path d="M12 1L12 23" stroke="#222222" stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                        <path d="M6 17L12 23L18 17" stroke="#222222" stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_171_11095">
-                            <rect width="24" height="24" fill="white" transform="translate(24) rotate(90)"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </a>
-        </div>
+      </div>
     </section>
 
-    <div class="scroll-wrap">
+    <section id="structure" class="section section_bg1 scrollspy">
+      <div class="structure">
+        <div class="container">
+          <h2 class="title">Структура <br> бизнеса</h2>
+          <ul class="structure__list">
+            <li>
+              <a class="structure__link" href="#">
+                Оптовое направление
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="structure__link" href="#">
+                Розничное направление
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="structure__link" href="#">
+                Производство
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="structure__map-wrap">
+          <p class="structure__desc">Наша компания имеет контрактное
+            производство с компаниями из
+            <span class="text-primary">выделенных</span> стран</p>
+          <img class="structure__map" src="src/images/structure/structure-map.svg" alt="#">
+        </div>
+      </div>
+    </section>
 
-        <aside class="sidebar">
-            <ul id="sidebar-nav" class="sidebar__list">
-                <li><a class="sidebar__link" href="#company">Компания</a></li>
-                <li><a class="sidebar__link" href="#structure">Структура бизнеса</a></li>
-                <li><a class="sidebar__link" href="#cooperation">Сотрудничество</a></li>
-                <li><a class="sidebar__link" href="#catalog">Каталог</a></li>
-                <li><a class="sidebar__link" href="#brands">Бренды</a></li>
-                <li><a class="sidebar__link" href="#articles">Статьи</a></li>
-                <li><a class="sidebar__link" href="#news">Новости</a></li>
-                <li><a class="sidebar__link" href="#contacts">Контакты</a></li>
-            </ul>
-        </aside>
+    <section id="cooperation" class="cooperation scrollspy">
+      <div class="section">
+        <div class="container">
+          <h2 class="title">Сотрудничество</h2>
+          <div class="section__inner">
+            <div class="section__item section__item_column">
+              <div>
+                <h3 class="section__title">Стратегия</h3>
+                <p class="section__desc">Наше направление деятельности - оптовая торговля, прямая дистрибуция и
+                  логистика товаров для здоровья в розницу через собственный торговый отдел.</p>
+              </div>
+              <div class="cooperation__channel">
+                <h3 class="section__title">Каналы сбыта</h3>
+                <div class="section__desc">
+                  <ul class="list-disclosure">
+                    <li class="text-primary"><span class="text-body">Оптовые компании</span></li>
+                    <li class="text-primary"><span class="text-body">Аптечные сети и несетевые аптеки</span>
+                    </li>
+                    <li class="text-primary"><span class="text-body">Магазины медтехники</span></li>
+                    <li class="text-primary"><span class="text-body">Ортопедические салоны</span>
+                    </li>
+                    <li class="text-primary">
+                      <span class="text-body">Розничные и интернет-магазины товаров для здоровья</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="section__item">
+              <h3 class="section__title">Наши преимущества</h3>
+              <div class="section__desc">
+                <ul class="list-disclosure">
+                  <li class="text-primary">
+                    <span class="text-body">Самый широкий ассортимент изделий ортопедического назначения и товаров для здоровья</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Доступные цены на весь ассортимент предлагаемой продукции</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Постоянное наличие всей продукции на складе</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Доставка заказов во все регионы РФ</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Дистрибуция через эффективные каналы сбыта</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Гибкая система скидок в зависимости от суммы заказов и сроков оплаты</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Программа лояльности и маркетинговая поддержка партнеров</span>
+                  </li>
+                  <li class="text-primary">
+                    <span class="text-body">Трейд-маркетинговые мероприятия для розницы</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="cooperation__footer">
+            <a class="button" href="#">Начать сотрудничество</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="company" class="section scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+    <section id="catalog" class="section section_bg2 scrollspy">
+      <div class="catalog">
+        <div class="container">
+          <h2 class="title"><a class="title__link" href="#">Каталог</a></h2>
+          <div class="catalog__inner">
+            <div class="section__item">
+              <ul class="catalog__list">
+                <li>
+                  <a class="catalog__link" data-type="ankle" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_1.svg" alt="#">
+                    Фиксаторы суставов
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="neck" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_2.svg" alt="#">
+                    Подушки ортопедические
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="elbow" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_3.svg" alt="#">
+                    Компрессионный трикотаж</a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="knee" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_4.svg" alt="#">
+                    Ортезы на суставы
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="back" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_5.svg" alt="#">
+                    Ортезы на позвоночник
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="belly" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_6.svg" alt="#">
+                    Бандажи
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_7.svg" alt="#">
+                    Средства реабилитации
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_8.svg" alt="#">
+                    Матрасы
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_9.svg" alt="#">
+                    Массажные изделия
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="section__item">
+              <ul class="catalog__list">
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_10.svg" alt="#">
+                    Товары для здоровья
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_11.svg" alt="#">
+                    Подушки
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="hand" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_12.svg" alt="#">
+                    Бинты
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" data-type="foot" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_13.svg" alt="#">
+                    Стельки ортопедические
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_14.svg" alt="#">
+                    Силиконовые изделия для ног
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_15.svg" alt="#">
+                    Обувь
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_16.svg" alt="#">
+                    Товары для спорта
+                  </a>
+                </li>
+                <li>
+                  <a class="catalog__link" href="#">
+                    <img class="catalog__icon" src="src/images/catalog/catalog_17.svg" alt="#">
+                    Товары для беременных
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="figure">
+              <a class="figure__link figure__link_neck" data-type="neck" href="#"></a>
+              <a class="figure__link figure__link_elbow" data-type="elbow" href="#"></a>
+              <a class="figure__link figure__link_hand" data-type="hand" href="#"></a>
+              <a class="figure__link figure__link_back" data-type="back" href="#"></a>
+              <a class="figure__link figure__link_belly" data-type="belly" href="#"></a>
+              <a class="figure__link figure__link_knee" data-type="knee" href="#"></a>
+              <a class="figure__link figure__link_ankle" data-type="ankle" href="#"></a>
+              <a class="figure__link figure__link_foot" data-type="foot" href="#"></a>
+              <img class="figure__image" width="448" height="731" src="src/images/figure/figure.png" alt="#">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands" class="section scrollspy">
+      <div class="brands">
+        <div class="container">
+          <h2 class="title"><a class="title__link" href="#">Бренды <br> ТД «Атлетика»</a></h2>
+          <div class="brands__wrapper">
+            <div class="brands__inner">
+              <div class="brands__opacity"></div>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-1.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="about">
-                <div class="container">
-                    <h2 class="title">Торговый дом <br> «Атлетика»</h2>
-                    <div class="about__inner">
-                        <div class="about__item">
-                            <h3 class="about__title">О нас</h3>
-                            <p class="about__desc">Торговый дом «Атлетика» - крупнейший агрегатор на ортопедическом
-                                рынке России.
-                                Является
-                                лидером в
-                                производстве и реализации ортопедической продукции, предназначенной для профилактики,
-                                лечения,
-                                реабилитации
-                                в
-                                ценовом сегменте low-priced и middle-priced.</p>
-                        </div>
-                        <div class="about__item">
-                            <h3 class="about__title">История</h3>
-                            <p class="about__desc">Торговый дом «Атлетика» был образован в 1993 году, как оптовая
-                                компания по продаже
-                                товаров медицинского
-                                назначения. В настоящее время крупнейший профессиональный розничный и оптовый оператор
-                                на рынке
-                                ортопедической
-                                продукции и товаров для здоровья, красоты и средств ухода.</p>
-                        </div>
-                        <div class="about__item">
-                            <h3 class="about__title">Миссия</h3>
-                            <p class="about__desc">Умножая возможности партнеров, делать доступной для потребителя
-                                ортопедическую
-                                продукцию достойного
-                                качества.</p>
-                        </div>
-                        <div class="about__item">
-                            <h3 class="about__title">Партнеры</h3>
-                            <p class="about__desc">ТД «Атлетика» имеет контрактное производство с компаниями из США,
-                                Германии, Италии,
-                                Китая, Турции, Тайваня,
-                                Южной Кореи, Пакистана.</p>
-                        </div>
-                    </div>
-                    <div class="indicators about__indicators">
-                        <div class="indicators__item">
-                            <span class="indicators__value">> 30</span>
-                            <span class="indicators__info">лет на рынке</span>
-                        </div>
-                        <div class="indicators__item">
-                            <span class="indicators__value">> 700</span>
-                            <span class="indicators__info">сотрудников</span>
-                        </div>
-                        <div class="indicators__item">
-                            <span class="indicators__value">14</span>
-                            <span class="indicators__info">собственных <br> торговых брендов</span>
-                        </div>
-                        <div class="indicators__item">
-                            <span class="indicators__value">> 1500</span>
-                            <span class="indicators__info">компаний-клиентов</span>
-                        </div>
-                    </div>
-                    <div class="about__call">
-                        <span>Объединяйте возможности с нами</span>
-                        <a class="button" href="#">Начать сотрудничество</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="structure" class="section section_bg1 scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-2.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="structure">
-                <div class="container">
-                    <h2 class="title">Структура <br> бизнеса</h2>
-                    <ul class="structure__list">
-                        <li>
-                            <a class="structure__link" href="#">
-                                Оптовое направление
-                                <svg width="24" height="14" viewBox="0 0 24 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="structure__link" href="#">
-                                Розничное направление
-                                <svg width="24" height="14" viewBox="0 0 24 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="structure__link" href="#">
-                                Производство
-                                <svg width="24" height="14" viewBox="0 0 24 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="structure__map-wrap">
-                    <p class="structure__desc">Наша компания имеет контрактное
-                        производство с компаниями из
-                        <span class="text-primary">выделенных</span> стран</p>
-                    <img class="structure__map" src="src/images/structure/structure-map.svg" alt="#">
-                </div>
-            </div>
-        </section>
-
-        <section id="cooperation" class="cooperation scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-3.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="container">
-                    <h2 class="title">Сотрудничество</h2>
-                    <div class="section__inner">
-                        <div class="section__item section__item_column">
-                            <div>
-                                <h3 class="section__title">Стратегия</h3>
-                                <p class="section__desc">Наше направление деятельности - оптовая торговля, прямая
-                                    дистрибуция и
-                                    логистика товаров для здоровья в розницу через собственный торговый отдел.</p>
-                            </div>
-                            <div class="cooperation__channel">
-                                <h3 class="section__title">Каналы сбыта</h3>
-                                <div class="section__desc">
-                                    <ul class="list-disclosure">
-                                        <li class="text-primary"><span class="text-body">Оптовые компании</span></li>
-                                        <li class="text-primary"><span class="text-body">Аптечные сети и несетевые аптеки</span>
-                                        </li>
-                                        <li class="text-primary"><span class="text-body">Магазины медтехники</span></li>
-                                        <li class="text-primary"><span class="text-body">Ортопедические салоны</span>
-                                        </li>
-                                        <li class="text-primary"><span
-                                                class="text-body">Розничные и интернет-магазины товаров для здоровья</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section__item">
-                            <h3 class="section__title">Наши преимущества</h3>
-                            <div class="section__desc">
-                                <ul class="list-disclosure">
-                                    <li class="text-primary"><span class="text-body">Самый широкий ассортимент изделий ортопедического назначения и товаров для здоровья</span>
-                                    </li>
-                                    <li class="text-primary"><span class="text-body">Доступные цены на весь ассортимент предлагаемой продукции</span>
-                                    </li>
-                                    <li class="text-primary"><span class="text-body">Постоянное наличие всей продукции на складе</span>
-                                    </li>
-                                    <li class="text-primary"><span
-                                            class="text-body">Доставка заказов во все регионы РФ</span></li>
-                                    <li class="text-primary"><span class="text-body">Дистрибуция через эффективные каналы сбыта</span>
-                                    </li>
-                                    <li class="text-primary"><span class="text-body">Гибкая система скидок в зависимости от суммы заказов и сроков оплаты</span>
-                                    </li>
-                                    <li class="text-primary"><span class="text-body">Программа лояльности и маркетинговая поддержка партнеров</span>
-                                    </li>
-                                    <li class="text-primary"><span class="text-body">Трейд-маркетинговые мероприятия для розницы</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cooperation__footer">
-                        <a class="button" href="#">Начать сотрудничество</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="catalog" class="section section_bg2 scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-4.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="catalog">
-                <div class="container">
-                    <h2 class="title"><a class="title__link" href="#">Каталог</a></h2>
-                    <div class="catalog__inner">
-                        <div class="section__item">
-                            <ul class="catalog__list">
-                                <li>
-                                    <a class="catalog__link" data-type="ankle" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_1.svg" alt="#">
-                                        Фиксаторы суставов
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="neck" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_2.svg" alt="#">
-                                        Подушки ортопедические
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="elbow" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_3.svg" alt="#">
-                                        Компрессионный трикотаж</a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="knee" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_4.svg" alt="#">
-                                        Ортезы на суставы
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="back" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_5.svg" alt="#">
-                                        Ортезы на позвоночник
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="belly" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_6.svg" alt="#">
-                                        Бандажи
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_7.svg" alt="#">
-                                        Средства реабилитации
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_8.svg" alt="#">
-                                        Матрасы
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_9.svg" alt="#">
-                                        Массажные изделия
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="section__item">
-                            <ul class="catalog__list">
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_10.svg" alt="#">
-                                        Товары для здоровья
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_11.svg" alt="#">
-                                        Подушки
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="hand" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_12.svg" alt="#">
-                                        Бинты
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" data-type="foot" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_13.svg" alt="#">
-                                        Стельки ортопедические
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_14.svg" alt="#">
-                                        Силиконовые изделия для ног
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_15.svg" alt="#">
-                                        Обувь
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_16.svg" alt="#">
-                                        Товары для спорта
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="catalog__link" href="#">
-                                        <img class="catalog__icon" src="src/images/catalog/catalog_17.svg" alt="#">
-                                        Товары для беременных
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="figure">
-                            <a class="figure__link figure__link_neck" data-type="neck" href="#"></a>
-                            <a class="figure__link figure__link_elbow" data-type="elbow" href="#"></a>
-                            <a class="figure__link figure__link_hand" data-type="hand" href="#"></a>
-                            <a class="figure__link figure__link_back" data-type="back" href="#"></a>
-                            <a class="figure__link figure__link_belly" data-type="belly" href="#"></a>
-                            <a class="figure__link figure__link_knee" data-type="knee" href="#"></a>
-                            <a class="figure__link figure__link_ankle" data-type="ankle" href="#"></a>
-                            <a class="figure__link figure__link_foot" data-type="foot" href="#"></a>
-                            <img class="figure__image" width="448" height="731" src="src/images/figure/figure.png"
-                                 alt="#">
-                            <!--              <object data="src/images/figure/figure.svg" type="image/svg+xml"></object>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="brands" class="section scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-1.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="brands">
-                <div class="container">
-                    <h2 class="title"><a class="title__link" href="#">Бренды <br> ТД «Атлетика»</a></h2>
-                    <div class="brands__wrapper">
-                        <div class="brands__inner">
-                            <div class="brands__opacity"></div>
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-1.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-2.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-3.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-4.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-1.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-2.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-3.svg" alt="#">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide brands__slide">
-                                        <a class="brands__item" href="#">
-                                            <img class="brands__logo" src="src/images/brands/brand-4.svg" alt="#">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brands__navigation">
-                        <button class="swiper-button-prev"></button>
-                        <button class="swiper-button-next"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="articles" class="section section_bg3 scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-2.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="articles">
-                <div class="container">
-                    <h2 class="title"><a class="title__link" href="#">Полезные <br> статьи</a></h2>
-                    <div class="articles__wrapper">
-                        <div class="articles__inner">
-                            <div class="articles__opacity"></div>
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide articles__slide">
-                                        <a class="articles__item" href="#">
-                                            <img class="articles__thumbnail" src="src/images/articles/article_1.jpg"
-                                                 alt="#">
-                                            <span class="articles__desc">Спортивная ортопедия Мюллер: медицина нового поколения</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide articles__slide">
-                                        <a class="articles__item" href="#">
-                                            <img class="articles__thumbnail" src="src/images/articles/article_2.jpg"
-                                                 alt="#">
-                                            <span class="articles__desc">Лечение заболеваний и повреждений позвоночника</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide articles__slide">
-                                        <a class="articles__item" href="#">
-                                            <img class="articles__thumbnail" src="src/images/articles/article_3.jpg"
-                                                 alt="#">
-                                            <span class="articles__desc">Изделия Comforma снимают боли и чувство усталости в стопе</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide articles__slide">
-                                        <a class="articles__item" href="#">
-                                            <img class="articles__thumbnail" src="src/images/articles/article_4.jpg"
-                                                 alt="#">
-                                            <span class="articles__desc">Спортивная ортопедия Мюллер: медицина нового поколения</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide articles__slide">
-                                        <a class="articles__item" href="#">
-                                            <img class="articles__thumbnail" src="src/images/articles/article_2.jpg"
-                                                 alt="#">
-                                            <span class="articles__desc">Лечение заболеваний и повреждений позвоночника</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="articles__navigation">
-                        <button class="swiper-button-prev"></button>
-                        <button class="swiper-button-next"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="news" class="section scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-3.svg" alt="#">
                     </a>
-                </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="news">
-                <div class="container">
-                    <h2 class="title"><a class="title__link" href="#">Новости</a></h2>
-                    <div class="news__wrapper">
-                        <div class="news__inner">
-                            <div class="news__opacity"></div>
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide news__slide">
-                                        <a class="news__item" href="#">
-                                            <img class="news__thumbnail" src="src/images/news/news_1.jpg" alt="#">
-                                            <span class="news__desc">Уважаемые Партнеры! Предлагаем Вам новинки – медицинские кровати с электрическим приводом.</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide news__slide">
-                                        <a class="news__item" href="#">
-                                            <img class="news__thumbnail" src="src/images/news/news_2.jpg" alt="#">
-                                            <span class="news__desc">Уважаемые партнеры! На период с 16 по 31 мая действуют специальные цены на Антиэмболические чулки Ergoforma 257/267.</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide news__slide">
-                                        <a class="news__item" href="#">
-                                            <img class="news__thumbnail" src="src/images/news/news_3.jpg" alt="#">
-                                            <span class="news__desc">Изделия Comforma снимают боли и чувство усталости в стопе</span>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide news__slide">
-                                        <a class="news__item" href="#">
-                                            <img class="news__thumbnail" src="src/images/news/news_1.jpg" alt="#">
-                                            <span class="news__desc">Уважаемые Партнеры! Предлагаем Вам новинки – медицинские кровати с электрическим приводом.</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news__navigation">
-                        <button class="swiper-button-prev"></button>
-                        <button class="swiper-button-next"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer id="contacts" class="contacts scrollspy">
-            <div class="header header_in container-fluid">
-                <div class="logo">
-                    <a href="/">
-                        <img class="logo__image" src="src/images/logo/Logo.png" alt="#">
+                  </div>
+                  <div class="swiper-slide brands__slide">
+                    <a class="brands__item" href="#">
+                      <img class="brands__logo" src="src/images/brands/brand-4.svg" alt="#">
                     </a>
+                  </div>
                 </div>
-                <div class="header__right">
-                    <div class="glass">
-                        <svg class="glass__icon" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                    d="M12.1737 3.47632C10.0855 3.70624 8.03026 4.60717 6.5193 5.94918C4.6095 7.64311 3.46924 9.71712 3.08446 12.1994C2.97185 12.9408 2.97185 14.4141 3.08446 15.1508C3.43639 17.3844 4.41241 19.3083 6.00783 20.9083C6.88062 21.7764 7.71587 22.3723 8.81858 22.9026C10.2357 23.583 11.6012 23.8927 13.206 23.8927C15.6038 23.888 17.7717 23.1372 19.6111 21.6591L19.9396 21.3963L22.9427 24.3947C25.6268 27.0788 25.9646 27.3978 26.1242 27.4307C26.6403 27.5245 27.0861 27.0647 26.9782 26.5485C26.95 26.4218 26.3776 25.8259 23.9469 23.3906L20.9485 20.3875L21.2112 20.059C22.6893 18.2196 23.4401 16.0518 23.4448 13.654C23.4495 12.0117 23.107 10.5571 22.3796 9.10243C21.8635 8.07011 21.2957 7.29119 20.4323 6.4278C18.8791 4.87464 17.0397 3.92678 14.8718 3.56078C14.2149 3.45286 12.7931 3.40594 12.1737 3.47632ZM14.3885 4.9544C17.9219 5.44241 20.7889 7.96688 21.718 11.4111C21.9245 12.1806 21.9949 12.7578 21.9949 13.6775C21.9902 15.3808 21.5866 16.8448 20.7232 18.2525C18.4896 21.8984 13.9192 23.4281 9.9823 21.8468C9.35352 21.5934 9.17051 21.5043 8.63089 21.1711C8.01149 20.791 7.54225 20.4203 7.01201 19.8948C5.33213 18.2102 4.43118 16.0377 4.43118 13.6634C4.43118 11.9976 4.86758 10.4679 5.74975 9.02266C6.3973 7.96688 7.51879 6.84542 8.57458 6.19787C9.60222 5.5691 10.8457 5.11395 11.9156 4.97318C12.1502 4.94502 12.3707 4.91217 12.4083 4.90279C12.6429 4.85587 13.9333 4.88871 14.3885 4.9544Z"
-                                    fill="#222222" stroke="#222222" stroke-width="0.3"/>
-                        </svg>
-                    </div>
-                    <div class="language">
-                        <a class="language__item language__item_active" href="#">rus</a>
-                        <a class="language__item" href="#">eng</a>
-                    </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="section section_bg1">
-                <div class="container">
-                    <h2 class="title">Контакты</h2>
-                    <div class="section__inner contacts__inner">
-                        <div class="contacts__item contacts__item_location">
-                            <span class="contacts__main">Санкт-Петербург</span>
-                            <span>ул. Швецова, д. 23, лит. Б</span>
-                        </div>
-                        <div class="contacts__item contacts__item_telephone">
-                            <a class="contacts__main contacts__link" href="tel:+78127796161">+7 (812) 779-61-61</a>
-                        </div>
-                        <div class="contacts__item contacts__item_email">
-                            <a class="contacts__link" href="mailto:info@atletika.ru">info@atletika.ru</a>
-                            <a class="contacts__link" href="mailto:secretar@atletika.ru">secretar@atletika.ru</a>
-                        </div>
-                        <div class="contacts__item contacts__item_fax">
-                            <a class="contacts__link" href="tel:+78127796161">+7 (812) 779-61-61</a>
-                            <span>ext. 201</span>
-                        </div>
-                    </div>
-                    <div class="contacts__footer">
-                        <button id="button-question" class="button" type="button">Задать вопрос</button>
-                    </div>
-                    <div class="contacts__map">
-                        <div id="map"></div>
-                    </div>
-                    <small class="contacts__copyright">
-                        © 1995-2020 Торговый дом "Атлетика" <br>
-                        Копирование материалов размещенных на данном сайте, правообладателем которых является Торговый
-                        Дом
-                        «Атлетика», без особого разрешения - запрещено.
-                    </small>
-                </div>
-            </div>
-        </footer>
+          </div>
+          <div class="brands__navigation">
+            <button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    </div>
+    <section id="articles" class="section section_bg3 scrollspy">
+      <div class="articles">
+        <div class="container">
+          <h2 class="title"><a class="title__link" href="#">Полезные <br> статьи</a></h2>
+          <div class="articles__wrapper">
+            <div class="articles__inner">
+              <div class="articles__opacity"></div>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide articles__slide">
+                    <a class="articles__item" href="#">
+                      <img class="articles__thumbnail" src="src/images/articles/article_1.jpg" alt="#">
+                      <span class="articles__desc">Спортивная ортопедия Мюллер: медицина нового поколения</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide articles__slide">
+                    <a class="articles__item" href="#">
+                      <img class="articles__thumbnail" src="src/images/articles/article_2.jpg" alt="#">
+                      <span class="articles__desc">Лечение заболеваний и повреждений позвоночника</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide articles__slide">
+                    <a class="articles__item" href="#">
+                      <img class="articles__thumbnail" src="src/images/articles/article_3.jpg" alt="#">
+                      <span class="articles__desc">Изделия Comforma снимают боли и чувство усталости в стопе</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide articles__slide">
+                    <a class="articles__item" href="#">
+                      <img class="articles__thumbnail" src="src/images/articles/article_4.jpg" alt="#">
+                      <span class="articles__desc">Спортивная ортопедия Мюллер: медицина нового поколения</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide articles__slide">
+                    <a class="articles__item" href="#">
+                      <img class="articles__thumbnail" src="src/images/articles/article_2.jpg" alt="#">
+                      <span class="articles__desc">Лечение заболеваний и повреждений позвоночника</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="articles__navigation">
+            <button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="section scrollspy">
+      <div class="news">
+        <div class="container">
+          <h2 class="title"><a class="title__link" href="#">Новости</a></h2>
+          <div class="news__wrapper">
+            <div class="news__inner">
+              <div class="news__opacity"></div>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide news__slide">
+                    <a class="news__item" href="#">
+                      <img class="news__thumbnail" src="src/images/news/news_1.jpg" alt="#">
+                      <span class="news__desc">Уважаемые Партнеры! Предлагаем Вам новинки – медицинские кровати с электрическим приводом.</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide news__slide">
+                    <a class="news__item" href="#">
+                      <img class="news__thumbnail" src="src/images/news/news_2.jpg" alt="#">
+                      <span class="news__desc">Уважаемые партнеры! На период с 16 по 31 мая действуют специальные цены на Антиэмболические чулки Ergoforma 257/267.</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide news__slide">
+                    <a class="news__item" href="#">
+                      <img class="news__thumbnail" src="src/images/news/news_3.jpg" alt="#">
+                      <span class="news__desc">Изделия Comforma снимают боли и чувство усталости в стопе</span>
+                    </a>
+                  </div>
+                  <div class="swiper-slide news__slide">
+                    <a class="news__item" href="#">
+                      <img class="news__thumbnail" src="src/images/news/news_1.jpg" alt="#">
+                      <span class="news__desc">Уважаемые Партнеры! Предлагаем Вам новинки – медицинские кровати с электрическим приводом.</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news__navigation">
+            <button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contacts" class="contacts scrollspy">
+      <div class="section section_bg1">
+        <div class="container">
+          <h2 class="title">Контакты</h2>
+          <div class="section__inner contacts__inner">
+            <div class="contacts__item contacts__item_location">
+              <span class="contacts__main">Санкт-Петербург</span>
+              <span>ул. Швецова, д. 23, лит. Б</span>
+            </div>
+            <div class="contacts__item contacts__item_telephone">
+              <a class="contacts__main contacts__link" href="tel:+78127796161">+7 (812) 779-61-61</a>
+            </div>
+            <div class="contacts__item contacts__item_email">
+              <a class="contacts__link" href="mailto:info@atletika.ru">info@atletika.ru</a>
+              <a class="contacts__link" href="mailto:secretar@atletika.ru">secretar@atletika.ru</a>
+            </div>
+            <div class="contacts__item contacts__item_fax">
+              <a class="contacts__link" href="tel:+78127796161">+7 (812) 779-61-61</a>
+              <span>ext. 201</span>
+            </div>
+          </div>
+          <div class="contacts__footer">
+            <button id="button-question" class="button" type="button">Задать вопрос</button>
+          </div>
+          <div class="contacts__map">
+            <div id="map"></div>
+          </div>
+          <small class="contacts__copyright">
+            © 1995-2020 Торговый дом "Атлетика" <br>
+            Копирование материалов размещенных на данном сайте, правообладателем которых является Торговый Дом
+            «Атлетика», без особого разрешения - запрещено.
+          </small>
+        </div>
+      </div>
+    </footer>
+
+  </div>
 
 </main>
-
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/js/uikit.min.js"></script>
 </body>
 </html>

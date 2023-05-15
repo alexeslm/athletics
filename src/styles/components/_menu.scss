@@ -10,7 +10,7 @@
   height: 100vh;
   min-height: 800px;
   z-index: 4;
-  display: flex;
+  display: flex !important;
   align-items: center;
   font-family: var(--font-family-secondary);
   transition: opacity .4s ease;
@@ -36,11 +36,6 @@
       position: relative;
       margin-top: 3.2rem;
     }
-  }
-
-  &_active {
-    visibility: visible;
-    opacity: 1;
   }
 
   &__list {

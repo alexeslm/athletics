@@ -1,5 +1,11 @@
 @import "normalize.css";
 
+@import 'uikit/src/scss/variables';
+@import 'uikit/src/scss/mixins';
+@import 'uikit/src/scss/components/animation';
+@import 'uikit/src/scss/components/sticky';
+@import 'uikit/src/scss/components/modal';
+
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/placeholders";
@@ -46,3 +52,6 @@
 @import "pages/brand-detail";
 @import "pages/articles-page";
 @import "pages/articles-detail";
+
+
+

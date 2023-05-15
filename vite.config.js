@@ -12,6 +12,7 @@ export default defineConfig({
                 brandDetail: resolve(__dirname, 'brand-detail/index.html'),
                 articles: resolve(__dirname, 'articles/index.html'),
                 articlesDetail: resolve(__dirname, 'articles-detail/index.html'),
+                company: resolve(__dirname, 'company/index.html'),
             },
         },
     },
