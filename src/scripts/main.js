@@ -71,6 +71,9 @@ UIkit.sticky('.sidebar', {
     media: 1680
 });
 
+UIkit.sticky('.sidebar__inner', {
+});
+
 
 
 const menuLinkArrow = document.querySelector('.menu__link-arrow');
