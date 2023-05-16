@@ -1,12 +1,10 @@
 import Swiper, {Navigation, Pagination, Thumbs} from "swiper";
 import 'swiper/scss';
 import 'swiper/scss/pagination'
-import scrollSpy from 'simple-scrollspy';
 import MicroModal from "micromodal";
 import UIkit from 'uikit';
 
 const hamburger = document.querySelector('.hamburger');
-const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
 
 UIkit.toggle(hamburger, {
@@ -30,13 +28,6 @@ UIkit.util.on(menu, 'beforehide', function () {
     setTimeout(() => {
         menu.style.visibility = 'hidden';
     }, 500);
-});
-
-const sticky = UIkit.sticky('.header_main', {
-    start: '.banner',
-    clsActive: 'header_in',
-    animation: 'uk-animation-slide-top',
-    media: 520
 });
 
 const searchWindow = document.querySelector('.search');
@@ -66,11 +57,20 @@ UIkit.util.on(searchWindow, 'beforehide', function () {
     }, 500);
 });
 
+UIkit.sticky('.header_main', {
+    start: '.banner',
+    clsActive: 'header_in',
+    animation: 'uk-animation-slide-top',
+    media: 520
+});
 
+UIkit.sticky('.sidebar', {
+    start: '.banner',
+    clsActive: 'sidebar_affix',
+    animation: 'uk-animation-slide-left',
+    media: 1680
+});
 
-
-
-const sidebar = document.querySelector('.sidebar');
 
 
 const menuLinkArrow = document.querySelector('.menu__link-arrow');
@@ -115,23 +115,6 @@ if (buttonQuestion) {
             disableScroll: true,
             disableFocus: true,
         });
-    })
-}
-
-if (sidebar) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY >= 900) {
-            sidebar.classList.add('sidebar_affix');
-        } else {
-            sidebar.classList.remove('sidebar_affix')
-        }
-    });
-
-    scrollSpy('#sidebar-nav', {
-        sectionClass: '.scrollspy',
-        menuActiveTarget: '.sidebar__link',
-        activeClass: 'sidebar__link_active',
-        offset: -500,
     })
 }
 

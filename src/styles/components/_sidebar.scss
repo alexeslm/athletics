@@ -1,26 +1,19 @@
-.scroll-wrap {
-  position: relative;
-}
-
 .sidebar {
+  position: absolute !important;
   visibility: hidden;
-  opacity: 0;
-  position: fixed;
   z-index: 3;
-  top: 30%;
-  left: 0;
   text-transform: uppercase;
   font-size: 2rem;
   line-height: 120%;
   font-family: var(--font-family-secondary);
   color: var(--color-secondary);
-  transition: opacity .4s ease;
   @include respond-to('large') {
     display: none;
   }
   &_affix {
     visibility: visible;
-    opacity: 1;
+    position: fixed !important;
+    top: 30% !important;
   }
   &__list {
     @extend %list-reset;
