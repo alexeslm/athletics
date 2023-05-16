@@ -230,6 +230,10 @@
     display: flex;
     column-gap: 3rem;
     align-items: center;
+    .button {
+      font-size: 1.8rem;
+      padding: 2.667rem 5.35rem;
+    }
     @include respond-to('normal') {
       justify-content: space-between;
     }
@@ -243,6 +247,10 @@
         text-align: center;
       }
     }
+  }
+
+  .product__price {
+    white-space: nowrap;
   }
 
   .product__info {
