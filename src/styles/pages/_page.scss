@@ -6,6 +6,15 @@
     padding-bottom: 20vw;
   }
 
+  &__inner {
+    position: relative;
+    left: 5vw;
+    @include respond-to('medium') {
+      position: static;
+      left: 0;
+    }
+  }
+
   &__top {
     margin-top: 70px;
     @include respond-to('mobile') {
@@ -29,6 +38,15 @@
       line-height: 133%;
       @include respond-to('mobile') {
         line-height: 120%;
+      }
+    }
+
+    &_left {
+      position: relative;
+      right: 5vw;
+      @include respond-to('medium') {
+        position: static;
+        right: 0;
       }
     }
   }
