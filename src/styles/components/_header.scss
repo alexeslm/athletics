@@ -16,6 +16,10 @@
       display: none;
     }
   }
+  &_page {
+    position: relative;
+    grid-template-columns: repeat(2, max-content);
+  }
   @include respond-to('medium') {
     grid-template-columns: repeat(2, max-content);
     nav {

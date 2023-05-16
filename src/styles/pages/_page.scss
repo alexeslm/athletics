@@ -1,9 +1,9 @@
 .page {
-  padding-top: 150px;
+  padding-top: 23px;
   padding-bottom: 150px;
   @include respond-to('mobile') {
-    padding-top: 22%;;
-    padding-bottom: 20%;
+    padding-top: 3.75vw;;
+    padding-bottom: 20vw;
   }
 
   &__top {
