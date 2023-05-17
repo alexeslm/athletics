@@ -21,4 +21,9 @@
     font-size: 1.4rem;
     padding: 1.3rem 2.3rem;
   }
+  &_transparent {
+    background-color: transparent;
+    color: var(--color-body);
+    border: 1px solid;
+  }
 }

@@ -7,20 +7,20 @@
     display: grid;
     grid-column-gap: 4rem;
     grid-template-areas:
-          "one two"
-          "one three"
-          "one four"
-          "one five"
-          "one six"
-          "one ...";
+          'one two'
+          'one three'
+          'one four'
+          'one five'
+          'one six'
+          'one ...';
     @include respond-to('normal') {
       grid-template-areas:
-          "two"
-          "one"
-          "three"
-          "six"
-          "four"
-          "five";
+          'two'
+          'one'
+          'three'
+          'six'
+          'four'
+          'five';
     }
     @include respond-to('mobile') {
       margin-top: 5vw;
@@ -117,15 +117,6 @@
     }
   }
 
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-
-    &-active {
-      background: var(--color-primary);
-    }
-  }
-
   .product__swiper-img {
     display: block;
     width: 100%;
@@ -140,7 +131,7 @@
     transform: translateY(-50%);
     width: 50px;
     height: 100%;
-    background: rgba(38, 47, 64, 0.5) url("/src/images/arrow/arrow-white.svg") no-repeat center;
+    background: rgba(38, 47, 64, 0.5) url('/src/images/arrow/arrow-white.svg') no-repeat center;
     @include respond-to('mobile') {
       display: none;
     }
@@ -199,7 +190,7 @@
       content: '';
       width: 1.5rem;
       height: 1.5rem;
-      background: url("/src/images/product/check.svg") no-repeat center;
+      background: url('/src/images/product/check.svg') no-repeat center;
     }
   }
 
@@ -230,10 +221,12 @@
     display: flex;
     column-gap: 3rem;
     align-items: center;
+
     .button {
       font-size: 1.8rem;
       padding: 2.667rem 5.35rem;
     }
+
     @include respond-to('normal') {
       justify-content: space-between;
     }
@@ -382,7 +375,7 @@
     display: block;
     width: 30px;
     height: 30px;
-    background: url("/src/images/arrow/arrow-download.svg") no-repeat center;
+    background: url('/src/images/arrow/arrow-download.svg') no-repeat center;
     background-size: contain;
   }
 }

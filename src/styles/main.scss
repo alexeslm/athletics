@@ -1,22 +1,24 @@
 @import "normalize.css";
 
-@import 'uikit/src/scss/variables';
-@import 'uikit/src/scss/mixins';
-@import 'uikit/src/scss/components/animation';
-@import 'uikit/src/scss/components/sticky';
-@import 'uikit/src/scss/components/modal';
-
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/placeholders";
 @import "abstracts/utils";
+
+@import 'uikit/src/scss/variables';
+@import 'uikit/src/scss/components/margin';
+@import 'uikit/src/scss/components/heading';
+@import 'uikit/src/scss/components/text';
+@import 'uikit/src/scss/components/flex';
+@import 'uikit/src/scss/components/animation';
+@import 'uikit/src/scss/components/sticky';
+@import 'uikit/src/scss/components/modal';
 
 @import "base/typography";
 @import "base/base";
 
 @import "layout/container";
 @import "layout/card-grid";
-
 @import "components/header";
 @import "components/logo";
 @import "components/glass";
@@ -45,6 +47,7 @@
 @import "components/form";
 @import "components/pagination";
 @import "components/card";
+@import "components/review";
 
 @import "pages/page";
 @import "pages/product";
@@ -52,6 +55,9 @@
 @import "pages/brand-detail";
 @import "pages/articles-page";
 @import "pages/articles-detail";
+@import "pages/company-page";
+
+
 
 
 

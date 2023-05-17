@@ -165,6 +165,78 @@ const newsSwiper = new Swiper('.news .swiper', {
     },
 });
 
+const productSwiperThumb = new Swiper(".product__swiper-thumb", {
+    grabCursor: true,
+    slidesPerView: 3,
+    spaceBetween: 12,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+        520: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+        },
+    }
+});
+
+const productSwiper = new Swiper(".product__swiper", {
+    modules: [Navigation, Pagination, Thumbs],
+    grabCursor: true,
+    thumbs: {
+        swiper: productSwiperThumb,
+    },
+    navigation: {
+        nextEl: ".product__swiper .swiper-button-next",
+        prevEl: ".product__swiper .swiper-button-prev",
+    },
+    pagination: {
+        el: '.product .swiper-pagination',
+        type: 'bullets',
+    },
+
+});
+
+const employeesSwiper = new Swiper('.company-page__employees .swiper', {
+    modules: [Navigation, Pagination],
+    loop: false,
+    slidesPerView: 4,
+    spaceBetween: 12,
+    navigation: {
+        nextEl: ".company-page__employees .swiper-button-next",
+        prevEl: ".company-page__employees .swiper-button-prev"
+    },
+    pagination: {
+        el: '.company-page__employees .swiper-pagination',
+        type: 'bullets',
+    },
+    breakpoints: {
+        520: {
+            spaceBetween: 32
+        },
+    },
+});
+
+const reviewsSwiper = new Swiper('.company-page__reviews .swiper', {
+    modules: [Navigation, Pagination],
+    loop: false,
+    slidesPerView: 2,
+    spaceBetween: 12,
+    navigation: {
+        nextEl: ".company-page__reviews .swiper-button-next",
+        prevEl: ".company-page__reviews .swiper-button-prev"
+    },
+    pagination: {
+        el: '.company-page__reviews .swiper-pagination',
+        type: 'bullets',
+    },
+    breakpoints: {
+        520: {
+            spaceBetween: 70
+        },
+    },
+});
+
 
 // *********************************************************************************************************************
 const figure = document.querySelector('.figure');
@@ -245,36 +317,3 @@ if (document.querySelector('#map')) {
         myMap.geoObjects.add(myPlacemark);
     }
 }
-
-
-const productSwiperThumb = new Swiper(".product__swiper-thumb", {
-    grabCursor: true,
-    slidesPerView: 3,
-    spaceBetween: 12,
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-        520: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-        },
-    }
-});
-
-const productSwiper = new Swiper(".product__swiper", {
-    modules: [Navigation, Pagination, Thumbs],
-    grabCursor: true,
-    thumbs: {
-        swiper: productSwiperThumb,
-    },
-    navigation: {
-        nextEl: ".product__swiper .swiper-button-next",
-        prevEl: ".product__swiper .swiper-button-prev",
-    },
-    pagination: {
-        el: '.product .swiper-pagination',
-        type: 'bullets',
-    },
-
-});

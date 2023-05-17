@@ -84,4 +84,21 @@
       height: 16px;
     }
   }
+
+  .page__swiper-footer {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    .swiper-pagination {
+      position: static;
+      z-index: 1;
+      width: max-content;
+    }
+  }
+
+  .page__swiper-navigation {
+    display: flex;
+    column-gap: 20px;
+  }
+
 }
