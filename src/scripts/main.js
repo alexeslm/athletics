@@ -61,7 +61,7 @@ UIkit.sticky('.header_main', {
     start: '.banner',
     clsActive: 'header_in',
     animation: 'uk-animation-slide-top',
-    media: 520
+    media: 1200
 });
 
 UIkit.sticky('.sidebar', {
@@ -200,7 +200,7 @@ const productSwiper = new Swiper(".product__swiper", {
 const employeesSwiper = new Swiper('.company-page__employees .swiper', {
     modules: [Navigation, Pagination],
     loop: false,
-    slidesPerView: 4,
+    slidesPerView: "auto",
     spaceBetween: 12,
     navigation: {
         nextEl: ".company-page__employees .swiper-button-next",
@@ -211,17 +211,24 @@ const employeesSwiper = new Swiper('.company-page__employees .swiper', {
         type: 'bullets',
     },
     breakpoints: {
-        520: {
+        1200: {
+            slidesPerView: 4,
             spaceBetween: 32
         },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 32
+        },
+        520: {
+            slidesPerView: 2,
+            spaceBetween: 32
+        }
     },
 });
 
 const reviewsSwiper = new Swiper('.company-page__reviews .swiper', {
     modules: [Navigation, Pagination],
     loop: false,
-    slidesPerView: 2,
-    spaceBetween: 12,
     navigation: {
         nextEl: ".company-page__reviews .swiper-button-next",
         prevEl: ".company-page__reviews .swiper-button-prev"
@@ -231,7 +238,8 @@ const reviewsSwiper = new Swiper('.company-page__reviews .swiper', {
         type: 'bullets',
     },
     breakpoints: {
-        520: {
+        992: {
+            slidesPerView: 2,
             spaceBetween: 70
         },
     },

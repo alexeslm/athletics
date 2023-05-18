@@ -35,3 +35,28 @@ abbr {
 .uk-text-lead {
   font-family: var(--font-family-secondary);
 }
+
+.uk-heading-small {
+  @include respond-to('mobile') {
+    font-size: calc(14 / 320 * 100) * 1vw;
+  }
+}
+
+.uk-text-large {
+  @include respond-to('mobile') {
+    font-size: calc(18 / 320 * 100) * 1vw;
+    font-weight: var(--font-w-bold);
+  }
+}
+
+.uk-text-lead {
+  @include respond-to('mobile') {
+    font-size: calc(48 / 320 *100) * 1vw;
+  }
+}
+
+.uk-text-default {
+  @include respond-to('mobile') {
+    font-size: calc(14 / 320 *100) * 1vw;
+  }
+}

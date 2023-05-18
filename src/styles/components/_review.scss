@@ -1,16 +1,23 @@
 .review {
   font-size: 1.6rem;
   line-height: 162%;
+  @include respond-to('mobile') {
+    font-size: calc(14 / 320 * 100) * 1vw;
+  }
 
   // .review__header
   &__header {
-    display: flex;
+    display: grid;
     column-gap: 20px;
+    grid-template-columns: 30% 1fr;
+    @include respond-to('mobile') {
+      column-gap: calc(12 / 320 * 100) * 1vw;
+      grid-template-columns: calc(114 / 320 * 100) * 1vw 1fr;
+    }
   }
 
   // .review__image-wrap
   &__image-wrap {
-    width: 30%;
   }
 
   // .review__image
@@ -33,6 +40,9 @@
     font-size: 3rem;
     font-family: var(--font-family-secondary);
     font-weight: var(--font-w-bold);
+    @include respond-to('mobile') {
+      font-size: calc(24 / 320 * 100) * 1vw;;
+    }
   }
 
   // .review__subtitle
@@ -64,6 +74,10 @@
       background-size: contain;
       transform: rotate(-45deg);
       transition: background-image 0.4s ease;
+      @include respond-to('mobile') {
+        width: 16px;
+        height: 16px;
+      }
     }
     @media (hover: hover) {
       &:hover {

@@ -6,6 +6,7 @@
 @import "abstracts/utils";
 
 @import 'uikit/src/scss/variables';
+@import 'uikit/src/scss/mixins';
 @import 'uikit/src/scss/components/margin';
 @import 'uikit/src/scss/components/heading';
 @import 'uikit/src/scss/components/text';
@@ -48,6 +49,7 @@
 @import "components/pagination";
 @import "components/card";
 @import "components/review";
+@import "components/career";
 
 @import "pages/page";
 @import "pages/product";

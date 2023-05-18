@@ -7,10 +7,20 @@
 
   &_page {
     background-image: url('/src/images/sections/bg_2.jpg');
+    @include respond-to('mobile') {
+      width: 100%;
+      height: 100vh !important;
+    }
   }
 
   &__page-content {
     padding-top: 33vh;
+    @include respond-to('normal') {
+      padding-top: 17vw;
+    }
+    @include respond-to('small') {
+      padding-top: 30vw;
+    }
   }
 
   .banner__inner {

@@ -1,14 +1,29 @@
 .company-page {
   padding: 0;
 
+  .section {
+    @include respond-to('mobile') {
+      padding-top: calc(73 / 320 * 100) * 1vw;
+    }
+  }
+
   .button {
     font-size: 1.8rem;
     padding: 25px 52px;
+    @include respond-to('small') {
+      font-size: 1.4rem;
+      padding: 1.3rem 2.3rem;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   // .company-page__title
   &__title {
     font-size: 8rem;
+    @include respond-to('mobile') {
+      font-size: calc(30 / 320 * 100) * 1vw;
+    }
   }
 
   // .company-page__name
@@ -21,14 +36,38 @@
     font-weight: var(--font-w-bold);
     display: block;
     margin-top: calc(50 / 1920) * 100vw;
+    padding-left: 5vw;
+    @include respond-to('mobile') {
+      font-size: calc(14 / 320 * 100) * 1vw;
+    }
   }
 
   // .company-page__banner-nav
   &__banner-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
     justify-content: space-between;
     align-items: flex-end;
     font-family: var(--font-family-secondary);
     text-transform: uppercase;
+    @include respond-to('normal') {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 50px;
+    }
+    @include respond-to('mobile') {
+      bottom: calc(20 / 320 * 100) * 1vw;;
+      row-gap: 20vh;
+      .banner__link {
+        svg {
+          width: calc(20 / 320 * 100) * 1vw;
+          height: auto;
+        }
+      }
+    }
   }
 
   // .company-page__slogan
@@ -37,6 +76,22 @@
     font-size: 2.4rem;
     line-height: 133%;
     margin-bottom: 80px;
+    @include respond-to('normal') {
+      margin: 0;
+      align-self: start;
+      padding-left: 5vw;
+    }
+    @include respond-to('mobile') {
+      font-weight: var(--font-w-bold);
+      font-size: calc(14 / 320 * 100) * 1vw;
+    }
+  }
+
+  // .company-page__employees
+  &__employees {
+    .swiper-slide {
+      width: 53vw;
+    }
   }
 
   // .company-page__swiper
@@ -62,14 +117,29 @@
     grid-auto-columns: 45%;
     row-gap: 60px;
     justify-content: space-between;
+    @include respond-to('small') {
+      grid-template-areas:
+          'one'
+          'two'
+          'three'
+          'four';
+      grid-auto-columns: 100%;
+    }
+    @include respond-to('mobile') {
+      font-size: 14px;
+      row-gap: calc(32 / 320 * 100) * 1vw;
+      margin-top: 10vw;
+    }
   }
 
   //.company-page__grid-1
   &__grid-1 {
     grid-area: one;
     display: flex;
-    //width: max-content;
     column-gap: calc(100 / 1920 * 100) * 1vw;
+    @include respond-to('small') {
+      justify-content: space-between;
+    }
   }
 
   //.company-page__grid-2
@@ -84,6 +154,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: max-content;
     gap: 40px;
+    @include respond-to('small') {
+      text-align: center;
+    }
+    @include respond-to('mobile') {
+      row-gap: calc(16 / 320 * 100) * 1vw;
+    }
   }
 
   //.company-page__grid-4
@@ -91,5 +167,13 @@
     grid-area: four;
     display: flex;
     column-gap: 20px;
+    @include respond-to('small') {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
+    @include respond-to('mobile') {
+      row-gap: calc(10 / 320 * 100) * 1vw;
+    }
   }
 }
