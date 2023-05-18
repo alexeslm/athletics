@@ -87,4 +87,21 @@
       }
     }
   }
+
+  // .review__grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    row-gap: 64px;
+    margin-top: 70px;
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+    }
+    @include respond-to('mobile') {
+      margin-top: 10vw;
+      row-gap: calc(40 / 320 * 100) * 1vw;
+    }
+  }
+
 }

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/src/styles/main.scss">
+  <script type="module" src="/src/scripts/main.js"></script>
+  <title>Отзывы</title>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d15451b8-f0c3-4ed8-939d-cfdbcbc978ac&lang=ru_RU"></script>
+</head>
+<body>
+
+<div id="modal-question" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container">
+      <div class="modal__inner">
+        <form class="form" action="#" method="post">
+          <div class="form__container">
+            <h2 class="modal__title">Задать вопрос</h2>
+            <div class="form__item">
+              <label class="form__label" for="name">ФИО</label>
+              <input class="form__input" id="name" type="text" placeholder="Заполните поле">
+            </div>
+            <div class="form__item">
+              <label class="form__label" for="tel">Контактный телефон</label>
+              <input class="form__input" id="tel" type="tel" placeholder="+7 (___) ___-__-__">
+            </div>
+            <div class="form__item">
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" id="email" type="email" placeholder="Заполните поле">
+            </div>
+            <div class="modal__button">
+              <button class="button" type="submit">Отправить</button>
+            </div>
+            <p class="form__agreement">Нажимая на кнопку “Отправить заявку”, <br> вы соглашаетесь с <a
+                class="text-primary" href="#">Политикой конфиденциальности</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="modal__aside">
+        <button class="modal__close" data-micromodal-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header header_page container-fluid">
+  <div class="logo">
+    <a href="/">
+      <img class="logo__image" src="/src/images/logo/Logo.png" alt="#">
+    </a>
+  </div>
+  <div class="header__right">
+    <button class="glass" type="button">
+      <span class="glass__icon"></span>
+    </button>
+    <div class="language">
+      <a class="language__item language__item_active" href="#">rus</a>
+      <a class="language__item" href="#">eng</a>
+    </div>
+    <div class="hamburger">
+      <span class="hamburger__line"></span>
+    </div>
+  </div>
+</header>
+
+<div class="menu">
+  <div class="container menu__container">
+    <a class="menu__back" href="#">Вернуться назад</a>
+    <div class="menu__wrap">
+      <ul class="menu__list menu__list_main">
+        <li>
+          <a class="menu__link" href="#">
+            Компания
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Сотрудники</a></li>
+            <li><a class="menu__sub-link" href="#">Отзывы</a></li>
+            <li><a class="menu__sub-link" href="#">Франшиза</a></li>
+            <li><a class="menu__sub-link" href="#">Вакансии</a></li>
+            <li><a class="menu__sub-link" href="#">Доставка и оплата</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Структура бизнеса
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Каталог
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Фиксаторы суставов</a></li>
+            <li>
+              <a class="menu__sub-link" href="#">Подушки ортопедические</a>
+              <ul class="menu__sub-list menu__sub-list_scroll">
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+              </ul>
+            </li>
+            <li><a class="menu__sub-link" href="#">Компрессорный трикотаж</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на суставы</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на позвоночник</a></li>
+            <li><a class="menu__sub-link" href="#">Бандажи</a></li>
+            <li><a class="menu__sub-link" href="#">Средства реабилитации</a></li>
+            <li><a class="menu__sub-link" href="#">Матрасы</a></li>
+            <li><a class="menu__sub-link" href="#">Массажные изделия</a></li>
+          </ul>
+        </li>
+        <li><a class="menu__link" href="#">Бренды</a></li>
+        <li><a class="menu__link" href="#">Где купить</a></li>
+        <li><a class="menu__link" href="#">Сотрудничество</a></li>
+        <li><a class="menu__link" href="#">Статьи</a></li>
+        <li><a class="menu__link" href="#">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="search">
+  <div class="container">
+    <div class="search__wrap">
+      <form class="search__form" action="#" method="get">
+        <div class="search__inner">
+          <label class="search__label" for="search">
+            <img class="search__icon" src="/src/images/search/glass.svg" alt="#">
+          </label>
+          <input class="search__input" type="search" name="search" id="search">
+        </div>
+      </form>
+      <div class="search__result">
+        <ul class="search__list">
+          <li class="search__item">
+            <a class="search__link" href="#">Фиксаторы суставов</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Подушки ортопедические</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Новый массажер для ног «Нега» - простота и доступность</a>
+            <a class="search__link" href="#">Статьи</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Ортезы на суставы</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Лечение заболеваний и повреждений позвоночника</a>
+            <a class="search__link" href="#">Статьи</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Бандажи</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<aside class="sidebar sidebar__inner">
+  <ul class="sidebar__list">
+    <li><a class="sidebar__link" href="#">Главная</a></li>
+    <li><a class="sidebar__link" href="#">Компания</a></li>
+    <li><a class="sidebar__link" href="#">Структура бизнеса</a></li>
+    <li><a class="sidebar__link" href="#">Сотрудничество</a></li>
+    <li><a class="sidebar__link" href="#">Каталог</a></li>
+    <li><a class="sidebar__link" href="#">Бренды</a></li>
+    <li><a class="sidebar__link" href="#">Где купить</a></li>
+    <li><a class="sidebar__link" href="#">Статьи</a></li>
+    <li><a class="sidebar__link" href="#">Новости</a></li>
+    <li><a class="sidebar__link" href="#">Контакты</a></li>
+  </ul>
+</aside>
+
+<main class="page">
+    <div class="container">
+      <a class="page__back" href="#">
+        <svg class="page__back-icon" width="24" height="14" viewBox="0 0 24 14" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.1431 7H0.857352" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.85742 13L0.857422 7L6.85742 1" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+        Компания
+      </a>
+      <div class="page__top">
+        <h1 class="title">Отзывы</h1>
+      </div>
+      <div class="page__inner">
+        <div class="review__grid">
+          <div class="review">
+            <div class="review__header">
+              <div class="review__image-wrap">
+                <img class="review__image" src="/src/images/brands/brand-1.svg" alt="#">
+              </div>
+              <div class="review__info">
+                <span class="review__title">FoSTA</span>
+                <span class="review__subtitle">Наталья, генеральный директор</span>
+              </div>
+            </div>
+            <div class="review__content">
+              <p>«Для нашей компании Торговый дом „Атлетика“ это 12 лет надёжного партнёрства на российском рынке
+                товаров для здоровья. ТД „Атлетика“ открыл для нас новую нишу в бизнесе, она оказалась весьма
+                перспективной. Сейчас мы занимаем первое место в нашем регионе по продажам ортопедии и средств
+                реабилитации, наращиваем реализацию ежегодно, несмотря на экономическую нестабильность в
+                мире.»</p>
+            </div>
+            <a href="#" class="review__link">Читать рекомендательное письмо</a>
+          </div>
+          <div class="review">
+            <div class="review__header">
+              <div class="review__image-wrap">
+                <img class="review__image" src="/src/images/brands/brand-1.svg" alt="#">
+              </div>
+              <div class="review__info">
+                <span class="review__title">FoSTA</span>
+                <span class="review__subtitle">Наталья, генеральный директор</span>
+              </div>
+            </div>
+            <div class="review__content">
+              <p>«Для нашей компании Торговый дом „Атлетика“ это 12 лет надёжного партнёрства на российском рынке
+                товаров для здоровья. ТД „Атлетика“ открыл для нас новую нишу в бизнесе, она оказалась весьма
+                перспективной. Сейчас мы занимаем первое место в нашем регионе по продажам ортопедии и средств
+                реабилитации, наращиваем реализацию ежегодно, несмотря на экономическую нестабильность в
+                мире.»</p>
+            </div>
+            <a href="#" class="review__link">Читать рекомендательное письмо</a>
+          </div>
+          <div class="review">
+            <div class="review__header">
+              <div class="review__image-wrap">
+                <img class="review__image" src="/src/images/brands/brand-1.svg" alt="#">
+              </div>
+              <div class="review__info">
+                <span class="review__title">FoSTA</span>
+                <span class="review__subtitle">Наталья, генеральный директор</span>
+              </div>
+            </div>
+            <div class="review__content">
+              <p>«Для нашей компании Торговый дом „Атлетика“ это 12 лет надёжного партнёрства на российском рынке
+                товаров для здоровья. ТД „Атлетика“ открыл для нас новую нишу в бизнесе, она оказалась весьма
+                перспективной. Сейчас мы занимаем первое место в нашем регионе по продажам ортопедии и средств
+                реабилитации, наращиваем реализацию ежегодно, несмотря на экономическую нестабильность в
+                мире.»</p>
+            </div>
+            <a href="#" class="review__link">Читать рекомендательное письмо</a>
+          </div>
+          <div class="review">
+            <div class="review__header">
+              <div class="review__image-wrap">
+                <img class="review__image" src="/src/images/brands/brand-1.svg" alt="#">
+              </div>
+              <div class="review__info">
+                <span class="review__title">FoSTA</span>
+                <span class="review__subtitle">Наталья, генеральный директор</span>
+              </div>
+            </div>
+            <div class="review__content">
+              <p>«Для нашей компании Торговый дом „Атлетика“ это 12 лет надёжного партнёрства на российском рынке
+                товаров для здоровья. ТД „Атлетика“ открыл для нас новую нишу в бизнесе, она оказалась весьма
+                перспективной. Сейчас мы занимаем первое место в нашем регионе по продажам ортопедии и средств
+                реабилитации, наращиваем реализацию ежегодно, несмотря на экономическую нестабильность в
+                мире.»</p>
+            </div>
+            <a href="#" class="review__link">Читать рекомендательное письмо</a>
+          </div>
+          <div class="review">
+            <div class="review__header">
+              <div class="review__image-wrap">
+                <img class="review__image" src="/src/images/brands/brand-1.svg" alt="#">
+              </div>
+              <div class="review__info">
+                <span class="review__title">FoSTA</span>
+                <span class="review__subtitle">Наталья, генеральный директор</span>
+              </div>
+            </div>
+            <div class="review__content">
+              <p>«Для нашей компании Торговый дом „Атлетика“ это 12 лет надёжного партнёрства на российском рынке
+                товаров для здоровья. ТД „Атлетика“ открыл для нас новую нишу в бизнесе, она оказалась весьма
+                перспективной. Сейчас мы занимаем первое место в нашем регионе по продажам ортопедии и средств
+                реабилитации, наращиваем реализацию ежегодно, несмотря на экономическую нестабильность в
+                мире.»</p>
+            </div>
+            <a href="#" class="review__link">Читать рекомендательное письмо</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+</body>
+</html>

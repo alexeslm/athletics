@@ -13,6 +13,7 @@ export default defineConfig({
                 articles: resolve(__dirname, 'articles/index.html'),
                 articlesDetail: resolve(__dirname, 'articles-detail/index.html'),
                 company: resolve(__dirname, 'company/index.html'),
+                reviews: resolve(__dirname, 'reviews/index.html'),
             },
         },
     },
