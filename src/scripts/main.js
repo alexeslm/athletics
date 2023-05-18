@@ -14,9 +14,7 @@ UIkit.toggle(hamburger, {
     duration: 400
 });
 
-UIkit.modal('.menu', {
-
-});
+UIkit.modal('.menu', {});
 
 UIkit.util.on(menu, 'beforeshow', function () {
     menu.style.visibility = 'visible';
@@ -41,9 +39,7 @@ UIkit.toggle(searchButton, {
     duration: 400
 });
 
-UIkit.modal(searchWindow, {
-
-});
+UIkit.modal(searchWindow, {});
 
 UIkit.util.on(searchWindow, 'beforeshow', function () {
     searchWindow.style.visibility = 'visible';
@@ -71,9 +67,7 @@ UIkit.sticky('.sidebar', {
     media: 1680
 });
 
-UIkit.sticky('.sidebar__inner', {
-});
-
+UIkit.sticky('.sidebar__inner', {});
 
 
 const menuLinkArrow = document.querySelector('.menu__link-arrow');
@@ -122,7 +116,7 @@ if (buttonQuestion) {
 }
 
 
-const brandsSwiper = new Swiper('.brands .swiper', {
+new Swiper('.brands .swiper', {
     modules: [Navigation],
     loop: false,
     slidesPerView: "auto",
@@ -133,7 +127,7 @@ const brandsSwiper = new Swiper('.brands .swiper', {
     }
 });
 
-const articlesSwiper = new Swiper('.articles .swiper', {
+new Swiper('.articles .swiper', {
     modules: [Navigation],
     loop: false,
     slidesPerView: "auto",
@@ -149,7 +143,7 @@ const articlesSwiper = new Swiper('.articles .swiper', {
     },
 });
 
-const newsSwiper = new Swiper('.news .swiper', {
+new Swiper('.news .swiper', {
     modules: [Navigation],
     loop: false,
     slidesPerView: "auto",
@@ -180,7 +174,7 @@ const productSwiperThumb = new Swiper(".product__swiper-thumb", {
     }
 });
 
-const productSwiper = new Swiper(".product__swiper", {
+new Swiper(".product__swiper", {
     modules: [Navigation, Pagination, Thumbs],
     grabCursor: true,
     thumbs: {
@@ -197,7 +191,7 @@ const productSwiper = new Swiper(".product__swiper", {
 
 });
 
-const employeesSwiper = new Swiper('.company-page__employees .swiper', {
+new Swiper('.company-page__employees .swiper', {
     modules: [Navigation, Pagination],
     loop: false,
     slidesPerView: "auto",
@@ -226,7 +220,7 @@ const employeesSwiper = new Swiper('.company-page__employees .swiper', {
     },
 });
 
-const reviewsSwiper = new Swiper('.company-page__reviews .swiper', {
+new Swiper('.company-page__reviews .swiper', {
     modules: [Navigation, Pagination],
     loop: false,
     navigation: {
@@ -244,6 +238,32 @@ const reviewsSwiper = new Swiper('.company-page__reviews .swiper', {
         },
     },
 });
+
+new Swiper(".career-page__slider .swiper", {
+    modules: [Navigation, Pagination],
+    navigation: {
+        nextEl: ".career-page__slider .swiper-button-next",
+        prevEl: ".career-page__slider .swiper-button-prev",
+    },
+    pagination: {
+        el: '.career-page__slider .swiper-pagination',
+        type: 'bullets',
+    },
+});
+
+const careerPageSwiperImg = document.querySelector('.career-page__swiper-img');
+const careerPageSwiperButtons = document.querySelectorAll('.career-page__swiper-button');
+function setButtonHeight() {
+    const currentHeight = window.getComputedStyle(careerPageSwiperImg).height;
+    careerPageSwiperButtons.forEach((button) => {
+        button.style.setProperty('--currentHeight', currentHeight);
+    })
+}
+
+setButtonHeight();
+
+window.addEventListener('resize', setButtonHeight);
+
 
 
 // *********************************************************************************************************************

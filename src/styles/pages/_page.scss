@@ -51,6 +51,15 @@
     }
   }
 
+  &__subtitle {
+    font-size: 4rem;
+    font-weight: var(--font-w-bold);
+    font-family: var(--font-family-secondary);
+    line-height: 120%;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
   &__back{
     @extend %link-reset;
     font-family: var(--font-family-secondary);
