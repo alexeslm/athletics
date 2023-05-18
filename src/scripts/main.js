@@ -252,17 +252,21 @@ new Swiper(".career-page__slider .swiper", {
 });
 
 const careerPageSwiperImg = document.querySelector('.career-page__swiper-img');
-const careerPageSwiperButtons = document.querySelectorAll('.career-page__swiper-button');
-function setButtonHeight() {
-    const currentHeight = window.getComputedStyle(careerPageSwiperImg).height;
-    careerPageSwiperButtons.forEach((button) => {
-        button.style.setProperty('--currentHeight', currentHeight);
-    })
+if (careerPageSwiperImg) {
+    const careerPageSwiperButtons = document.querySelectorAll('.career-page__swiper-button');
+    function setButtonHeight() {
+        const currentHeight = window.getComputedStyle(careerPageSwiperImg).height;
+        careerPageSwiperButtons.forEach((button) => {
+            button.style.setProperty('--currentHeight', currentHeight);
+        })
+    }
+
+    setButtonHeight();
+
+    window.addEventListener('resize', setButtonHeight);
 }
 
-setButtonHeight();
 
-window.addEventListener('resize', setButtonHeight);
 
 
 

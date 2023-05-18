@@ -1,9 +1,18 @@
 .career-page {
+  .career__inner {
+    @include respond-to('mobile') {
+      margin-top: 0;
+    }
+  }
 
   // .career-page__subtitle
   &__subtitle {
     margin-top: 50px;
     margin-bottom: 60px;
+    @include respond-to('mobile') {
+      margin: 10vw 0;
+      font-size: calc(24 /320 * 100) * 1vw;
+    }
   }
 
   // .career-page__button
@@ -18,6 +27,9 @@
       width: 100%;
       text-align: center;
     }
+    @include respond-to('mobile') {
+      margin: calc(48 / 320 * 100) * 1vw 0;
+    }
   }
 
   // .career-page__link-arrow
@@ -25,6 +37,9 @@
     display: flex;
     align-items: center;
     column-gap: 20px;
+    @include respond-to('small') {
+      justify-content: center;
+    }
 
     &:after {
       content: '';
@@ -35,6 +50,9 @@
       background-size: contain;
       transform: rotate(135deg);
       transition: background-image 0.4s ease;
+      @include respond-to('mobile') {
+        display: none;
+      }
     }
   }
 
@@ -46,6 +64,12 @@
                 'one two'
                 'one ...';
     column-gap: 40px;
+    @include respond-to('small') {
+      grid-template-columns: 100%;
+      grid-template-areas:
+                'two'
+                'one';
+    }
   }
 
   // .career-page__desc
@@ -54,14 +78,22 @@
     color: var(--color-dark-info);
     font-size: 1.6rem;
     line-height: 162%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 
     p {
       margin: 0;
     }
 
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px
+    @include respond-to('small') {
+      margin-top: 30px;
+    }
+
+    @include respond-to('mobile') {
+      font-size: calc(14 / 320 * 100) * 1vw;
+      margin-top: calc(24 / 320 * 100) * 1vw;
+    }
   }
 
   // .career-page__swiper-img
@@ -81,8 +113,13 @@
       font-size: 1.4rem;
       line-height: 157%;
       color: var(--color-dark);
+
       figcaption {
         margin-top: 10px;
+        @include respond-to('mobile') {
+          margin-top: 5vw;
+          font-size: calc(12 / 320 * 100) * 1vw;
+        }
       }
     }
   }
@@ -98,7 +135,7 @@
     width: 50px;
     height: var(--currentHeight);
     background: rgba(38, 47, 64, 0.5) url('/src/images/arrow/arrow-white.svg') no-repeat center;
-    @include respond-to('mobile') {
+    @include respond-to('small') {
       display: none;
     }
 
@@ -130,6 +167,9 @@
   .swiper-pagination {
     margin-top: 20px;
     position: static;
+    @include respond-to('mobile') {
+      margin-top: 5vw;
+    }
   }
 
 }
