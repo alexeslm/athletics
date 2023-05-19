@@ -16,6 +16,7 @@ export default defineConfig({
                 reviews: resolve(__dirname, 'reviews/index.html'),
                 career: resolve(__dirname, 'career/index.html'),
                 cooperation: resolve(__dirname, 'cooperation/index.html'),
+                employees: resolve(__dirname, 'employees/index.html'),
             },
         },
     },

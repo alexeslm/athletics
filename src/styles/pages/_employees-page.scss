@@ -1,0 +1,20 @@
+.employees-page {
+  // .employees-page__subtitle
+  &__subtitle {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    @include respond-to('mobile') {
+      margin: 10vw 0;
+      font-size: calc(24 /320 * 100) * 1vw;
+    }
+  }
+
+  // .employees-page__grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    justify-content: space-between;
+    row-gap: 60px;
+  }
+
+}

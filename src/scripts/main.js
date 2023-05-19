@@ -32,7 +32,6 @@ const searchWindow = document.querySelector('.search');
 const searchButton = document.querySelector('.glass');
 const searchIcon = document.querySelector('.glass__icon');
 
-
 UIkit.toggle(searchButton, {
     target: searchWindow,
     animation: 'uk-animation-fade',
@@ -68,6 +67,32 @@ UIkit.sticky('.sidebar', {
 });
 
 UIkit.sticky('.sidebar__inner', {});
+
+
+// *********************************************************************************************************************
+const employeesPageSelect = document.querySelector('.employees-page__select');
+const employeesPageFilter = document.querySelector('.employees-page__filter');
+const employeesPageFilterButton = document.querySelector('.employees-page__filter .button');
+
+UIkit.dropdown(employeesPageSelect, {
+    toggle: employeesPageFilterButton,
+    mode: 'click',
+});
+
+UIkit.filter(employeesPageFilter, {
+    target: '.test',
+});
+
+UIkit.util.on(employeesPageFilter, 'beforeFilter', function () {
+    UIkit.dropdown(employeesPageSelect).hide(0);
+});
+
+UIkit.util.on(employeesPageFilter, 'afterFilter', function () {
+    employeesPageFilterButton.textContent = employeesPageSelect.querySelector('.uk-active a').textContent;
+});
+
+
+// *********************************************************************************************************************
 
 
 const menuLinkArrow = document.querySelector('.menu__link-arrow');
@@ -254,6 +279,7 @@ new Swiper(".career-page__slider .swiper", {
 const careerPageSwiperImg = document.querySelector('.career-page__swiper-img');
 if (careerPageSwiperImg) {
     const careerPageSwiperButtons = document.querySelectorAll('.career-page__swiper-button');
+
     function setButtonHeight() {
         const currentHeight = window.getComputedStyle(careerPageSwiperImg).height;
         careerPageSwiperButtons.forEach((button) => {
@@ -265,9 +291,6 @@ if (careerPageSwiperImg) {
 
     window.addEventListener('resize', setButtonHeight);
 }
-
-
-
 
 
 // *********************************************************************************************************************
