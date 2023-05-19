@@ -122,4 +122,13 @@
     }
   }
 
+  //.employees-page__pagination
+  &__pagination {
+    display: none;
+    margin-top: calc(40 / 320 * 100) * 1vw;
+    @include respond-to('mobile') {
+      display: flex;
+    }
+  }
+
 }
