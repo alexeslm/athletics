@@ -72,15 +72,16 @@ UIkit.sticky('.sidebar__inner', {});
 // *********************************************************************************************************************
 const employeesPageSelect = document.querySelector('.employees-page__select');
 const employeesPageFilter = document.querySelector('.employees-page__filter');
-const employeesPageFilterButton = document.querySelector('.employees-page__filter .button');
+const employeesPageFilterButton = document.querySelector('.employees-page__filter .button-select');
 
-UIkit.dropdown(employeesPageSelect, {
+var test = UIkit.dropdown(employeesPageSelect, {
     toggle: employeesPageFilterButton,
+    offset: -1,
     mode: 'click',
 });
-
+console.log(test);
 UIkit.filter(employeesPageFilter, {
-    target: '.test',
+    target: '.employees-page__contact-list',
 });
 
 UIkit.util.on(employeesPageFilter, 'beforeFilter', function () {

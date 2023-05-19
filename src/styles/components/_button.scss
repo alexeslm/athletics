@@ -21,9 +21,26 @@
     font-size: 1.4rem;
     padding: 1.3rem 2.3rem;
   }
+
   &_transparent {
     background-color: transparent;
     color: var(--color-body);
     border: 1px solid;
+  }
+
+}
+
+.button-select {
+  background-color: transparent;
+  border: 1px solid var(--color-light-gray);
+  font-size: 1.6rem;
+  line-height: 162%;
+  padding: 20px 17px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  &:after {
+    content: url('/src/images/arrow/arrow-drop.svg');
   }
 }

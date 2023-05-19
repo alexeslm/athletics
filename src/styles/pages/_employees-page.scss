@@ -17,4 +17,75 @@
     row-gap: 60px;
   }
 
+  //.employees-page__managers
+  &__managers {
+    margin-top: 80px;
+  }
+
+  //.employees-page__filter
+  &__filter {
+    margin-top: 40px;
+  }
+
+  //.employees-page__option
+  &__option {
+    max-width: 350px;
+    position: relative;
+  }
+
+  //.employees-page__select
+  &__select {
+    @extend %list-reset;
+    width: 100%;
+    padding: 0 20px 20px;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-light-gray);
+    border-top-style: none;
+    left: 0 !important;
+    font-size: 1.6rem;
+    line-height: 162%;
+    li {
+      padding-top: 20px;
+    }
+    a {
+      @extend %link-reset;
+    }
+  }
+
+  //.employees-page__contact-list
+  &__contact-list {
+    @extend %list-reset;
+    max-width: 840px;
+    margin-top: 40px;
+    li:nth-child(even) {
+      background-color: hsla(219, 15%, 62%, 0.05);
+    }
+  }
+
+  .employees-page__contact-item {
+    display: grid;
+    grid-template-columns: 55% 20% 25%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    line-height: 162%;
+    padding: 20px;
+  }
+
+  //.employees-page__contact-name
+  &__contact-name {
+    color: var(--color-dark-info);
+  }
+
+  //.employees-page__contact-tel
+  &__contact-tel {
+    color: var(--color-info);
+  }
+
+  //.employees-page__contact-city
+  &__contact-city {
+    color: #8F99AC;
+    text-align: right;
+  }
+
 }
