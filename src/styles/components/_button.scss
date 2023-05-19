@@ -43,4 +43,9 @@
   &:after {
     content: url('/src/images/arrow/arrow-drop.svg');
   }
+  @include respond-to('mobile') {
+    padding: 3.2vw 5vw;
+    font-size: calc(14 / 320 * 100) * 1vw;
+    line-height: 150%;
+  }
 }

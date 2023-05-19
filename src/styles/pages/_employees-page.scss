@@ -5,7 +5,6 @@
     margin-bottom: 60px;
     @include respond-to('mobile') {
       margin: 10vw 0;
-      font-size: calc(24 /320 * 100) * 1vw;
     }
   }
 
@@ -15,16 +14,32 @@
     grid-template-columns: repeat(4, 23%);
     justify-content: space-between;
     row-gap: 60px;
+    @include respond-to('small') {
+      grid-template-columns: repeat(3, 30%);
+    }
+    @include respond-to('mobile') {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: calc(12 / 320 * 100) * 1vw;
+      row-gap: 10vw;
+    }
   }
 
   //.employees-page__managers
   &__managers {
     margin-top: 80px;
+    @include respond-to('mobile') {
+      margin-top: 10vw;
+    }
   }
 
   //.employees-page__filter
   &__filter {
     margin-top: 40px;
+    font-size: 1.6rem;
+    @include respond-to('mobile') {
+      margin-top: 5vw;
+      font-size: calc(14 / 320 * 100) * 1vw;
+    }
   }
 
   //.employees-page__option
@@ -42,13 +57,16 @@
     border: 1px solid var(--color-light-gray);
     border-top-style: none;
     left: 0 !important;
-    font-size: 1.6rem;
     line-height: 162%;
+    max-width: 100% !important;
     li {
       padding-top: 20px;
     }
     a {
       @extend %link-reset;
+    }
+    @include respond-to('mobile') {
+      padding: 0 5vw 3.2vw;
     }
   }
 
@@ -60,6 +78,12 @@
     li:nth-child(even) {
       background-color: hsla(219, 15%, 62%, 0.05);
     }
+    @include respond-to('small') {
+      max-width: 100%;
+    }
+    @include respond-to('mobile') {
+      margin-top: 5vw;
+    }
   }
 
   .employees-page__contact-item {
@@ -67,9 +91,16 @@
     grid-template-columns: 55% 20% 25%;
     align-items: center;
     justify-content: space-between;
-    font-size: 1.6rem;
     line-height: 162%;
     padding: 20px;
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+      row-gap: 8px;
+    }
+    @include respond-to('mobile') {
+      padding: calc(20 / 320 * 100) * 1vw 3.2vw;
+      line-height: 150%;
+    }
   }
 
   //.employees-page__contact-name
@@ -86,6 +117,9 @@
   &__contact-city {
     color: #8F99AC;
     text-align: right;
+    @include respond-to('small') {
+      text-align: left;
+    }
   }
 
 }

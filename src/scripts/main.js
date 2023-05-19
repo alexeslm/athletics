@@ -56,7 +56,7 @@ UIkit.sticky('.header_main', {
     start: '.banner',
     clsActive: 'header_in',
     animation: 'uk-animation-slide-top',
-    media: 1200
+    //media: 1200
 });
 
 UIkit.sticky('.sidebar', {
@@ -74,12 +74,12 @@ const employeesPageSelect = document.querySelector('.employees-page__select');
 const employeesPageFilter = document.querySelector('.employees-page__filter');
 const employeesPageFilterButton = document.querySelector('.employees-page__filter .button-select');
 
-var test = UIkit.dropdown(employeesPageSelect, {
+UIkit.dropdown(employeesPageSelect, {
     toggle: employeesPageFilterButton,
     offset: -1,
     mode: 'click',
 });
-console.log(test);
+
 UIkit.filter(employeesPageFilter, {
     target: '.employees-page__contact-list',
 });

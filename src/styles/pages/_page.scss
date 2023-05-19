@@ -58,6 +58,9 @@
     line-height: 120%;
     text-transform: uppercase;
     margin: 0;
+    @include respond-to('mobile') {
+      font-size: calc(24 /320 * 100) * 1vw;
+    }
   }
 
   &__back{
