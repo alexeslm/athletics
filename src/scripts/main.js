@@ -1,8 +1,47 @@
 import Swiper, {Navigation, Pagination, Thumbs} from "swiper";
 import 'swiper/scss';
-import 'swiper/scss/pagination'
+import 'swiper/scss/pagination';
+
 import MicroModal from "micromodal";
+
 import UIkit from 'uikit';
+
+import noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
+
+
+/**********************************************************************************************************************/
+const priceRangeSlider = document.getElementById('priceRangeSlider');
+const priceStart = document.getElementById('priceStart');
+const priceEnd = document.getElementById('priceEnd');
+
+noUiSlider.create(priceRangeSlider, {
+    start: [priceStart.value, priceEnd.value],
+    connect: true,
+    range: {
+        'min': parseInt(priceStart.min),
+        'max': parseInt(priceStart.max)
+    }
+});
+
+priceRangeSlider.noUiSlider.on('update', function (values, handle) {
+    const value = values[handle];
+    if (handle) {
+        priceEnd.value = Math.round(value);
+    } else {
+        priceStart.value = Math.round(value);
+    }
+});
+
+priceStart.addEventListener('change', function () {
+    priceRangeSlider.noUiSlider.set([this.value, null,]);
+});
+
+priceEnd.addEventListener('change', function () {
+    priceRangeSlider.noUiSlider.set([null, this.value]);
+});
+/**********************************************************************************************************************/
+
 
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');

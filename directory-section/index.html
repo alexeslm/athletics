@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/src/styles/main.scss">
+  <script type="module" src="/src/scripts/main.js"></script>
+  <title>Фиксаторы суставов</title>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d15451b8-f0c3-4ed8-939d-cfdbcbc978ac&lang=ru_RU"></script>
+</head>
+<body>
+
+<div id="modal-question" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container">
+      <div class="modal__inner">
+        <form class="form" action="#" method="post">
+          <div class="form__container">
+            <h2 class="modal__title">Задать вопрос</h2>
+            <div class="form__item">
+              <label class="form__label" for="name">ФИО</label>
+              <input class="form__input" id="name" type="text" placeholder="Заполните поле">
+            </div>
+            <div class="form__item">
+              <label class="form__label" for="tel">Контактный телефон</label>
+              <input class="form__input" id="tel" type="tel" placeholder="+7 (___) ___-__-__">
+            </div>
+            <div class="form__item">
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" id="email" type="email" placeholder="Заполните поле">
+            </div>
+            <div class="modal__button">
+              <button class="button" type="submit">Отправить</button>
+            </div>
+            <p class="form__agreement">Нажимая на кнопку “Отправить заявку”, <br> вы соглашаетесь с <a
+                class="text-primary" href="#">Политикой конфиденциальности</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="modal__aside">
+        <button class="modal__close" data-micromodal-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header header_page container-fluid">
+  <div class="logo">
+    <a href="/">
+      <img class="logo__image" src="/src/images/logo/Logo.png" alt="#">
+    </a>
+  </div>
+  <div class="header__right">
+    <button class="glass" type="button">
+      <span class="glass__icon"></span>
+    </button>
+    <div class="language">
+      <a class="language__item language__item_active" href="#">rus</a>
+      <a class="language__item" href="#">eng</a>
+    </div>
+    <div class="hamburger">
+      <span class="hamburger__line"></span>
+    </div>
+  </div>
+</header>
+
+<div class="menu">
+  <div class="container menu__container">
+    <a class="menu__back" href="#">Вернуться назад</a>
+    <div class="menu__wrap">
+      <ul class="menu__list menu__list_main">
+        <li>
+          <a class="menu__link" href="#">
+            Компания
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Сотрудники</a></li>
+            <li><a class="menu__sub-link" href="#">Отзывы</a></li>
+            <li><a class="menu__sub-link" href="#">Франшиза</a></li>
+            <li><a class="menu__sub-link" href="#">Вакансии</a></li>
+            <li><a class="menu__sub-link" href="#">Доставка и оплата</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Структура бизнеса
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">
+            Каталог
+            <svg class="menu__link-arrow" width="24" height="14" viewBox="0 0 24 14" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.857422 7H23.1431" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17.1436 13L23.1436 7L17.1436 1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <ul class="menu__sub-list">
+            <li><a class="menu__sub-link" href="#">Фиксаторы суставов</a></li>
+            <li>
+              <a class="menu__sub-link" href="#">Подушки ортопедические</a>
+              <ul class="menu__sub-list menu__sub-list_scroll">
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для здоровья</a></li>
+                <li><a class="menu__sub-link" href="#">Подушки</a></li>
+                <li><a class="menu__sub-link" href="#">Бинты</a></li>
+                <li><a class="menu__sub-link" href="#">Стельки ортопедические</a></li>
+                <li><a class="menu__sub-link" href="#">Силиконовые изделия для ног</a></li>
+                <li><a class="menu__sub-link" href="#">Обувь</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для спорта</a></li>
+                <li><a class="menu__sub-link" href="#">Товары для беременных</a></li>
+              </ul>
+            </li>
+            <li><a class="menu__sub-link" href="#">Компрессорный трикотаж</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на суставы</a></li>
+            <li><a class="menu__sub-link" href="#">Ортезы на позвоночник</a></li>
+            <li><a class="menu__sub-link" href="#">Бандажи</a></li>
+            <li><a class="menu__sub-link" href="#">Средства реабилитации</a></li>
+            <li><a class="menu__sub-link" href="#">Матрасы</a></li>
+            <li><a class="menu__sub-link" href="#">Массажные изделия</a></li>
+          </ul>
+        </li>
+        <li><a class="menu__link" href="#">Бренды</a></li>
+        <li><a class="menu__link" href="#">Где купить</a></li>
+        <li><a class="menu__link" href="#">Сотрудничество</a></li>
+        <li><a class="menu__link" href="#">Статьи</a></li>
+        <li><a class="menu__link" href="#">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="search">
+  <div class="container">
+    <div class="search__wrap">
+      <form class="search__form" action="#" method="get">
+        <div class="search__inner">
+          <label class="search__label" for="search">
+            <img class="search__icon" src="/src/images/search/glass.svg" alt="#">
+          </label>
+          <input class="search__input" type="search" name="search" id="search">
+        </div>
+      </form>
+      <div class="search__result">
+        <ul class="search__list">
+          <li class="search__item">
+            <a class="search__link" href="#">Фиксаторы суставов</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Подушки ортопедические</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Новый массажер для ног «Нега» - простота и доступность</a>
+            <a class="search__link" href="#">Статьи</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Ортезы на суставы</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Лечение заболеваний и повреждений позвоночника</a>
+            <a class="search__link" href="#">Статьи</a>
+          </li>
+          <li class="search__item">
+            <a class="search__link" href="#">Бандажи</a>
+            <a class="search__link" href="#">Каталог</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<aside class="sidebar sidebar__inner">
+  <ul class="sidebar__list">
+    <li><a class="sidebar__link" href="#">Главная</a></li>
+    <li><a class="sidebar__link" href="#">Компания</a></li>
+    <li><a class="sidebar__link" href="#">Структура бизнеса</a></li>
+    <li><a class="sidebar__link" href="#">Сотрудничество</a></li>
+    <li><a class="sidebar__link sidebar__link_active" href="#">Каталог</a></li>
+    <li><a class="sidebar__link" href="#">Бренды</a></li>
+    <li><a class="sidebar__link" href="#">Где купить</a></li>
+    <li><a class="sidebar__link" href="#">Статьи</a></li>
+    <li><a class="sidebar__link" href="#">Новости</a></li>
+    <li><a class="sidebar__link" href="#">Контакты</a></li>
+  </ul>
+</aside>
+
+<main class="brand-detail">
+  <div class="page">
+    <div class="container">
+      <a class="page__back" href="#">
+        <svg class="page__back-icon" width="24" height="14" viewBox="0 0 24 14" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.1431 7H0.857352" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.85742 13L0.857422 7L6.85742 1" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+        Каталог
+      </a>
+      <div class="page__inner">
+
+        <div class="page__top">
+          <h1 class="page__title page__title_left">Фиксаторы суставов</h1>
+        </div>
+
+        <div class="filter">
+          <form class="filter__form" action="#" method="post">
+            <div class="filter__item">
+              <label for="stock">
+                <span>В наличии</span>
+                <input type="checkbox" name="stock" id="stock" checked>
+              </label>
+            </div>
+            <div class="filter__item">
+              <button class="filter__drop-button" type="button">Категория</button>
+              <ul class="filter__drop">
+                <li>
+                  <label for="566">
+                    <input type="checkbox" name="category" id="566">
+                    <span>Фиксаторы колена FOSTA/КОМФ-ОРТ</span>
+                  </label>
+                </li>
+                <li>
+                  <label for="912">
+                    <input type="checkbox" name="category" id="912">
+                    <span>Фиксаторы голени и бедра FOSTA</span>
+                  </label>
+                </li>
+                <li>
+                  <label for="621">
+                    <input type="checkbox" name="category" id="621">
+                    <span>Фиксаторы голеностопа FOSTA/КОМФ-ОРТ</span>
+                  </label>
+                </li>
+                <li>
+                  <label for="646">
+                    <input type="checkbox" name="category" id="646">
+                    <span>Фиксаторы локтя FOSTA/КОМФ-ОРТ</span>
+                  </label>
+                </li>
+                <li>
+                  <label for="459">
+                    <input type="checkbox" name="category" id="459">
+                    <span>Фиксаторы плеча и руки FOSTA/КОМФ-ОРТ</span>
+                  </label>
+                </li>
+                <li>
+                  <label for="397">
+                    <input type="checkbox" name="category" id="397">
+                    <span>Фиксаторы запястья и кисти FOSTA/КОМФ-ОРТ</span>
+                  </label>
+                </li>
+                <li>
+                  <label for="484">
+                    <input type="checkbox" name="category" id="484">
+                    <span>Согревающие изделия (с турмалином) FOSTA</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="filter__item">
+              <button class="filter__drop-button" type="button">Бренд</button>
+              <ul class="filter__drop">
+                <li>
+                  <label for="540">
+                    <input type="checkbox" name="brand" id="540">
+                    <span>FOSTA/КОМФ-ОРТ</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="filter__item">
+              <button class="filter__drop-button" type="button"><span>Цена, <abbr title="Рубль">₽</abbr> </span>
+              </button>
+              <div class="filter__drop">
+                <div class="filter__price-wrap">
+                  <input type="number" name="priceStart" id="priceStart" value="0" min="0" max="100">
+                  <input type="number" name="priceEnd" id="priceEnd" value="100" min="0" max="100">
+                </div>
+                <div id="priceRangeSlider"></div>
+              </div>
+            </div>
+            <button type="submit">Показать</button>
+            <button type="reset">Сбросить всё</button>
+          </form>
+        </div>
+
+        <section class="card-grid">
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="card__item" href="#">
+              <figure class="card__image">
+                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
+                     alt="#">
+                <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
+              </figure>
+              <span class="card__code">Артикул 23402348</span>
+              <div class="card__footer">
+                <span class="card__price">4000 <abbr title="Рубль">₽</abbr></span>
+                <span class="card__more">Подробнее</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <div class="pagination">
+          <ul class="pagination__list">
+            <li class="pagination__item pagination__item_active">
+              <a class="pagination__link" href="#">1</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">...</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">10</a>
+            </li>
+          </ul>
+          <a class="pagination__arrow" href="#">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 12L23 12" stroke="#262F40" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              <path d="M17 18L23 12L17 6" stroke="#262F40" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

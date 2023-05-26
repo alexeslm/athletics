@@ -17,6 +17,7 @@ export default defineConfig({
                 career: resolve(__dirname, 'career/index.html'),
                 cooperation: resolve(__dirname, 'cooperation/index.html'),
                 employees: resolve(__dirname, 'employees/index.html'),
+                directorySection: resolve(__dirname, 'directory-section/index.html'),
             },
         },
     },
