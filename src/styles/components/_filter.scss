@@ -1,0 +1,7 @@
+.filter {
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    column-gap: 25px;
+  }
+}

@@ -236,7 +236,10 @@
             <div class="filter__item">
               <label for="stock">
                 <span>В наличии</span>
-                <input type="checkbox" name="stock" id="stock" checked>
+                <div class="switcher">
+                  <input type="checkbox" name="stock" id="stock" checked>
+                  <span class="switcher__slider"></span>
+                </div>
               </label>
             </div>
             <div class="filter__item">
@@ -308,7 +311,6 @@
                 <div id="priceRangeSlider"></div>
               </div>
             </div>
-            <button type="submit">Показать</button>
             <button type="reset">Сбросить всё</button>
           </form>
         </div>
@@ -317,8 +319,19 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image3.jpg" alt="#">
+                    </div>
+                  </div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -331,8 +344,16 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                  </div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>

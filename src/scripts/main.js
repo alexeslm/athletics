@@ -130,9 +130,19 @@ UIkit.util.on(employeesPageFilter, 'beforeFilter', function () {
 UIkit.util.on(employeesPageFilter, 'afterFilter', function () {
     employeesPageFilterButton.textContent = employeesPageSelect.querySelector('.uk-active a').textContent;
 });
-
-
 // *********************************************************************************************************************
+
+
+/**********************************************************************************************************************/
+const filterDrop = document.querySelectorAll('.filter__drop');
+
+filterDrop.forEach( filter => {
+    UIkit.dropdown(filter, {
+        toggle: filter.previousElementSibling,
+        mode: 'click'
+    })
+})
+/**********************************************************************************************************************/
 
 
 const menuLinkArrow = document.querySelector('.menu__link-arrow');
@@ -315,6 +325,43 @@ new Swiper(".career-page__slider .swiper", {
         type: 'bullets',
     },
 });
+
+/**********************************************************************************************************************/
+const setRangeList = (count, width = 256) => {
+    let rangeList = [];
+    const percentRange = Math.floor(width / count);
+    for (let i = 0; i < count; i++) {
+        const rangeStart = i * percentRange;
+        const rangeEnd = rangeStart + percentRange;
+        rangeList.push({
+            start: rangeStart,
+            end: rangeEnd
+        });
+    }
+    return rangeList;
+}
+
+const cardSwiperList = document.querySelectorAll('.card__swiper');
+cardSwiperList.forEach(swiper => {
+    const currentSwiper = new Swiper(swiper, {});
+    const countOfSldes = currentSwiper.slides.length;
+    const rangeList = setRangeList(countOfSldes, swiper.offsetWidth);
+    const swiperOffsetX = swiper.getBoundingClientRect().left;
+
+    swiper.addEventListener('mousemove', evt => {
+        const mouseOffset = Math.abs(Math.floor(evt.clientX - swiperOffsetX));
+        console.log(mouseOffset);
+        let indexOfSlide = 0;
+        rangeList.forEach( (range, index) => {
+            if (mouseOffset > range.start && mouseOffset <= range.end) {
+                indexOfSlide = index;
+            }
+        } );
+        currentSwiper.slideTo(indexOfSlide);
+    })
+});
+/**********************************************************************************************************************/
+
 
 const careerPageSwiperImg = document.querySelector('.career-page__swiper-img');
 if (careerPageSwiperImg) {
