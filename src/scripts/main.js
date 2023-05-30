@@ -132,24 +132,38 @@ UIkit.util.on(employeesPageFilter, 'afterFilter', function () {
 
 /**********************************************************************************************************************/
 const filterDrop = document.querySelectorAll('.filter__drop');
+const normalMediaQuery = window.matchMedia('(max-width: 1199px)');
 
-filterDrop.forEach( filter => {
-    UIkit.dropdown(filter, {
-        toggle: filter.previousElementSibling,
-        offset: 40,
-        mode: 'click',
-        shift: false,
-        flip: false,
-        pos: 'bottom-center'
+if (!normalMediaQuery.matches) {
+    filterDrop.forEach( filter => {
+        UIkit.dropdown(filter, {
+            toggle: filter.previousElementSibling,
+            offset: 40,
+            mode: 'click',
+            shift: false,
+            flip: false,
+            pos: 'bottom-center',
+        });
+        UIkit.util.on(filter, 'beforeshow', function () {
+            filter.previousElementSibling.classList.add('filter__drop-button_active')
+        });
+        UIkit.util.on(filter, 'beforehide', function () {
+            filter.previousElementSibling.classList.remove('filter__drop-button_active')
+        });
     })
+} else {
+    filterDrop.forEach(filter => {
+        UIkit.dropdown(filter).$destroy();
+        filter.classList.remove('uk-drop', 'uk-dropdown')
+    });
 
-    UIkit.util.on(filter, 'beforeshow', function () {
-        filter.previousElementSibling.classList.add('filter__drop-button_active')
-    });
-    UIkit.util.on(filter, 'beforehide', function () {
-        filter.previousElementSibling.classList.remove('filter__drop-button_active')
-    });
-})
+    UIkit.accordion('.filter__form', {
+        toggle: '.filter__drop-button',
+        targets: '.filter__item_mobile',
+        content: '.filter__drop',
+        multiple: true,
+    })
+}
 
 const filterResetList = document.querySelectorAll('.filter__drop-reset');
 filterResetList.forEach(reset => {

@@ -6,11 +6,18 @@
     column-gap: 25px;
     align-items: center;
     font-size: 1.9rem;
+    @include respond-to('normal') {
+      grid-template-columns: 1fr;
+    }
   }
 
   // .filter__item
   &__item {
-
+    @include respond-to('normal') {
+      &.uk-open .filter__drop {
+        display: block;
+      }
+    }
   }
 
   // .filter__switcher
@@ -71,6 +78,9 @@
       display: flex;
       flex-direction: column;
       row-gap: 16px;
+    }
+    @include respond-to('normal') {
+      display: none;
     }
   }
 
