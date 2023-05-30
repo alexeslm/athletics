@@ -1,0 +1,32 @@
+#priceRangeSlider {
+  height: 3px;
+  border: none;
+  background-color: var(--color-light-gray);
+  margin-top: 5px;
+}
+
+.noUi-handle {
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 50%;
+  top: -5px !important;
+  right: -12px !important;
+  border: 6px solid var(--color-primary);
+  cursor: pointer;
+}
+
+.noUi-handle:after, .noUi-handle:before {
+  display: none !important;
+}
+
+.noUi-connect {
+  background-color: var(--color-primary);
+}
+
+.noUi-handle-lower {
+  //left: -1px;
+}
+
+.noUi-handle-upper {
+  right: -1px !important;
+}

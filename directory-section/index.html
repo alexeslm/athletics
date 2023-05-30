@@ -213,7 +213,7 @@
   </ul>
 </aside>
 
-<main class="brand-detail">
+<main class="directory-section">
   <div class="page">
     <div class="container">
       <a class="page__back" href="#">
@@ -231,10 +231,10 @@
           <h1 class="page__title page__title_left">Фиксаторы суставов</h1>
         </div>
 
-        <div class="filter">
+        <div class="filter directory-section__filter">
           <form class="filter__form" action="#" method="post">
             <div class="filter__item">
-              <label for="stock">
+              <label class="filter__switcher" for="stock">
                 <span>В наличии</span>
                 <div class="switcher">
                   <input type="checkbox" name="stock" id="stock" checked>
@@ -244,61 +244,73 @@
             </div>
             <div class="filter__item">
               <button class="filter__drop-button" type="button">Категория</button>
-              <ul class="filter__drop">
-                <li>
-                  <label for="566">
-                    <input type="checkbox" name="category" id="566">
-                    <span>Фиксаторы колена FOSTA/КОМФ-ОРТ</span>
-                  </label>
-                </li>
-                <li>
-                  <label for="912">
-                    <input type="checkbox" name="category" id="912">
-                    <span>Фиксаторы голени и бедра FOSTA</span>
-                  </label>
-                </li>
-                <li>
-                  <label for="621">
-                    <input type="checkbox" name="category" id="621">
-                    <span>Фиксаторы голеностопа FOSTA/КОМФ-ОРТ</span>
-                  </label>
-                </li>
-                <li>
-                  <label for="646">
-                    <input type="checkbox" name="category" id="646">
-                    <span>Фиксаторы локтя FOSTA/КОМФ-ОРТ</span>
-                  </label>
-                </li>
-                <li>
-                  <label for="459">
-                    <input type="checkbox" name="category" id="459">
-                    <span>Фиксаторы плеча и руки FOSTA/КОМФ-ОРТ</span>
-                  </label>
-                </li>
-                <li>
-                  <label for="397">
-                    <input type="checkbox" name="category" id="397">
-                    <span>Фиксаторы запястья и кисти FOSTA/КОМФ-ОРТ</span>
-                  </label>
-                </li>
-                <li>
-                  <label for="484">
-                    <input type="checkbox" name="category" id="484">
-                    <span>Согревающие изделия (с турмалином) FOSTA</span>
-                  </label>
-                </li>
-              </ul>
+              <div class="filter__drop">
+                <ul class="filter__drop-list">
+                  <li>
+                    <label for="566">
+                      <input class="checkbox" type="checkbox" name="category" id="566">
+                      <span class="checkbox__text">Фиксаторы колена FOSTA/КОМФ-ОРТ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="912">
+                      <input class="checkbox" type="checkbox" name="category" id="912">
+                      <span class="checkbox__text">Фиксаторы голени и бедра FOSTA</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="621">
+                      <input class="checkbox" type="checkbox" name="category" id="621">
+                      <span class="checkbox__text">Фиксаторы голеностопа FOSTA/КОМФ-ОРТ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="646">
+                      <input class="checkbox" type="checkbox" name="category" id="646">
+                      <span class="checkbox__text">Фиксаторы локтя FOSTA/КОМФ-ОРТ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="459">
+                      <input class="checkbox" type="checkbox" name="category" id="459">
+                      <span class="checkbox__text">Фиксаторы плеча и руки FOSTA/КОМФ-ОРТ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="397">
+                      <input class="checkbox" type="checkbox" name="category" id="397">
+                      <span class="checkbox__text">Фиксаторы запястья и кисти FOSTA/КОМФ-ОРТ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="484">
+                      <input class="checkbox" type="checkbox" name="category" id="484">
+                      <span class="checkbox__text">Согревающие изделия (с турмалином) FOSTA</span>
+                    </label>
+                  </li>
+                </ul>
+                <div class="filter__drop-buttons">
+                  <button class="filter__button filter__drop-reset">Сбросить</button>
+                  <button class="filter__button filter__drop-ready">Готово</button>
+                </div>
+              </div>
             </div>
             <div class="filter__item">
               <button class="filter__drop-button" type="button">Бренд</button>
-              <ul class="filter__drop">
-                <li>
-                  <label for="540">
-                    <input type="checkbox" name="brand" id="540">
-                    <span>FOSTA/КОМФ-ОРТ</span>
-                  </label>
-                </li>
-              </ul>
+              <div class="filter__drop">
+                <ul class="filter__drop-list">
+                  <li>
+                    <label for="540">
+                      <input class="checkbox" type="checkbox" name="brand" id="540">
+                      <span class="checkbox__text">FOSTA/КОМФ-ОРТ</span>
+                    </label>
+                  </li>
+                </ul>
+                <div class="filter__drop-buttons">
+                  <button class="filter__button filter__drop-reset">Сбросить</button>
+                  <button class="filter__button filter__drop-ready">Готово</button>
+                </div>
+              </div>
             </div>
             <div class="filter__item">
               <button class="filter__drop-button" type="button"><span>Цена, <abbr title="Рубль">₽</abbr> </span>
@@ -309,13 +321,17 @@
                   <input type="number" name="priceEnd" id="priceEnd" value="100" min="0" max="100">
                 </div>
                 <div id="priceRangeSlider"></div>
+                <div class="filter__drop-buttons">
+                  <button class="filter__button filter__drop-reset">Сбросить</button>
+                  <button class="filter__button filter__drop-ready">Готово</button>
+                </div>
               </div>
             </div>
-            <button type="reset">Сбросить всё</button>
+            <button class="filter__button" type="reset">Сбросить всё</button>
           </form>
         </div>
 
-        <section class="card-grid">
+        <section class="card-grid directory-section__grid">
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
@@ -331,6 +347,7 @@
                       <img class="card__thumbnail" src="/src/images/card/product-image3.jpg" alt="#">
                     </div>
                   </div>
+                  <div class="swiper-pagination"></div>
                 </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
@@ -353,6 +370,7 @@
                       <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
                     </div>
                   </div>
+                  <div class="swiper-pagination"></div>
                 </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
@@ -366,8 +384,20 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image3.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -380,8 +410,17 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -394,8 +433,20 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image3.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -408,8 +459,17 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -422,8 +482,20 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image3.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -436,8 +508,17 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>
@@ -450,8 +531,20 @@
           <div class="card">
             <a class="card__item" href="#">
               <figure class="card__image">
-                <img class="card__thumbnail" src="/src/images/card/product-image1.jpg"
-                     alt="#">
+                <div class="swiper card__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image1.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image2.jpg" alt="#">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="card__thumbnail" src="/src/images/card/product-image3.jpg" alt="#">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
                 <figcaption class="card__name">Бандаж для локтевого сустава F-114</figcaption>
               </figure>
               <span class="card__code">Артикул 23402348</span>

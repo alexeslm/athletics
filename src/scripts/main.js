@@ -7,8 +7,6 @@ import MicroModal from "micromodal";
 import UIkit from 'uikit';
 
 import noUiSlider from 'nouislider';
-import 'nouislider/dist/nouislider.css';
-
 
 /**********************************************************************************************************************/
 const priceRangeSlider = document.getElementById('priceRangeSlider');
@@ -95,7 +93,6 @@ UIkit.sticky('.header_main', {
     start: '.banner',
     clsActive: 'header_in',
     animation: 'uk-animation-slide-top',
-    //media: 1200
 });
 
 UIkit.sticky('.sidebar', {
@@ -139,7 +136,33 @@ const filterDrop = document.querySelectorAll('.filter__drop');
 filterDrop.forEach( filter => {
     UIkit.dropdown(filter, {
         toggle: filter.previousElementSibling,
-        mode: 'click'
+        offset: 40,
+        mode: 'click',
+        shift: false,
+        flip: false,
+        pos: 'bottom-center'
+    })
+
+    UIkit.util.on(filter, 'beforeshow', function () {
+        filter.previousElementSibling.classList.add('filter__drop-button_active')
+    });
+    UIkit.util.on(filter, 'beforehide', function () {
+        filter.previousElementSibling.classList.remove('filter__drop-button_active')
+    });
+})
+
+const filterResetList = document.querySelectorAll('.filter__drop-reset');
+filterResetList.forEach(reset => {
+    reset.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        const inputsList = reset.closest('.filter__drop').querySelectorAll('input');
+        inputsList.forEach(input => {
+            if (input.type === 'checkbox') {
+                input.checked = false;
+            } else if (input.type === 'number') {
+                priceRangeSlider.noUiSlider.reset();
+            }
+        })
     })
 })
 /**********************************************************************************************************************/
@@ -343,14 +366,19 @@ const setRangeList = (count, width = 256) => {
 
 const cardSwiperList = document.querySelectorAll('.card__swiper');
 cardSwiperList.forEach(swiper => {
-    const currentSwiper = new Swiper(swiper, {});
+    const currentSwiper = new Swiper(swiper, {
+        modules: [Pagination],
+        pagination: {
+            el: swiper.querySelector('.swiper-pagination'),
+            type: 'bullets',
+        },
+    });
     const countOfSldes = currentSwiper.slides.length;
     const rangeList = setRangeList(countOfSldes, swiper.offsetWidth);
     const swiperOffsetX = swiper.getBoundingClientRect().left;
 
     swiper.addEventListener('mousemove', evt => {
         const mouseOffset = Math.abs(Math.floor(evt.clientX - swiperOffsetX));
-        console.log(mouseOffset);
         let indexOfSlide = 0;
         rangeList.forEach( (range, index) => {
             if (mouseOffset > range.start && mouseOffset <= range.end) {

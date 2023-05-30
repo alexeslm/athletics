@@ -88,5 +88,15 @@
 
   &__swiper {
     width: 256px;
+    .swiper-pagination {
+      display: none;
+    }
+    @media (hover: hover) {
+      &:hover {
+        .swiper-pagination {
+          display: block;
+        }
+      }
+    }
   }
 }

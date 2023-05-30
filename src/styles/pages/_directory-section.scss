@@ -1,0 +1,11 @@
+.directory-section {
+  &__filter {
+    margin-top: 6rem;
+  }
+  &__grid {
+    margin: 50px 0;
+    @include respond-to('mobile') {
+      margin: 10vw 0;
+    }
+  }
+}
