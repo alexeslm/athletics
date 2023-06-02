@@ -231,105 +231,225 @@
           <h1 class="page__title page__title_left">Фиксаторы суставов</h1>
         </div>
 
-        <div class="filter directory-section__filter">
-          <form class="filter__form" action="#" method="post">
-            <div class="filter__item">
-              <label class="filter__switcher" for="stock">
-                <span>В наличии</span>
-                <div class="switcher">
-                  <input type="checkbox" name="stock" id="stock" checked>
-                  <span class="switcher__slider"></span>
-                </div>
-              </label>
-            </div>
-            <div class="filter__item filter__item_mobile">
-              <button class="filter__drop-button" type="button">Категория</button>
-              <div class="filter__drop">
-                <ul class="filter__drop-list">
-                  <li>
-                    <label for="566">
-                      <input class="checkbox" type="checkbox" name="category" id="566">
-                      <span class="checkbox__text">Фиксаторы колена FOSTA/КОМФ-ОРТ</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="912">
-                      <input class="checkbox" type="checkbox" name="category" id="912">
-                      <span class="checkbox__text">Фиксаторы голени и бедра FOSTA</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="621">
-                      <input class="checkbox" type="checkbox" name="category" id="621">
-                      <span class="checkbox__text">Фиксаторы голеностопа FOSTA/КОМФ-ОРТ</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="646">
-                      <input class="checkbox" type="checkbox" name="category" id="646">
-                      <span class="checkbox__text">Фиксаторы локтя FOSTA/КОМФ-ОРТ</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="459">
-                      <input class="checkbox" type="checkbox" name="category" id="459">
-                      <span class="checkbox__text">Фиксаторы плеча и руки FOSTA/КОМФ-ОРТ</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="397">
-                      <input class="checkbox" type="checkbox" name="category" id="397">
-                      <span class="checkbox__text">Фиксаторы запястья и кисти FOSTA/КОМФ-ОРТ</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="484">
-                      <input class="checkbox" type="checkbox" name="category" id="484">
-                      <span class="checkbox__text">Согревающие изделия (с турмалином) FOSTA</span>
-                    </label>
-                  </li>
-                </ul>
-                <div class="filter__drop-buttons">
-                  <button class="filter__button filter__drop-reset">Сбросить</button>
-                  <button class="filter__button filter__drop-ready">Готово</button>
-                </div>
-              </div>
-            </div>
-            <div class="filter__item filter__item_mobile">
-              <button class="filter__drop-button" type="button">Бренд</button>
-              <div class="filter__drop">
-                <ul class="filter__drop-list">
-                  <li>
-                    <label for="540">
-                      <input class="checkbox" type="checkbox" name="brand" id="540">
-                      <span class="checkbox__text">FOSTA/КОМФ-ОРТ</span>
-                    </label>
-                  </li>
-                </ul>
-                <div class="filter__drop-buttons">
-                  <button class="filter__button filter__drop-reset">Сбросить</button>
-                  <button class="filter__button filter__drop-ready">Готово</button>
-                </div>
-              </div>
-            </div>
-            <div class="filter__item filter__item_mobile">
-              <button class="filter__drop-button" type="button"><span>Цена, <abbr title="Рубль">₽</abbr> </span>
-              </button>
-              <div class="filter__drop">
-                <div class="filter__price-wrap">
-                  <input type="number" name="priceStart" id="priceStart" value="0" min="0" max="100">
-                  <input type="number" name="priceEnd" id="priceEnd" value="100" min="0" max="100">
-                </div>
-                <div id="priceRangeSlider"></div>
-                <div class="filter__drop-buttons">
-                  <button class="filter__button filter__drop-reset">Сбросить</button>
-                  <button class="filter__button filter__drop-ready">Готово</button>
-                </div>
-              </div>
-            </div>
-            <button class="filter__button" type="reset">Сбросить всё</button>
-          </form>
+        <div class="directory-section__mobile">
+          <button class="directory-section__mobile-toggle" data-micromodal-trigger="modal-filter" type="button">Все фильтры</button>
         </div>
+
+        <div class="modal" id="modal-filter">
+          <div class="modal__overlay">
+            <div class="filter directory-section__filter">
+              <a class="filter__back-link" href="javascript:;" data-micromodal-close="modal-filter">
+                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.4282 5H0.571079" stroke="#828282" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.5708 9L0.570801 5L4.5708 1" stroke="#828282" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Вернуться назад
+              </a>
+              <span class="filter__mobile-title">Фильтры</span>
+              <form class="filter__form" action="#" method="post">
+                <div class="filter__item">
+                  <label class="filter__switcher" for="stock">
+                    <span>В наличии</span>
+                    <div class="switcher">
+                      <input type="checkbox" name="stock" id="stock" checked>
+                      <span class="switcher__slider"></span>
+                    </div>
+                  </label>
+                </div>
+                <div class="filter__item filter__item_mobile">
+                  <button class="filter__drop-button" type="button">Категория</button>
+                  <div class="filter__drop">
+                    <ul class="filter__drop-list">
+                      <li>
+                        <label for="566">
+                          <input class="checkbox" type="checkbox" name="category" id="566">
+                          <span class="checkbox__text">Фиксаторы колена FOSTA/КОМФ-ОРТ</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label for="912">
+                          <input class="checkbox" type="checkbox" name="category" id="912">
+                          <span class="checkbox__text">Фиксаторы голени и бедра FOSTA</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label for="621">
+                          <input class="checkbox" type="checkbox" name="category" id="621">
+                          <span class="checkbox__text">Фиксаторы голеностопа FOSTA/КОМФ-ОРТ</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label for="646">
+                          <input class="checkbox" type="checkbox" name="category" id="646">
+                          <span class="checkbox__text">Фиксаторы локтя FOSTA/КОМФ-ОРТ</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label for="459">
+                          <input class="checkbox" type="checkbox" name="category" id="459">
+                          <span class="checkbox__text">Фиксаторы плеча и руки FOSTA/КОМФ-ОРТ</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label for="397">
+                          <input class="checkbox" type="checkbox" name="category" id="397">
+                          <span class="checkbox__text">Фиксаторы запястья и кисти FOSTA/КОМФ-ОРТ</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label for="484">
+                          <input class="checkbox" type="checkbox" name="category" id="484">
+                          <span class="checkbox__text">Согревающие изделия (с турмалином) FOSTA</span>
+                        </label>
+                      </li>
+                    </ul>
+                    <div class="filter__drop-buttons">
+                      <button class="filter__button filter__drop-reset">Сбросить</button>
+                      <button class="filter__button filter__drop-ready">Готово</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter__item filter__item_mobile">
+                  <button class="filter__drop-button" type="button">Бренд</button>
+                  <div class="filter__drop">
+                    <ul class="filter__drop-list">
+                      <li>
+                        <label for="540">
+                          <input class="checkbox" type="checkbox" name="brand" id="540">
+                          <span class="checkbox__text">FOSTA/КОМФ-ОРТ</span>
+                        </label>
+                      </li>
+                    </ul>
+                    <div class="filter__drop-buttons">
+                      <button class="filter__button filter__drop-reset">Сбросить</button>
+                      <button class="filter__button filter__drop-ready">Готово</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter__item filter__item_mobile">
+                  <button class="filter__drop-button" type="button"><span>Цена, <abbr title="Рубль">₽</abbr> </span>
+                  </button>
+                  <div class="filter__drop">
+                    <div class="filter__price-wrap">
+                      <input type="number" name="priceStart" id="priceStart" value="0" min="0" max="100">
+                      <input type="number" name="priceEnd" id="priceEnd" value="100" min="0" max="100">
+                    </div>
+                    <div id="priceRangeSlider"></div>
+                    <div class="filter__drop-buttons">
+                      <button class="filter__button filter__drop-reset">Сбросить</button>
+                      <button class="filter__button filter__drop-ready">Готово</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter__button-wrap">
+                  <button class="filter__button filter__button_primary" type="submit">Показать</button>
+                  <button class="filter__button" type="reset">Сбросить всё</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+        <!--        <div class="filter directory-section__filter">
+                  <form class="filter__form" action="#" method="post">
+                    <div class="filter__item">
+                      <label class="filter__switcher" for="stock">
+                        <span>В наличии</span>
+                        <div class="switcher">
+                          <input type="checkbox" name="stock" id="stock" checked>
+                          <span class="switcher__slider"></span>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="filter__item filter__item_mobile">
+                      <button class="filter__drop-button" type="button">Категория</button>
+                      <div class="filter__drop">
+                        <ul class="filter__drop-list">
+                          <li>
+                            <label for="566">
+                              <input class="checkbox" type="checkbox" name="category" id="566">
+                              <span class="checkbox__text">Фиксаторы колена FOSTA/КОМФ-ОРТ</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label for="912">
+                              <input class="checkbox" type="checkbox" name="category" id="912">
+                              <span class="checkbox__text">Фиксаторы голени и бедра FOSTA</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label for="621">
+                              <input class="checkbox" type="checkbox" name="category" id="621">
+                              <span class="checkbox__text">Фиксаторы голеностопа FOSTA/КОМФ-ОРТ</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label for="646">
+                              <input class="checkbox" type="checkbox" name="category" id="646">
+                              <span class="checkbox__text">Фиксаторы локтя FOSTA/КОМФ-ОРТ</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label for="459">
+                              <input class="checkbox" type="checkbox" name="category" id="459">
+                              <span class="checkbox__text">Фиксаторы плеча и руки FOSTA/КОМФ-ОРТ</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label for="397">
+                              <input class="checkbox" type="checkbox" name="category" id="397">
+                              <span class="checkbox__text">Фиксаторы запястья и кисти FOSTA/КОМФ-ОРТ</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label for="484">
+                              <input class="checkbox" type="checkbox" name="category" id="484">
+                              <span class="checkbox__text">Согревающие изделия (с турмалином) FOSTA</span>
+                            </label>
+                          </li>
+                        </ul>
+                        <div class="filter__drop-buttons">
+                          <button class="filter__button filter__drop-reset">Сбросить</button>
+                          <button class="filter__button filter__drop-ready">Готово</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__item filter__item_mobile">
+                      <button class="filter__drop-button" type="button">Бренд</button>
+                      <div class="filter__drop">
+                        <ul class="filter__drop-list">
+                          <li>
+                            <label for="540">
+                              <input class="checkbox" type="checkbox" name="brand" id="540">
+                              <span class="checkbox__text">FOSTA/КОМФ-ОРТ</span>
+                            </label>
+                          </li>
+                        </ul>
+                        <div class="filter__drop-buttons">
+                          <button class="filter__button filter__drop-reset">Сбросить</button>
+                          <button class="filter__button filter__drop-ready">Готово</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__item filter__item_mobile">
+                      <button class="filter__drop-button" type="button"><span>Цена, <abbr title="Рубль">₽</abbr> </span>
+                      </button>
+                      <div class="filter__drop">
+                        <div class="filter__price-wrap">
+                          <input type="number" name="priceStart" id="priceStart" value="0" min="0" max="100">
+                          <input type="number" name="priceEnd" id="priceEnd" value="100" min="0" max="100">
+                        </div>
+                        <div id="priceRangeSlider"></div>
+                        <div class="filter__drop-buttons">
+                          <button class="filter__button filter__drop-reset">Сбросить</button>
+                          <button class="filter__button filter__drop-ready">Готово</button>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="filter__button" type="reset">Сбросить всё</button>
+                  </form>
+                </div>-->
 
         <section class="card-grid directory-section__grid">
           <div class="card">

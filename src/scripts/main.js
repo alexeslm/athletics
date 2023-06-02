@@ -13,31 +13,34 @@ const priceRangeSlider = document.getElementById('priceRangeSlider');
 const priceStart = document.getElementById('priceStart');
 const priceEnd = document.getElementById('priceEnd');
 
-noUiSlider.create(priceRangeSlider, {
-    start: [priceStart.value, priceEnd.value],
-    connect: true,
-    range: {
-        'min': parseInt(priceStart.min),
-        'max': parseInt(priceStart.max)
-    }
-});
+if (priceRangeSlider) {
+    noUiSlider.create(priceRangeSlider, {
+        start: [priceStart.value, priceEnd.value],
+        connect: true,
+        range: {
+            'min': parseInt(priceStart.min),
+            'max': parseInt(priceStart.max)
+        }
+    });
 
-priceRangeSlider.noUiSlider.on('update', function (values, handle) {
-    const value = values[handle];
-    if (handle) {
-        priceEnd.value = Math.round(value);
-    } else {
-        priceStart.value = Math.round(value);
-    }
-});
+    priceRangeSlider.noUiSlider.on('update', function (values, handle) {
+        const value = values[handle];
+        if (handle) {
+            priceEnd.value = Math.round(value);
+        } else {
+            priceStart.value = Math.round(value);
+        }
+    });
 
-priceStart.addEventListener('change', function () {
-    priceRangeSlider.noUiSlider.set([this.value, null,]);
-});
+    priceStart.addEventListener('change', function () {
+        priceRangeSlider.noUiSlider.set([this.value, null,]);
+    });
 
-priceEnd.addEventListener('change', function () {
-    priceRangeSlider.noUiSlider.set([null, this.value]);
-});
+    priceEnd.addEventListener('change', function () {
+        priceRangeSlider.noUiSlider.set([null, this.value]);
+    });
+}
+
 /**********************************************************************************************************************/
 
 
@@ -134,35 +137,57 @@ UIkit.util.on(employeesPageFilter, 'afterFilter', function () {
 const filterDrop = document.querySelectorAll('.filter__drop');
 const normalMediaQuery = window.matchMedia('(max-width: 1199px)');
 
-if (!normalMediaQuery.matches) {
-    filterDrop.forEach( filter => {
-        UIkit.dropdown(filter, {
-            toggle: filter.previousElementSibling,
-            offset: 40,
-            mode: 'click',
-            shift: false,
-            flip: false,
-            pos: 'bottom-center',
-        });
-        UIkit.util.on(filter, 'beforeshow', function () {
-            filter.previousElementSibling.classList.add('filter__drop-button_active')
-        });
-        UIkit.util.on(filter, 'beforehide', function () {
-            filter.previousElementSibling.classList.remove('filter__drop-button_active')
-        });
+const filterDropButtonsList = document.querySelectorAll('.filter__drop-button');
+filterDropButtonsList.forEach( button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('filter__drop-button_active');
     })
-} else {
-    filterDrop.forEach(filter => {
-        UIkit.dropdown(filter).$destroy();
-        filter.classList.remove('uk-drop', 'uk-dropdown')
-    });
+});
 
-    UIkit.accordion('.filter__form', {
-        toggle: '.filter__drop-button',
-        targets: '.filter__item_mobile',
-        content: '.filter__drop',
-        multiple: true,
-    })
+function listener(matches) {
+    if (!matches) {
+        UIkit.accordion('.filter__form').$destroy();
+        document.querySelector('.filter__form').classList.remove('uk-accordion');
+
+        filterDrop.forEach( filter => {
+            UIkit.dropdown(filter, {
+                toggle: filter.previousElementSibling,
+                offset: 40,
+                mode: 'click',
+                shift: false,
+                flip: false,
+                pos: 'bottom-center',
+            });
+            UIkit.util.on(filter, 'beforeshow', function () {
+                filter.previousElementSibling.classList.add('filter__drop-button_active');
+            });
+            UIkit.util.on(filter, 'beforehide', function () {
+                filter.previousElementSibling.classList.remove('filter__drop-button_active');
+            });
+        })
+
+    } else {
+        MicroModal.init({
+            disableScroll: true,
+        });
+
+        filterDrop.forEach(filter => {
+            UIkit.dropdown(filter).$destroy();
+            filter.classList.remove('uk-drop', 'uk-dropdown')
+        });
+
+        UIkit.accordion('.filter__form', {
+            toggle: '.filter__drop-button',
+            targets: '.filter__item_mobile',
+            content: '.filter__drop',
+            multiple: true
+        });
+    }
+}
+
+if (document.querySelector('.filter__form')) {
+    normalMediaQuery.addEventListener('change', evt => listener(evt.matches));
+    listener(normalMediaQuery.matches);
 }
 
 const filterResetList = document.querySelectorAll('.filter__drop-reset');

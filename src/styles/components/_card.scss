@@ -98,5 +98,11 @@
         }
       }
     }
+    @include respond-to('normal') {
+      width: 214px;
+    }
+    @include respond-to('small') {
+      width: 100%;
+    }
   }
 }
