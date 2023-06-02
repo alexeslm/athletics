@@ -18,6 +18,8 @@ export default defineConfig({
                 cooperation: resolve(__dirname, 'cooperation/index.html'),
                 employees: resolve(__dirname, 'employees/index.html'),
                 directorySection: resolve(__dirname, 'directory-section/index.html'),
+                franchise: resolve(__dirname, 'franchise/index.html'),
+                employeesDetail: resolve(__dirname, 'employees-detail/index.html'),
             },
         },
     },
