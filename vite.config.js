@@ -21,6 +21,7 @@ export default defineConfig({
                 franchise: resolve(__dirname, 'franchise/index.html'),
                 employeesDetail: resolve(__dirname, 'employees-detail/index.html'),
                 wholesaleDirection: resolve(__dirname, 'wholesale-direction/index.html'),
+                retailDirection: resolve(__dirname, 'retail-direction/index.html'),
             },
         },
     },

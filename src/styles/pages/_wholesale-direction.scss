@@ -40,5 +40,13 @@
       margin-bottom: calc(48 / 320 * 100vw);
     }
   }
+
+  // .wholesale-direction__footer
+  &__footer .button {
+    @include respond-to('mobile') {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
 
