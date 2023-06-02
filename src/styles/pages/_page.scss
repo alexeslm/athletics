@@ -33,6 +33,15 @@
       font-size: 7.5vw;
     }
 
+    &_medium {
+      font-size: 3.2rem;
+      line-height: 125%;
+      @include respond-to('mobile') {
+        font-size: calc(24 / 320 * 100vw);
+        line-height: 120%;
+      }
+    }
+
     &_normal {
       font-size: 2.4rem;
       line-height: 133%;

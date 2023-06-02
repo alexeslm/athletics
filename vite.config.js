@@ -20,6 +20,7 @@ export default defineConfig({
                 directorySection: resolve(__dirname, 'directory-section/index.html'),
                 franchise: resolve(__dirname, 'franchise/index.html'),
                 employeesDetail: resolve(__dirname, 'employees-detail/index.html'),
+                wholesaleDirection: resolve(__dirname, 'wholesale-direction/index.html'),
             },
         },
     },
