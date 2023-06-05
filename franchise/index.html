@@ -193,8 +193,8 @@
   </ul>
 </aside>
 
-<main class="company-page page">
-  <div class="banner banner_page">
+<main class="franchise page">
+  <div class="banner franchise__banner">
     <header class="header header_main container-fluid">
       <div class="logo">
         <a href="/">
@@ -225,26 +225,28 @@
     </header>
     <section class="container">
       <div class="banner__page-content">
-        <h1 class="banner__title company-page__title">Компания</h1>
-        <span class="company-page__name">Торговый дом «Атлетика»</span>
-      </div>
-
-      <div class="company-page__banner-nav container">
-        <span class="company-page__slogan">Товары для здоровья, <br> реабилитации и спорта</span>
-        <a class="banner__link" href="#company">
-          <svg width="31" height="77" viewBox="0 0 31 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M2.62549 11.3559C2.46376 11.8893 1.88791 12.1933 1.33763 12.0368C0.78863 11.8801 0.473668 11.3219 0.635116 10.7885C1.59571 7.64252 3.5968 4.91813 6.24579 2.99567C8.83663 1.11514 12.0429 0 15.5 0C19.7631 0 23.6391 1.68952 26.4475 4.4114C29.2557 7.13335 31 10.8901 31 15.0227V27.976C31 32.1082 29.257 35.8652 26.4475 38.5873C23.6393 41.3105 19.7635 43 15.5 43C11.2365 43 7.36092 41.3105 4.55247 38.5873C1.74426 35.8654 0 32.1086 0 27.976V21.2787C0 20.723 0.465921 20.2714 1.03928 20.2714C1.61387 20.2714 2.07856 20.723 2.07856 21.2787V27.976C2.07856 31.5525 3.58783 34.8038 6.02106 37.1624C8.4543 39.5209 11.8086 40.9838 15.4985 40.9838C19.1883 40.9838 22.5426 39.5209 24.9759 37.1624C27.4092 34.8039 28.9184 31.5526 28.9184 27.976V15.0227C28.9184 11.4462 27.4091 8.19495 24.9759 5.83637C22.7736 3.70173 19.8159 2.30066 16.5392 2.05446V8.00535C17.3598 8.19488 18.0946 8.60454 18.672 9.16548C19.4857 9.95415 19.9911 11.0433 19.9911 12.2416V15.7563C19.9911 16.9547 19.4857 18.0438 18.672 18.8324C17.8584 19.6211 16.7347 20.111 15.4984 20.111C14.262 20.111 13.1384 19.6211 12.3247 18.8324C11.5111 18.0438 11.0057 16.9547 11.0057 15.7563V12.2416C11.0057 11.0433 11.5111 9.95415 12.3247 9.16548C12.9034 8.60456 13.6385 8.19488 14.4576 8.00535V2.05446C11.8573 2.2495 9.46066 3.16866 7.48545 4.60124C5.18807 6.26841 3.45448 8.62935 2.62181 11.3552L2.62549 11.3559ZM17.2039 10.5895C16.7664 10.1655 16.1634 9.90216 15.5004 9.90216C14.8373 9.90216 14.2356 10.1655 13.7969 10.5895C13.3594 11.0136 13.0877 11.5981 13.0877 12.2407V15.7553C13.0877 16.398 13.3594 16.9813 13.7969 17.4065C14.2344 17.8306 14.8373 18.0939 15.5004 18.0939C16.1621 18.0939 16.7652 17.8306 17.2039 17.4065C17.6414 16.9825 17.913 16.398 17.913 15.7553V12.2407C17.913 11.5981 17.6414 11.0147 17.2039 10.5895Z"
-                fill="#222222"/>
-            <path d="M15 57V75.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <h1 class="banner__title franchise__title">Франшиза</h1>
+        <div class="franchise__banner-content">
+          <span>Ортопедические салоны</span>
+          <h2 class="franchise__name">«Кладовая здоровья»</h2>
+          <span>Мы предлагаем Вам стать участником франчайзинговой программы «Кладовая Здоровья» и открыть фирменный ортопедический салон в Вашем городе.</span>
+        </div>
       </div>
     </section>
+    <div class="container-fluid franchise__banner-footer">
+      <div class="franchise__banner-item">
+        <span>Инвестиции от</span>
+        <span class="text-primary page__subtitle">1 000 000 <abbr title="Рубль">₽</abbr></span>
+      </div>
+      <div class="franchise__banner-item">
+        <span>Окупаемость от</span>
+        <span class="text-primary page__subtitle">6 месяцев</span>
+      </div>
+      <button class="button" type="button">Оставить заявку</button>
+    </div>
   </div>
 
-  <section id="company" class="section">
+  <section class="section">
     <div class="about">
       <div class="container">
         <h2 class="page__title text-primary">Работаем с 1993 года</h2>
@@ -569,7 +571,8 @@
             <div class="career__item">
               <img src="/src/images/career/career-icon-1.svg" alt="#">
               <h3 class="career__title">Работаем с 1993 года</h3>
-              <p class="career__desc">Атлетика — старейшая компания на российском рынке ортопедии и товаров для здоровья.
+              <p class="career__desc">Атлетика — старейшая компания на российском рынке ортопедии и товаров для
+                здоровья.
                 Нас знают все участники рынка товаров для здоровья: аптечные сети, оптовые компании.</p>
             </div>
             <div class="career__item">

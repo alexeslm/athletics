@@ -1,0 +1,54 @@
+.franchise {
+  padding: 0;
+
+  &__banner {
+    background-image: url('/src/images/franchise/franchise-banner.jpg');
+  }
+
+  &__banner-content {
+    padding-left: 5vw;
+    font-size: 2rem;
+    line-height: 150%;
+    margin-top: 50px;
+  }
+
+  &__title {
+    font-size: 8rem;
+    @include respond-to('mobile') {
+      font-size: calc(30 / 320 * 100) * 1vw;
+    }
+  }
+
+  &__name {
+    font-family: var(--font-family-secondary);
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-size: 4rem;
+    line-height: 120%;
+    font-weight: var(--font-w-bold);
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    @include respond-to('mobile') {
+      font-size: calc(14 / 320 * 100) * 1vw;
+    }
+  }
+
+  &__banner-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6vh;
+    display: flex;
+    column-gap: 100px;
+    justify-content: end;
+    font-size: 20px;
+  }
+
+  &__banner-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+}
