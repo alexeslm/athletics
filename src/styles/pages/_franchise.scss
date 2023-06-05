@@ -51,4 +51,36 @@
     row-gap: 5px;
   }
 
+  &__progress {
+    margin-top: 50px;
+    display: grid;
+    grid-template-areas:
+            'one two'
+            'one three';
+    grid-auto-columns: max-content;
+    grid-auto-rows: max-content;
+    justify-content: space-between;
+  }
+
+  &__awards {
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    gap: 50px 40px;
+    grid-area: one;
+  }
+
+  &__indicators {
+    grid-area: two;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: max-content;
+    gap: 40px;
+    @include respond-to('small') {
+      text-align: center;
+    }
+    @include respond-to('mobile') {
+      row-gap: calc(16 / 320 * 100) * 1vw;
+    }
+  }
+
 }
