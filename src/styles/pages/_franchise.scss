@@ -100,6 +100,7 @@
     font-size: 1.6rem;
     line-height: 162%;
     position: relative;
+
     &:before {
       counter-increment: count;
       content: counter(count);
@@ -111,6 +112,43 @@
       left: -18px;
       top: 0;
     }
+  }
+
+  // .franchise__cooperation
+  &__cooperation {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+
+  // .franchise__cooperation-title
+  &__cooperation-title {
+    font-size: 21px;
+  }
+
+  // .franchise__cooperation-item
+  &__cooperation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 20px;
+  }
+
+  // .franchise__cooperation-desc
+  &__cooperation-desc {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 4rem;
+  }
+
+  // .franchise__cooperation-content
+  &__cooperation-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    font-size: 1.6rem;
   }
 
 }

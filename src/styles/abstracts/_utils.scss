@@ -21,3 +21,9 @@
 .ff-secondary {
   font-family: var(--font-family-secondary);
 }
+
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
