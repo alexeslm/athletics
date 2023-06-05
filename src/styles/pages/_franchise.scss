@@ -83,4 +83,34 @@
     }
   }
 
+  &__advantages {
+    margin-top: 50px;
+    @extend %list-reset;
+    counter-reset: count 0;
+    display: grid;
+    grid-template-columns: repeat(2, 47%);
+    justify-content: space-between;
+    row-gap: 60px;
+  }
+
+  &__advantages-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 1.6rem;
+    line-height: 162%;
+    position: relative;
+    &:before {
+      counter-increment: count;
+      content: counter(count);
+      font-family: var(--color-secondary);
+      font-size: 8rem;
+      font-weight: var(--font-w-bold);
+      opacity: 0.15;
+      position: absolute;
+      left: -18px;
+      top: 0;
+    }
+  }
+
 }
