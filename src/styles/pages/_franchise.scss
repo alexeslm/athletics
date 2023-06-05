@@ -151,4 +151,20 @@
     font-size: 1.6rem;
   }
 
+  // .franchise__video-grid
+  &__video-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+
+  // .franchise__video-text
+  &__video-text {
+    margin: 30px 0;
+    font-size: 1.6rem;
+    line-height: 162%;
+    color: var(--color-info);
+  }
+
 }
