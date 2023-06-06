@@ -165,6 +165,54 @@
     font-size: 1.6rem;
     line-height: 162%;
     color: var(--color-info);
+    max-width: 900px;
+  }
+
+  // .franchise__certificates
+  &__certificates {
+  }
+
+  // .franchise__certificates-swiper
+  &__certificates-swiper {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  // .franchise__certificates-navigation
+  &__certificates-navigation {
+  }
+
+  // .franchise__certificates-footer
+  &__certificates-footer {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // .franchise__certificates-text
+  &__certificates-text {
+    font-size: 1.6rem;
+    line-height: 162%;
+    white-space: pre-line;
+  }
+
+  // .franchise__certificates-desc
+  &__certificates-desc {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  // .franchise__certificates-button
+  &__certificates-button {
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    line-height: 144%;
+  }
+
+  // .franchise__3d-wrap
+  &__3d-wrap {
+    margin-top: 50px;
   }
 
 }

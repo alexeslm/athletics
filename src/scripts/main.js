@@ -388,6 +388,25 @@ new Swiper(".career-page__slider .swiper", {
     },
 });
 
+new Swiper('.franchise__certificates .swiper', {
+    modules: [Navigation, Pagination],
+    loop: false,
+    navigation: {
+        nextEl: ".franchise__certificates .swiper-button-next",
+        prevEl: ".franchise__certificates .swiper-button-prev"
+    },
+    pagination: {
+        el: '.franchise__certificates .swiper-pagination',
+        type: 'bullets',
+    },
+    breakpoints: {
+        992: {
+            slidesPerView: 5,
+            spaceBetween: 10
+        },
+    },
+});
+
 /**********************************************************************************************************************/
 const setRangeList = (count, width = 256) => {
     let rangeList = [];
