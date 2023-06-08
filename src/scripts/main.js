@@ -391,6 +391,8 @@ new Swiper(".career-page__slider .swiper", {
 new Swiper('.franchise__certificates .swiper', {
     modules: [Navigation, Pagination],
     loop: false,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
     navigation: {
         nextEl: ".franchise__certificates .swiper-button-next",
         prevEl: ".franchise__certificates .swiper-button-prev"
@@ -400,12 +402,37 @@ new Swiper('.franchise__certificates .swiper', {
         type: 'bullets',
     },
     breakpoints: {
-        992: {
+        1200: {
             slidesPerView: 5,
             spaceBetween: 10
         },
     },
 });
+
+
+
+let initFranchiseCooperationSwiper = false;
+let swiperFranchiseCooperationSwiper;
+const franchiseCooperationGrid = document.querySelector('.franchise__cooperation-grid');
+
+function swiperFranchiseStart() {
+    if (window.innerWidth <= 991) {
+        if (!initFranchiseCooperationSwiper && franchiseCooperationGrid) {
+            initFranchiseCooperationSwiper = true;
+            franchiseCooperationGrid.classList.add('swiper-wrapper');
+            swiperFranchiseCooperationSwiper = new Swiper(".franchise__cooperation", {
+                slidesPerView: "auto",
+                spaceBetween: 20
+            });
+        }
+    } else if (initFranchiseCooperationSwiper) {
+        swiperFranchiseCooperationSwiper.destroy();
+        initFranchiseCooperationSwiper = false;
+        franchiseCooperationGrid.classList.remove('swiper-wrapper');
+    }
+}
+swiperFranchiseStart();
+window.addEventListener("resize", swiperFranchiseStart);
 
 /**********************************************************************************************************************/
 const setRangeList = (count, width = 256) => {

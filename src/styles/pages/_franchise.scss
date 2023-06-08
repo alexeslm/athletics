@@ -5,15 +5,29 @@
     background-image: url('/src/images/franchise/franchise-banner.jpg');
   }
 
+  // .franchise__banner-text
+  &__banner-text {
+    @include respond-to('small') {
+      padding-top: 150px;
+    }
+  }
+
   &__banner-content {
     padding-left: 5vw;
     font-size: 2rem;
     line-height: 150%;
     margin-top: 50px;
+    @include respond-to('small') {
+      padding-left: 0;
+      margin-top: 20px;
+    }
   }
 
   &__title {
     font-size: 8rem;
+    @include respond-to('small') {
+      font-size: 5rem;
+    }
     @include respond-to('mobile') {
       font-size: calc(30 / 320 * 100) * 1vw;
     }
@@ -43,6 +57,13 @@
     column-gap: 100px;
     justify-content: end;
     font-size: 20px;
+    @include respond-to('small') {
+      margin-top: 30px;
+      position: static;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 30px;
+    }
   }
 
   &__banner-item {
@@ -60,6 +81,12 @@
     grid-auto-columns: max-content;
     grid-auto-rows: max-content;
     justify-content: space-between;
+    @include respond-to('normal') {
+      grid-template-areas:
+            'one'
+            'two'
+            'three';
+    }
   }
 
   &__awards {
@@ -67,6 +94,13 @@
     grid-template-columns: repeat(2, 250px);
     gap: 50px 40px;
     grid-area: one;
+    @include respond-to('normal') {
+      grid-template-columns: repeat(4, 22vw);
+      gap: 20px;
+    }
+    @include respond-to('small') {
+      grid-template-columns: repeat(2, 230px);
+    }
   }
 
   &__indicators {
@@ -75,8 +109,16 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: max-content;
     gap: 40px;
+    @include respond-to('normal') {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      justify-content: space-between;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
     @include respond-to('small') {
       text-align: center;
+      grid-template-columns: repeat(2, 1fr);
     }
     @include respond-to('mobile') {
       row-gap: calc(16 / 320 * 100) * 1vw;
@@ -91,6 +133,9 @@
     grid-template-columns: repeat(2, 47%);
     justify-content: space-between;
     row-gap: 60px;
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__advantages-item {
@@ -117,9 +162,23 @@
   // .franchise__cooperation
   &__cooperation {
     margin-top: 50px;
+  }
+
+  // .franchise__cooperation-grid
+  &__cooperation-grid {
     display: grid;
     grid-template-columns: repeat(2, 48%);
     justify-content: space-between;
+    @include respond-to('normal') {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+    @include respond-to('small') {
+      align-items: stretch;
+      .swiper-slide {
+        height: auto;
+      }
+    }
   }
 
   // .franchise__cooperation-title
@@ -141,6 +200,9 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     column-gap: 4rem;
+    @include respond-to('small') {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   // .franchise__cooperation-content
@@ -176,6 +238,11 @@
   &__certificates-swiper {
     margin-top: 50px;
     margin-bottom: 30px;
+    @include respond-to('normal') {
+      .swiper-slide {
+        width: 248px;
+      }
+    }
   }
 
   // .franchise__certificates-navigation
@@ -187,6 +254,10 @@
     margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    @include respond-to('normal') {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20px;
+    }
   }
 
   // .franchise__certificates-text
